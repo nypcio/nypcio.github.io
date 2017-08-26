@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Test</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="testcustom.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-3">nypc.io</h1>
+      <p class="lead">Welcome to the discussion of NYPC problems!</p>
+    </div>
+</div>
+
+<nav class = "navbar navbar-default navbar-fixed-top" role = "navigation">
+        
+        <div class = "navbar-header">
+           <a class = "navbar-brand" href = "#">nypc.io</a>
+        </div>
+        
+        <div>
+           <ul class = "nav navbar-nav">
+              <li class = "default"><a href = "#">News</a></li>
+              <li><a href = "#">Discussion</a></li>
+              
+              <li class = "dropdown">
+                 <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+                    Problems
+                    <b class = "caret"></b>
+                 </a>
+                 
+                 <ul class = "dropdown-menu">
+                     <a class="test" tabindex="-1" href="#">NYPC 2016<span class="caret"></span></a>
+                    
+                 <!-- <li class = "divider"></li> -->
+                    <!-- <li><a href = "#">Separated link</a></li>
+                    
+                    <li class = "divider"></li>
+                    <li><a href = "#">One more separated link</a></li> -->
+                    <li class="dropdown-submenu">
+                        <li><a tabindex="-1" href="#">Preliminary Round</a></li>
+                        <li><a tabindex="-1" href="#">Final Round</a></li>
+                    </li>
+                </ul>
+                 
+              </li>
+           </ul>
+        </div>
+        
+        <div class="pull-right">
+            <u1 class="nav navbar-nav">
+                <li><a href="login.html">Log In</a></li>
+            </u1>
+        </div>
+
+</nav>
+
+<div class="container">
+        <h3 class="text-center">What is a Fitbit?</h3>
+        <p>Fitbit watches are one the most popular forms of wearable healthcare technology. They are wireless activity trackers that measure a wide range of data including heart rate, quality of sleep, number of steps walked and steps climbed. Alongside the watches, Fitbit provides a mobile app and website that can be used without the tracker to allow users to track their diet and activities and set short and long-term goals. </p>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('.dropdown-submenu a.test').on("click", function(e){
+            $(this).next('u1').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+    });
+    </script>
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://nypc-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<body>    
+        <script id="dsq-count-scr" src="//nypc-io.disqus.com/count.js" async></script>
+</body>                        
+</html>

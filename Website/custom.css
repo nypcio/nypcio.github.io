@@ -1,0 +1,16 @@
+.jumbotron {
+  padding-top: 70px;
+  color: black;
+  height: 290px;
+}
+.jumbotron-gadgets {
+  background-image: url("images/gadgets.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.centerImage
+{
+  text-align:center;
+  display:block;
+}

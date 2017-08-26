@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Smart Assistants</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-override.css" />
+  <link rel="stylesheet" href="custom.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">nypc.io</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="smartassistants.html">Smart Assistants
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="cognitivecomputingsystems.html">Cognitive computing systems</a></li>
+            <li><a href="healthapps.html">Health monitoring & diagnosis apps</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="intelligentrobots.html">Intelligent Robots
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="typesofrobots.html">Types of robots</a></li>
+            <li><a href="roboticsurgery.html">Robotic surgery</a></li>
+          </ul>
+        </li><li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="healthcaregadgets.html">Healthcare Gadgets
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="wearabletechnology.html">Wearable technology</a></li>
+            <li><a href="gadgetsforyourphone.html">Gadgets for your phone</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="jumbotron jumbotron-gadgets">
+  <h1 class="text-center">Wearable technology</h1>
+  <p class="text-center">The wearable technology revolution is taking place right before our eyes, so we'll take you through a few of the most popular and innovative products on the market.</p>
+  <center><a class="btn btn-info" href="#fitbit" role="button">Fitbit</a>
+  <a class="btn btn-info" href="#healthpatch" role="button">Healthpatch MD</a>
+  <a class="btn btn-info" href="#helius" role="button">Helius</a>
+  <a class="btn btn-info" href="#google" role="button">Google Smart Contact Lenses</a></center>
+</div>
+
+
+
+<div class="container">
+  <h2 class="text-center" id="fitbit">Fitbit</h2>
+  <center><img src="images/fitbit.png" class="img-responsive" alt="Fitbits" style="width: 60%; height: 60%"></center>
+  <h3 class="text-center">What is a Fitbit?</h3>
+    <p>Fitbit watches are one the most popular forms of wearable healthcare technology. They are wireless activity trackers that measure a wide range of data including heart rate, quality of sleep, number of steps walked and steps climbed. Alongside the watches, Fitbit provides a mobile app and website that can be used without the tracker to allow users to track their diet and activities and set short and long-term goals. </p>
+  <h3 class="text-center">How does a Fitbit work?</h3>
+    <p>Fitbit trackers work using a three-axis accelerometer to track motion. An accelerometer is an electromechanical device which measures the acceleration of a moving object when attached to it. It works in many different ways, two of which involve the piezoelectric effect and the capacitance sensor. The most common form of accelerators use piezoelectric effect and microscopic crystal structures which are put under stress as a result of accelerative forces. From this stress, the crystals produce a voltage and the accelerometer translates to voltage to determine the velocity and orientation of the moving body.</p>
+    <p>The capacitance accelerometer detects and records vibrations produced on a device. The components of the accelerometer are capable of storing capacitance and when they are moved, the generated capacitance is sensed by the accelerometer’s sensors and translated into voltage for interpretation by the accelerometer. Most accelerometers are composed of multiple axes to allow the accelerometer to measure motion in any direction, allowing for more precise measurements that those with fewer axes.</p>
+  <h3 class="text-center">How does a Fitbit count steps?</h3>
+    <p>Fitbit has a unique algorithm for step counting that looks for patterns in a person’s motion that suggests they are walking and determines whether the motion’s size is large enough by setting a threshold. If the motion and acceleration measurement meet this threshold, the movement counts as a step. While Fitbit’s algorithm is not publicly available, step counting algorithms generally work as follows.</p>
+    <img src="images/fitbitgraph.png" alt="Fitbits" style="width: 25%; height: 25%" class="pull-right">
+    <p>As a three-axis accelerometer is used, three measurements (x, y, z) are taken corresponding to vertical, forward and side acceleration of a person. Regardless of which way a person is moving, at least one axis will have relatively large period acceleration changes so peak detection and a dynamic threshold-decision algorithm for acceleration are applied on all three axes in order to detect a cycle of walking. The dynamic threshold-decision algorithm works by  continuously updates the maximum and minimum values of the three-axis acceleration every set number of samples. The average value (maximum + minimum)/2 is called the dynamic threshold level and this level is used to decide whether steps have been taken.</p>
+    <p>The peak detection algorithm works by calculating the steps from the x-, y- or z- axis depending on which axis has the largest change in acceleration. However, the change in acceleration must meet a certain threshold value or they will be discarded. There are many other methods used to avoid over or undercounting such as the use of a time window to discard invalid vibrations that fall outside of a certain time interval (too fast or too slow). By means of an algorithm similar to this, Fitbit have become the biggest-selling maker of activity trackers in the world.</p>
+    <center><a href="#fitbitrefs" class="btn btn-default" data-toggle="collapse">References</a></center>
+    <p>
+    <div id="fitbitrefs" class="collapse">
+      <div class="list-group">
+        <a href="http://www.analog.com/media/en/analog-dialogue/volume-44/number-2/articles/pedometer-design-3-axis-digital-acceler.pdf" class="list-group-item list-group-item-action">analog.com</a>
+        <a href="http://www.livescience.com/40102-accelerometers.html" class="list-group-item list-group-item-action">livescience.com</a>
+        <a href="https://help.fitbit.com/articles/en_US/Help_article/1143" class="list-group-item list-group-item-action">help.fitbit.com</a>
+        <a href="http://www.fitbit.co.za/" class="list-group-item list-group-item-action">fitbit.co.za</a>
+      </div>
+    </div>
+
+    <h2 class="text-center" id="healthpatch">Healthpatch MD</h2>
+    <center><img src="images/healthpatch.jpg" class="img-responsive" alt="Healthpatch MD" style="width: 40%; height: 40%"></center>
+    <h3 class="text-center">What is the Healthpatch MD?</h3>
+    <p>One of the latest developments in wearable technology is the Healthpatch MD, a bionic band-aid consisting of a variety of sensors that monitor heart rate, respiration, temperature, steps taken, sleep cycle, stress levels and whether the user has fallen or become incapacitated. It is the first medical technology device of its kind as this small, unobtrusive patch worn on the chest is capable of taking clinical-grade biometric measurements. It also supports the treatment of a wide range of diseases and conditions by allowing healthcare professionals access to 24-hour, real-time physiological data. The patch pairs over bluetooth with a mobile device for Wi-Fi connectivity so patients and doctors can access the encrypted data through a cloud platform provided by LifeWatch, a cardiac monitoring partner company.</p>
+    <h3 class="text-center">How does the Healthpatch MD work?</h3>
+    <p>The patch works by using the latest sensors and electronics combined with Vital Connect’s SensorFusion algorithms which process 30,000 data points a minute to produce accurate measurements. These algorithms analyse several biometrics to produce far more accurate and significant measurements than those that would be any to be generated by considering any individual biometric alone. These biometrics include stress, sleep quality, calories burned and contextual heart rate among others.</p>
+    <h3 class="text-center">What is inside the Healthpatch MD?</h3>
+    <p>The device is consists of two main components: a disposable adhesive patch containing the ECG electrodes and battery, and a reusable electronics module that contains the embedded processor, tri-axial accelerometer (aids detection of posture, steps and falls) and BLE transceiver (used to pair the patch with mobile devices). The data from the tri-axial accelerometer is used in performing the patch’s unique fall detection function.</p>
+    <h3 class="text-center">How does the Healthpatch MD detect falls?</h3>
+    <p>One of the main features of the fall detection algorithm is identifying whether the subject is in a horizontal position after an impact. As well as this, the subject must have a low activity level for several seconds after a possible fall in order to reduce the number of false positive. This activity level is determined by calculating a moving average of the acceleration vector. The horizontal position is determined by calculating the angle of the acceleration vector soon after impact with an acceleration vector obtained when the person was standing. This angle can only be calculated with the use of a calibration procedure which can be achieved by measuring the acceleration vector of the person as they are walking. The vector is called the calibration vector. The difference between this vector and the vector after the possible impact determines whether the horizontal position criterion is satisfied which in turns determines whether the person has or has not fallen.</p>
+    <center><a href="#mdrefs" class="btn btn-default" data-toggle="collapse">References</a></center>
+    <p>
+    <div id="mdrefs" class="collapse">
+      <div class="list-group">
+        <a href="http://www.postscapes.com/wireless-biometric-patch-healthpatch-md/" class="list-group-item list-group-item-action">postscapes.com</a>
+        <a href="http://www.cathlabdigest.com/article/Vital-Connect-HealthPatch-MD-Biosensor-Receives-FDA-Clearance" class="list-group-item list-group-item-action">cathlabdigest.com</a>
+        <a href="http://www.asylumpr.com/wp-content/uploads/video/pdf_288.pdf" class="list-group-item list-group-item-action">asylumpr.com</a>
+        <a href="https://vitalconnect.com/wp-content/uploads/2017/02/Chan2013EMBC_VitalConnectPatch.pdf" class="list-group-item list-group-item-action">vitalconnect.com</a>
+        <a href="http://ieeexplore.ieee.org/xpls/icp.jsp?arnumber=6346853" class="list-group-item list-group-item-action">ieeexplore.iee.org</a>
+        <a href="http://www.imedicalapps.com/2014/02/vital-connect-wearable-biosensor-healthpatch/" class="list-group-item list-group-item-action">imedicalapps.com</a>
+      </div>
+    </div>
+
+    <h2 class="text-center" id="helius">Helius</h2>
+    <center><img src="images/helius.jpg" class="img-responsive" alt="Helius Pill" style="width: 50%; height: 50%"></center>
+    <h3 class="text-center">What is Helius?</h3>
+    <p>One of the most exciting launches in healthcare technology is that of the Helius pill which is the world’s first ever FDA approved digestible microchip. It uses a small patch (Proteus Personal Monitor) worn on the body together with sensor-enabled pills and a cloud services that allows for access to real-time information on the user’s health. The pills are composed of tiny sensors made mostly of silicon that are covered in magnesium and copper so they react with the user’s stomach acid and generator enough power through this reaction to send a time-stamped signal to the patch. This information is then forwarded to the user’s smartphone using Bluetooth. The encrypted data is then forwarded to a secure database that can be reviewed by the user’s doctor or relatives. The pill’s main use is to encourage and confirm that users are complying with their drug regimen as the total cost incurred due to poor compliance is near $300 billion annually. Therefore the information sent to the patch includes the type of medication taken and amount of dosage as well as the time of ingestion. </p>
+    <h3 class="text-center">How does the Helius pill work?</h3>
+    <p>The technology works on the basis of ingestible event markers (essentially sand grain-sized microchips) that can be incorporated into pills. The minuscule IEM, attached to an inert pharmaceutical tablet, is designed to send a time-stamped confirmation of ingestion as a unique identifier to the Proteus patch worn outside the body. The signal is communicated via volume conduction communication (also known as intra-body communication), a form of communication that uses the human body as the medium of transmission for electrical signals. </p>
+    <h3 class="text-center">What is inside the IEM sensor?</h3>
+    <p>The sensor consists of three main components: the active layers, the integrated circuit and the insulating skirt disk. The active layers are thin films of magnesium and cuprous chloride. Underneath there is a gold layer that acts as a current collector. Together, these layers, upon contact with gastric fluid, produce a battery that powers the device. The code transmitted by the pill to the patch consists of a binary number representing the medication and dosage. In order to transmit this code, the integrated circuit modules the discharge current between high and low levels at frequencies chosen specifically to avoid stimulating any unwanted cells. </p>
+    <center><a href="#heliusrefs" class="btn btn-default" data-toggle="collapse">References</a></center>
+    <p>
+    <div id="heliusrefs" class="collapse">
+      <div class="list-group">
+        <a href="http://www.postscapes.com/smart-sensor-pills-helius/" class="list-group-item list-group-item-action">postscapes.com</a>
+        <a href="https://innovatemedtec.com/content/proteus-digital-health-shows-reliability-of-its-helius-smart-pills---" class="list-group-item list-group-item-action">innovativemedtec.com</a>
+        <a href="http://e-collection.library.ethz.ch/eserv/eth:29911/eth-29911-02.pdf" class="list-group-item list-group-item-action">e-collection.library.ethz.ch</a>
+        <a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6861446&tag=1" class="list-group-item list-group-item-action">ieeexplore.iee.org</a>
+        <a href="http://www.bbc.co.uk/news/business-23620996" class="list-group-item list-group-item-action">bbc.co.uk</a>
+      </div>
+    </div>
+
+    <h2 class="text-center" id="google">Google Smart Contact Lenses</h2>
+    <center><img src="images/googlelens.jpg" class="img-responsive" alt="Google Smart Contact Lenses" style="width: 50%; height: 50%"></center>
+    <h3 class="text-center">What are Google smart contact lenses?</h3>
+    <p>Google smart contact lenses may not be available yet but they are certain to be one of the innovative gadgets of the next decade. Announced in 2014, the lenses aim to help diabetics by constantly measuring the glucose levels in their tears. In addition, the lens can also help focus the user’s vision where required. The lens is composed of a wireless chip and a tiny glucose sensor. A minuscule hole in the lens allows the tear fluid to touch the sensor, which lies in between two soft layers of lens material, and allow it to measure blood glucose levels. In the same layer as the sensor, there is also a wireless antenna thinner than a human hair which sends information to the wireless device through the wireless technology RFID (radio-frequency identification). This antenna gathers, reads and analysis data that will be sent to the device; the current prototypes produce one reading per second. In the future, tiny LED lights may be added to notify users when glucose levels exceed a certain threshold.</p>
+    <h3 class="text-center">What is radio-frequency identification?</h3>
+    <p>Radio-frequency identification is the use of radio waves to read and analyse information stored on a tag attached to an object. The tags contain electronically stored information and can either be active, passive or battery-assisted passive. An active tag has a local power source (e.g. a battery) and transmits its ID signal periodically. A battery-assisted passive tag also has a small battery but is only activated when an RFID reader is nearby. A passive tag has no battery, rendering it cheaper and smaller, but instead the tag uses radio energy transmitted by the RFID reader. However, a passive tag requires a thousand times stronger power level to transmit a signal. RFID tags contain an integrated circuit and an antenna, as well as fixed or programmable logic used for processing the transmission and sensor data.</p>
+    <p>The electronically stored information in tags is accessed used an RFID reader which transmits an encoded radio signal to interrogate the tag. The tag receives the message and sends its unique ID back, along with any other required information. This allows the RFID reader to discriminate among several tags that may be within range and read them simultaneously. </p>
+    <center><a href="#googlerefs" class="btn btn-default" data-toggle="collapse">References</a></center>
+    <p>
+    <div id="googlerefs" class="collapse">
+      <div class="list-group">
+        <a href="https://en.wikipedia.org/wiki/Google_Contact_Lens" class="list-group-item list-group-item-action">en.wikipedia.org</a>
+        <a href="https://en.wikipedia.org/wiki/Radio-frequency_identification" class="list-group-item list-group-item-action">en.wikipedia.org</a>
+        <a href="http://www.technovelgy.com/ct/Technology-Article.asp?ArtNum=1" class="list-group-item list-group-item-action">technovelgy.com</a>
+        <a href="https://googleblog.blogspot.co.uk/2014/01/introducing-our-smart-contact-lens.html" class="list-group-item list-group-item-action">googleblog.blogspot.co.uk</a>
+        <a href="https://www.forbes.com/sites/leoking/2014/07/15/google-smart-contact-lens-focuses-on-healthcare-billions/#aae0d34217f4" class="list-group-item list-group-item-action">forbes.com</a>
+      </div>
+    </div>
+</div>
+
+</body>
+</html>
