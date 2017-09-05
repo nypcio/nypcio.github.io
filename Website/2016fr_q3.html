@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>2016 NYPC Final Round Question 3</title>
+    </head>
+    <body>
+        <h1>Arithmetic with Matches: Only One</h1>
+        <p style ="text-align:center">
+        An arithmetic equation is given in matches:
+        </p>
+        <img src="images/m2_img1.png">
+        <p style ="text-align: center">For example, the above image says 5000 – 7000 + 3000, and the result is 1000.</p>
+        <p style="text-align: center">Now, from the above arithmetic equation, if we move one match from 3, the result of the below equation becomes 0. </p>
+        <img src="images/m2_img2.png">
+        <p style="text-align: center">
+            Just like the above example, let us move the minimum number of matches to make the absolute value of the result of the arithmetic equation to be as small as possible. 
+            -	Each equation is made up with numbers from 0 to 1000, +, and -.
+            -	The numbers from 0 to 9 need to be represented as the following:                           
+        </p>
+        <img src="images/m1_img3.png">
+        <p style ="text-align: center">In other words, you are not allowed to create numbers as the following:
+        </p>
+        <img src="images/m1_img4.png">
+        <p style ="text-align: center">
+            -	Newly made equation must only use a number from 0 to 1000, +, and -.
+            -	Matches that make up any number (0 – 9) or symbols (+, -) can be moved to form other numbers or symbols. 
+            ex) 0 + 1 can be changed into 8 – 1
+            -	You are unable to change a number to a symbol and vice versa. 
+            ex) + cannot be changed to 1.
+            -	You cannot move a match to a place with nothing to form a number/symbol nor can you delete all matches to get rid of a number/ symbol.
+            ex) 111 cannot be changed to 9.
+            -	You may not add nor delete a match from the arithmetic equation. In other words, the total number of matches must be equal after the transformation.
+            -	You can move matches to make the first digit of the number 0. In this case, we don’t interpret this number as a base 8 number but a base 10 number.
+            ex) 8000 can be changed to 0800 by moving around one match, and the value of 0800 will be interpreted as 800.
+            -	The original equation and resulting equation always begins with a number, and no two symbols may be next to each other. 
+            ex) -1 + 10 nor 1 – - 1 is allowed.         
+        </p>
+        <h2>Input</h2>
+        <p style ="text-align: center">
+            First line of input is the original arithmetic equation that will be represented in matches. 
+            /* Two of the input data are less than 100 characters.
+                 Three of the input data are greater than or equal to 100 and less than 1000 characters.
+                 Five of the input data are greater than or equal to 1000 and less than 10000 characters. */            
+            </p>
+       <h2>Output</h2>
+       <p style="text-align: center">
+        Output the arithmetic equation produced after moving around the matches from the original equation.       </p>
+       <h2>Input Example</h2>
+       <img src="images/m2_input.png">
+       <h2>Output Example</h2>
+       <img src="images/m2_output.png">
+       <h2>Marks Guideline</h2>
+       <p style="text-align: center">
+            For each hidden test case, marks will be awarded with these rules: 
+            -	Let us set the result of the original arithmetic equation as I, the result of the final arithmetic equation as R, and the minimum number of matches needed to move produce the final arithmetic equation as N. The points for this solution will be floor(I - |R|) / sqrt(N + 100)). (|x| is the absolute value of x. sqrt(x) is the square root of x. floor(x) is the greatest integer that is less than or equal to x.) 
+            If in the case that I is less than |R|, you will be awarded 0 marks. 
+                    Ex) the above example would earn 99 points. 
+            -	You will be awarded 10 marks if you have the highest point. 
+            -	For points below the highest point, you will be awarded floor(10 * (points you’ve earned)/ (highest point earned)) marks. 
+            
+            Therefore, even after receiving your marks once you’ve submitted your code, your marks may decrease if other person’s solution produces a new maximum point.             
+       </p>    
+    </body>
+</html>
+
+                

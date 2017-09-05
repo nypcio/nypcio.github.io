@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>2016 NYPC Final Round Question 4</title>
+    </head>
+    <body>
+        <h1>Manage My Own Farm: Plane and Harvest</h1>
+        <p style ="text-align:center">
+            You are given a rectangular-shaped land. You are also given the map of the land with the locations of the farm and the places of the workers. Your goal is to plant crops and harvest them on this land and maintain the farm.
+        </p>
+        <p style ="text-align: center">
+            Goal:
+            Let us start with level 1. 
+            The goal of level 1 is to create at least one farm and gather berry three times. 
+            </p>
+        <p style="text-align: center">
+                Development:
+                These are labelled on the map:
+                -	.  : empty land. You can use the “plow” command to make a bare land into a farm.
+                -	# : farm land. You may plant crops.
+                You can order the workers to either plow the land or harvest crops. Time is required to collect the crops and for them to grow. In this game, time is represented in turns. We begin with 0 turn. Planting crops requires 1 turn, others are inputted manually. The location of the worker is also inputted. 
+                 </p>
+        <p style="text-align: center">
+                In Level 1, worker can do the following:
+                -	move x y 
+                Moves the worker to a specific location. If the current location of the worker is x0, y0, then after |x – x0| + |y- y0| turns, the worker goes to the desired location. The location of the farm nor crops affects the movement of the worker. While moving, the worker cannot complete any other orders. (|x| is the absolute value of x)
+                -	plow 
+                The worker creates a farm on its current location. The condition is that the current location of the worker must be empty land. The cost and turns needed to create a farm are given in the input. While plowing, the worker cannot complete any other orders until the amount of turns inputted has passed.
+                -	plant crop 
+                The worker plants the ordered crop onto the farm at its current location. The worker must be on an empty farm. Planting takes 1 turn. In Level 1, berry must be included in the crops. The cost of planting crops is used up from the current savings. Once the planting is complete, the crop grows on its own so the worker can do other tasks during that period. The turn it takes for the crop to grow is given in the input. 
+                -	harvest
+                The worker harvests fully frown crops on its current location. Only fully grown crops can be harvested. Harvesting requires 1 turn. Once the harvesting is complete, the savings money increases by the amount of coast of harvest and the farm that was harvested returns to an empty farm.
+                
+                How to order the worker will be explained in the output section. 
+                While completing a task, you cannot order anything else to the worker. 
+                If ordered a command that is unable to be completed or if a command is an incorrect order, the command is interpreted as an error.                     
+        </p>
+        <h2>Input</h2>
+        <p style ="text-align: center">
+                First line of input is the current amount of savings, M. 
+                In Level 1 of the game, you are given enough money to create one farm and to plant 3 berry.
+                The next line is the amount of turns it takes to generate a farm and its cost. 
+                Third line gives the coordinates (x,y) of the location of the worker. The top-left is (1,1).
+                The next line represents the width W and height H of the map, and the map is given across H lines. (W and H greater than or equal to 1 and less than or equal to 100)
+                The following line tells us N, the number of types of crops you can plant. (N is less than equal to 20)
+                The next N lines represent each of the types of crops and its information. The information includes the name of the crop, turns it takes to harvest the crop, the cost of planting the crop, and the amount of money you make from harvesting the crop. 
+                The name of the crop is given in un-capitalised English, has no spaces, and is less than 20 characters. 
+                In declaring a variable for the savings account, you may use any type appropriate that is able to hold a number from 0 to 1 million. 
+                The area for one farm is present in the input, and regardless of how many farms were present in the land originally, you must make one farm on your own.   
+                
+            </p>
+       <h2>Output</h2>
+       <p style="text-align: center">
+            
+            In each line of output, you are to list out the commands you ordered the worker. Each line should begin with the starting turn number and should be listed in increasing order of turn numbers. 
+            The output commands should be listed so that once all tasks complete, the worker should have created at least one farm and have planted berry three times. 
+            If ordered a command that is unable to be completed or an incorrect order, the command is interpreted as an error.            
+       </p>
+       <h2>Input Example</h2>
+       <img src="images/f1_input.png">
+       <p style="text-align: center">
+            You first start with 100. 
+            To make a new farm, you need 5 turns and 50p.
+            The worker starts at (5,3).
+            The size of the map is width 6 and height 5. There are already two farms existent on the map. 
+            You are given an option of two crops to plant:
+            -	berry : requires 10 turns to grow, 5p to plant, and you earn 10p once you harvest
+            -	watermelon: requires 50 turns to grow, 200p to plant, and you earn 273p once you harvest            
+    </p>
+       <h2>Output Example</h2>
+       <img src="images/f1_output.png">
+       <p style="text-align: center">
+            The worker moves two spaces and forms a farm. 
+            Then, starting from the right, the worker plants the berry and returns to the right. 
+            Since the worker planted the berry at the 7th turn, and because berry takes 1 turn to plant and 10 turns to grow, the worker can harvest the berry on the 18th turn. 
+            After waiting until the berry is fully grown, the worker moves one space by one space to harvest the berry. 
+            Since there were two farms already present at the start, if the worker plows the land and forms one extra farm, the worker can grow 3 berry at once.             
+    </p>     
+    </body>
+</html>
+
+                

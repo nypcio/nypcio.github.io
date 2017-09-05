@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>2016 NYPC Final Round Question 5</title>
+    </head>
+    <body>
+        <h1>Manage My  Own Farm: Upgraded Farm</h1>
+        <p style ="text-align:center">
+                You are given a rectangular-shaped land. You are also given the map of the land with the locations of the farm and the places of the workers. Your goal is to plane crops and harvest them on this land and maintain the farm.
+        </p>
+        <p style ="text-align: center">
+                Goal:
+                Let us move on to Level 2.
+                In Level 2, you can upgrade your farm.
+                If you upgrade your farm, the level of the farm increases and there are crops you are only able to plant in specific levels. 
+                Let us upgrade our farms to harvest the highest valued crop.                
+            </p>
+        <p style="text-align: center">
+                Development:
+                These are labelled on the map:
+                -	.  : empty land. You can use the “plow” command to make it into a farm
+                -	# : farm land. You may plant crops. The given farms all start at level 1. 
+                You can order the workers to either plow the land or harvest crops. Time is required to collect the crops and for them to grow. In this game, time is represented in turns. We begin with 0 turn. Planting crops requires 1 turn, others are inputted manually. The location of the worker is also inputted.                
+                 </p>
+        <p style="text-align: center">
+                In Level 2, worker can do the following:
+                -	upgrade 
+                Upgrades the level of the current farm the worker is on. To upgrade the farm, the worker must work on the farm during the given number of turns for that upgrade.
+                
+                In these cases, upgrades are not allowed: 
+                o	There is no farm on the worker’s current location 
+                o	There is not enough money to upgrade
+                o	There are crops already growing on the farm 
+                o	The farm has already reached maximum level
+                The number of turns and the cost of upgrade will be given in the input.
+                
+                -	move x y 
+                Moves the worker to a specific location. If the current location of the worker is x0, y0, then after |x – x0| + |y- y0| turns, the worker goes to the desired location. The location of the farm nor crops affect the movement of the worker. While moving, the worker cannot complete any other orders. (|x| is the absolute value of x)
+                -	plow 
+                The worker creates a farm on its current location. The condition is that the current location of the worker must be empty land. The cost and turns needed to create a farm is given in the input. While plowing, the worker cannot complete any other orders until the amount of turns inputted has passed.
+                -	plant crop 
+                The worker plants the ordered crop onto the farm at its current location. The worker’s current location must be on farm land that is greater than or equal to the crop level. Planting takes 1 turn. The cost of planting crops is used up from the current savings, and if the amount of money left in the savings is less than the cost to plant a crop, you cannot plant that crop. Once the planting is complete, the crop grows on its own so the worker can do other tasks during that period. The turn it takes for the crop to grow is given in the input. 
+                -	harvest
+                The worker harvests fully frown crops on its current location. Only fully grown crops can be harvested. Harvesting requires 1 turn. Once the harvesting is complete, the savings money increases by the amount of coast of harvest and the farm that was harvested returns to an empty farm while maintaining its level.
+                How to order the worker will be explained in the output section. While completing a task, you cannot order anything else to the worker. If ordered a command that is unable to be completed or an incorrect order, the command is interpreted as an error.                                     
+        </p>
+        <h2>Input</h2>
+        <p style ="text-align: center">
+                First line of input has the current amount of savings and the maximum level possible for a farm, M and L. (L is greater than equal to 2 and less than equal to 5)
+                The next line is the amount of turns it takes to generate a farm and its cost. Newly made farms are always level 1.
+                In the next L-1 lines of the output, the number of turns it takes to upgrade a farm and its cost are listed in increasing order of levels. (For instance, the input will start with the number of turns it takes to upgrade and its cost from level 1 to 2, then 2 to 3, and so on.)
+                Third line gives the coordinates of the location of the worker. The top-left is (1,1).
+                The next line represents the width W and height H of the map, and the map is given across H lines. (W, H are greater than equal to 1 and less than equal to 100)
+                The following line tells us N, the number of types of crops you can plant. (N is less than equal to 20)
+                The next N lines represent each of the types of crops and its information. The information includes the name of the crop, minimum level of the farm in which the crop can be planted, turns it takes to harvest the crop, the cost of planting the crop, and the amount of money you make from harvesting the crop. 
+                The name of the crop is given in un-capitalised English, has no spaces and is less than 20 characters. 
+                In declaring a variable for the savings account, you may use any type appropriate that is able to hold a number from 0 to 1 million. 
+                In the input, at least one crop that can be only planted on level L exists. Only inputs that are possible to achieve the goal is inputted.
+            </p>
+       <h2>Output</h2>
+       <p style="text-align: center">
+            
+            In each line of output, you are to list out the commands you ordered the worker. Each line should begin with the starting turn number and should be listed in increasing order of turn numbers. 
+            The output commands should be listed so that once all tasks complete, the worker should have harvested at least one crop that can only be harvested in the maximum level L.
+            
+            If ordered a command that is unable to be completed or if a command is an incorrect order, the command is interpreted as an error.
+                        
+       </p>
+       <h2>Input Example</h2>
+       <img src="images/f2_input.png">
+       <p style="text-align: center">
+            You first start with 100p. 
+            The maximum level of farms is 3.
+            To make a new farm, you need 5 turns and 50p.
+            To upgrade the farm from level 1 to 2, you need 5 turns and 100p.
+            To upgrade the farm from level 2 to 3, you need 5 turns and 150p.
+            The worker starts at (3,2).
+            The size of the map is width 3 and height 2. There are no farms existent on the map. 
+            You are given an option of two crops to plant:
+            -	berry : requires 5 turns to grow, 50p to plant, and you earn 1000p once you harvest
+            -	watermelon: can only be planted in farms in level 3 or higher, requires 50 turns to grow, 1000p to plant, and you earn 10000p once you harvest            
+    </p>
+       <h2>Output Example</h2>
+       <img src="images/f2_output.png">
+       <p style="text-align: center">
+            Let’s look at the output line by line. The worker created a farm on its current location (remaining money: 50p).
+            The worker planted the berry (remaining money: 0p) and harvested the berry (remaining money 1000p).
+            Repeated the same process and now the remaining money is 1950p.
+            The worker upgraded the farm from level 1 to level 2. (remaining money: 1850p)
+            The worker upgraded the farm from level 2 to level 3. (remaining money: 1700p)
+            The worker planted the watermelon (remaining money: 700p) and harvested it. (remaining money: 10700p)
+            Since the worker harvested the level 3 crop, the goal was achieved.                          
+    </p>     
+    </body>
+</html>
+
+                
