@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>2016 NYPC Preliminary Question 2</title>
+    </head>
+    <body>
+        <h1>Mabinogi Dual: Is this a valid Deck?</h1>
+        <p style ="text-align: relative">
+                In the mobil TCG Mabinogi Dual, there are five types of elements: Gold, Mana, Light, Dark, and Nature. 
+        </p>
+        <center> <img src="images/md_img1.png"> </center>
+        <p style="text-align: relative">
+                The cards are divided depending on its element. <br>
+                For example, the following card has a blue glass icon, and that means that this card requires the element Mana.
+        </p>
+        <center> <img src="images/md_img2.png"></center>
+        <p style="text-align: relative">
+                In order to start the game, you need to gather 12 or less cards to form a deck. <br>
+                Each deck can have a mixture of max three elements.  </p>
+        <p style ="text-align: relative">
+                Given the list of elements 12 or less cards require, write a program that determines whether these cards can form a correct deck.
+        </p>
+        <h2>Input</h2>
+        <p style ="text-align: relative">
+            First line of input will have the size of the game screen, N.
+            N is greater than or equal to 1 and less than or equal to 12. 
+        </p>
+        <p style="text-align: relative">   
+             In the next N lines of input, each card’s required element (gold, mana, light, dark, or nature) will be given.     
+        </p>
+       <h2>Output</h2>
+       <p style="text-align: relative">
+            If these cards can form a valid deck, output “valid.” Otherwise, output “invalid.”
+        </p>
+       <h2>Input Example 1</h2>
+       <img src="images/md_input1.png">
+       <h2>Output Example 1</h2>
+       <img src="images/md_output_valid.png">
+       <p style="text-align: relative">
+        A deck is valid if it's made up of only one element.
+    </p>
+       <h2>Input Example 2</h2>
+       <img src="images/md_input2.png">
+       <h2>Output Example 2</h2>
+       <img src="images/md_output_valid.png">
+       <p style="text-align: relative">
+        A deck is valid if it's made up of three different types of elements.
+    </p>
+       <h2>Input Example 3</h2>
+       <img src="images/md_input3.png">
+       <h2>Output Example 3</h2>
+       <img src="images/md_output_invalid.png">
+       <p style="text-align: relative"> 
+        A deck is invalid because it is made up of five different elements.
+    </p>
+       <h2>Input Example 4</h2>
+       <img src="images/md_input4.png">
+       <h2>Output Example 4</h2>
+       <img src="images/md_output_valid.png">
+    
+       <center><img src="images/md_img3.png"></center>
+       <h2>Marks Guideline</h2>
+       <p style="text-align: relative">Marks will be awarded according to the number of hidden test cases the program passes.</p>     
+       <div id="disqus_thread"></div>
+       <script>
+       
+       /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */
+       (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypc-io.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </body>
+</html>
+
+                

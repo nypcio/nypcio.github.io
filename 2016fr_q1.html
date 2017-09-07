@@ -6,39 +6,46 @@
     </head>
     <body>
         <h1>Spin And Slide</h1>
-        <p style ="text-align:center">Let us write code that will will be implemented in a virtual puzzle. 
+        <p style ="text-align: relative">Let us write code that will will be implemented in a virtual puzzle. 
             The size of the puzzle board is N x N, and each tile is either empty or filled in with a 1 x 1 square with a specific colour. 
         </p>
-        <img src="images/ss_img1.png">
+        <center> <img src="images/ss_img1.png"> </center>
         <p style ="text-align: center">= Original Board</p>
-        <p style="text-align: center">This is the original board. If we rotate this by 90 degrees clockwise, the puzzle board will look like this: </p>
-        <img src="images/ss_img2.png">
-        <p style="text-align: center">If we allow the blocks to slide down, the puzzle board will look like this: </p>
-        <img src="images/ss_img3.png">
+        <p style="text-align: relative">This is the original board. If we rotate this by 90 degrees clockwise, the puzzle board will look like this: </p>
+        <center> <img src="images/ss_img2.png"> </center>
+        <p style="text-align: relative">If we allow the blocks to slide down, the puzzle board will look like this: </p>
+        <center> <img src="images/ss_img3.png"> </center>
         <p style ="text-align: center">= SpinAndSlide(Original Board, 1)</p>
-        <p style ="text-align: center">Let us define SpinAndSlide as rotating the puzzle board by 90 degrees clockwise 
-            and sliding all the coloured tiles to the bottom of the board. Our goal is to output the puzzle board once SpinAndSlide is applied 
-            multiple times onto a given board.
-
-            For instance, if we apply SpinAndSlide one more time onto the previous example board, the outcome will look like this:
+        <p style ="text-align: relative">Let us define SpinAndSlide as rotating the puzzle board by 90 degrees clockwise 
+            and sliding all the coloured tiles to the bottom of the board. 
         </p>
-        <img src="images/ss_img4.png">
+        <p style="text-align: relative">Our goal is to output the puzzle board once SpinAndSlide is applied 
+            multiple times onto a given board. </p>
+        <p style="text-align: relative">    
+            For instance, if we apply SpinAndSlide one more time onto the previous example board, the outcome will look like this:</p>
+        <center> <img src="images/ss_img4.png"> </center>
         <p style ="text-align: center">= SpinAndSlide(Original Board, 2)</p>
         <h2>Input</h2>
-        <p style ="text-align: center">
-            First line of input is the size N of the puzzle board. N must be an integer between 1 and 100 inclusive.
-            Second line of input is M, the number of times you wish to call SpinAndSlide.  M must be an integer between 0 and 100 inclusive. 
-            Starting from the third line of input, the original board will be given in N lines. 
-            Each line is made up of N characters and each character that represents a coloured tile is written in capitalised alphabet and if it’s empty, it is represented by ‘.’. The original set up is always the case in which the blocks are slid to the bottom of the board.
+        <p style ="text-align: relative">
+            First line of input is the size N of the puzzle board. N must be an integer between 1 and 100 inclusive.</p>
+        <p style="text-align: relative">   
+            Second line of input is M, the number of times you wish to call SpinAndSlide.  M must be an integer between 0 and 100 inclusive. </p>
+        <p style="text-align: relative">    
+            Starting from the third line of input, the original board will be given in N lines. </p>
+        <p style="text-align: relative">    
+            Each line is made up of N characters and each character that represents a coloured tile is written in capitalised alphabet and if it’s empty, it is represented by ‘.’. </p>
+        <p style="text-align: relative">    The original set up is always the case in which the blocks are slid to the bottom of the board.
             </p>
        <h2>Output</h2>
-       <p style="text-align: center">Output the status of the board after SpinAndSlide is executed M number of times across N lines. Each line needs to be represented by N characters. If the tile is coloured, the correct capitalised alphabet needs to be in place of the tile, otherwise if empty, ‘.’.</p>
+       <p style="text-align: relative">Output the status of the board after SpinAndSlide is executed M number of times across N lines. </p>
+       <p style="text-align: relative">Each line needs to be represented by N characters. </p>
+       <p style="text-align: relative"> If the tile is coloured, the correct capitalised alphabet needs to be in place of the tile, otherwise if empty, ‘.’.</p>
        <h2>Input Example</h2>
        <img src="images/ss_input.png">
        <h2>Output Example</h2>
        <img src="images/ss_output.png">
        <h2>Marks Guideline</h2>
-       <p style="text-align: center">Marks will be awarded according to the number of hidden test cases the program passes.</p>     
+       <p style="text-align: relative">Marks will be awarded according to the number of hidden test cases the program passes.</p>     
        <div id="disqus_thread"></div>
        <script>
        

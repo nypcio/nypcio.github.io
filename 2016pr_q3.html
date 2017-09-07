@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>2016 NYPC Preliminary Question 3</title>
+    </head>
+    <body>
+        <h1>Turn on the Lights!</h1>
+        <p style ="text-align: relative">
+                In a 2D lattice grid space, there are mirrors that are slanted in a 45 degree angle or 135 degree angle and a lamp. <br>
+                We want to shoot lasers that are parallel to either the row or the column of the grid from the outside. <br>\
+                If the laser hits the lamp, the lamp turns on. If the lamp hits the mirror, depending on the direction of the mirror, the laser takes a turn of 90 degrees. 
+        </p>
+        <p style="text-align: relative">
+                Find one way to shoot the laser in order to turn on the lamp. 
+        </p>
+        <p style="text-align: relative">
+                A grid where it’s impossible to turn on the lamp will not be given as an input.
+        </p>
+
+        <p style="text-align: relative">
+            Successful Trial: 
+        </p>
+
+        <center> <img src="images/lamp_img1.png"> </center>
+
+        <p style="text-align: relative">
+            Unsuccessful Trial:
+        </p>
+
+        <center><img src="images/lamp_img2.png"></center>
+
+        <h2>Input</h2>
+        <p style ="text-align: relative">
+                First line of input will have the width W and height H of the 2D lattice grid space. 
+                (W, H are both greater than or equal to 1 and less than or equal to 30.)
+        </p>
+        <p style="text-align: relative">   
+                A W by H lattice grid will be given in these characters : <br> 
+                -	. :  empty space <br>
+                -	/ : 45 degree slanted mirror <br>
+                -	\ : 135 degree slanted mirror <br>
+                -	O : lamp 
+        </p>                
+       <h2>Output</h2>
+       <p style="text-align: relative">
+            Output one possible way of turning on the map.
+    </p>
+        <p style="text-align: relative">
+                Depending on the direction of the laser, output the result as follows: <br>
+                -	If shot from the left side of the grid: L (number of rows down from the top) <br>
+                -	If shot from the right side of the grid: R (number of rows down from the top) <br>
+                -	If shot from the top of the grid: U (number of columns from the left) <br>
+                -	If shot from the bottom of the grid: D (number of columns from the left)
+                
+        </p>
+        <p style="text-align: relative">
+                The very top and the very left grid counts as the 0th row/column.
+        </p>
+       <h2>Input Example</h2>
+       <img src="images/lamp_input.png">
+       <h2>Output Example</h2>
+       <img src="images/lamp_output.png">
+       <p style="text-align: relative">
+        To turn the lamp on from the input grid, there are four possible answers: L 2, R 2, D 0, R 3. <br>
+        You will get full marks for outputting any one of the possible answers.        
+</p>
+       <h2>Marks Guideline</h2>
+       <p style="text-align: relative">Marks will be awarded according to the number of hidden test cases the program passes.</p>     
+       <div id="disqus_thread"></div>
+       <script>
+       
+       /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */
+       (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypc-io.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </body>
+</html>
+
+                
