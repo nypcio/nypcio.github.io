@@ -18,6 +18,7 @@
 }
 .button3 {font-size: 14px;}
 </style>
+<link href="css/image.css" rel="stylesheet">
     </head>
     <body>
         <h1>Manage My Own Farm: Plant and Harvest</h1>
@@ -79,7 +80,21 @@
             If ordered a command that is unable to be completed or an incorrect order, the command is interpreted as an error.            
        </p>
        <h2>Input Example</h2>
-       <img src="images/f1_input.png">
+       <pre>
+       100
+       5 50
+       5 3
+       6 5
+       ......
+       .##...
+       ......
+       ......
+       ......
+       2
+       berry 10 5 10
+       watermelon 50 200 273
+       </pre>
+
        <p style="text-align: relative">
             You first start with 100. <br>
             To make a new farm, you need 5 turns and 50p. <br>
@@ -90,7 +105,22 @@
             -	watermelon: requires 50 turns to grow, 200p to plant, and you earn 273p once you harvest <br>          
     </p>
        <h2>Output Example</h2>
-       <img src="images/f1_output.png">
+       <pre>
+       0 move 4 2
+       2 plow
+       7 plant berry
+       8 move 3 2
+       9 plant berry
+       10 move 2 2 
+       11 move 2 2 
+       11 plant berry
+       12 move 4 2 
+       18 harvest
+       19 move 3 2 
+       20 harvest
+       21 move 2 2 
+       22 harvest
+       </pre>
        <p style="text-align: relative">
             The worker moves two spaces and forms a farm. <br>
             Then, starting from the right, the worker plants the berry and returns to the right. <br>

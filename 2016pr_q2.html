@@ -18,6 +18,8 @@
 }
 .button3 {font-size: 14px;}
 </style>
+
+  <link href="css/image.css" rel="stylesheet">
     </head>
     <body>
         <h1>Mabinogi Dual: Is this a valid Deck?</h1>
@@ -49,31 +51,75 @@
             If these cards can form a valid deck, output “valid.” Otherwise, output “invalid.”
         </p>
        <h2>Input Example 1</h2>
-       <img src="images/md_input1.png">
+       <pre>
+       12
+       gold
+       gold
+       gold
+       gold
+       gold
+       gold
+       gold
+       gold
+       gold
+       gold
+       gold
+       gold</pre>
        <h2>Output Example 1</h2>
-       <img src="images/md_output_valid.png">
+       <pre>valid</pre>
        <p style="text-align: relative">
         A deck is valid if it's made up of only one element.
     </p>
        <h2>Input Example 2</h2>
-       <img src="images/md_input2.png">
+       <pre>
+       12
+       light
+       light
+       light
+       light
+       nature
+       mana
+       mana
+       nature
+       mana
+       mana
+       mana
+       nature</pre>
        <h2>Output Example 2</h2>
-       <img src="images/md_output_valid.png">
+       <pre>valid</pre>
        <p style="text-align: relative">
         A deck is valid if it's made up of three different types of elements.
     </p>
        <h2>Input Example 3</h2>
-       <img src="images/md_input3.png">
+       <pre>
+       5
+       gold
+       mana
+       light
+       dark
+       nature</pre>
        <h2>Output Example 3</h2>
-       <img src="images/md_output_invalid.png">
+       <pre>invalid</pre>
        <p style="text-align: relative"> 
         A deck is invalid because it is made up of five different elements.
     </p>
        <h2>Input Example 4</h2>
-       <img src="images/md_input4.png">
+       <pre>
+       12
+       light
+       light
+       light
+       dark
+       dark
+       light
+       light
+       light
+       light
+       light
+       dark 
+       light</pre>
        <h2>Output Example 4</h2>
-       <img src="images/md_output_valid.png">
-    
+       <pre>valid</pre>    
        <center><img src="images/md_img3.png"></center>
        <h2>Marks Guideline</h2>
        <p style="text-align: relative">Marks will be awarded according to the number of hidden test cases the program passes.</p>     
