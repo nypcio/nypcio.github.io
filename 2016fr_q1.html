@@ -2,26 +2,39 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>2016 NYPC Final Round Question 1</title>
 
         <link href="css/image.css" rel="stylesheet">
         <style>
         .button {
-    background-color: #f05f40;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-.button3 {font-size: 14px;}
-</style>
-
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .button3 {font-size: 14px;} 
+        </style>
     </head>
     <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
         <h1>Spin And Slide</h1>
         <p style ="text-align: relative">Let us write code that will will be implemented in a virtual puzzle. 
             The size of the puzzle board is N x N, and each tile is either empty or filled in with a 1 x 1 square with a specific colour. 
@@ -83,11 +96,10 @@
        </pre>
        <h2>Marks Guideline</h2>
        <p style="text-align: relative">Marks will be awarded according to the number of hidden test cases the program passes.</p>     
-       <h2>Share Your Thoughts</h2>
-       <div id="disqus_thread"></div>
+       <!-- <div id="disqus_thread"></div>
        <script>
-       
-       /**
+        -->
+       <!-- /**
        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
        /*
@@ -95,18 +107,31 @@
        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
        };
-       */
-       (function() { // DON'T EDIT BELOW THIS LINE
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
        var d = document, s = d.createElement('script');
        s.src = 'https://nypcio.disqus.com/embed.js';
        s.setAttribute('data-timestamp', +new Date());
        (d.head || d.body).appendChild(s);
        })();
        </script>
-       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
 
-       <a href="index.html"><button class="button button3">Return Home</button></a>
-                                   
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
     </body>
 </html>
 

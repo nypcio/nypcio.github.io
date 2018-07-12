@@ -11,7 +11,8 @@
 }
       
 .curtain__panel {
-  background: orange;
+  background: #ffffff;
+  color: #f05f40;
   width: 50%; /* Each panel takes up half the container */
   height: 100vh; /* Used for demo purposes */
   float: left; /* Makes sure panels are side-by-side */
@@ -22,14 +23,14 @@
 
 .curtain__panel--left {
   /* Styles for sliding the left panel */
-  font-size: 450%;
+  font-size:560%;
   transform: translateX(-100%);
 
 }
 
 .curtain__panel--right {
   /* Styles for sliding the right panel */  
-  font-size: 450%;
+  font-size: 560%;
   transform: translateX(100%);
 
 }
