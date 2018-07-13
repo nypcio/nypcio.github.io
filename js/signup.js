@@ -1,5 +1,5 @@
 // file: signup.js
-$(document).ready(function($){
+jQuery(document).ready(function($){
 	var $form_modal = $('.cd-user-modal'),
 		$form_login = $form_modal.find('#cd-login'),
 		$form_signup = $form_modal.find('#cd-signup'),
@@ -123,7 +123,7 @@ $(document).ready(function($){
 				if (input.val() == input.attr('placeholder')) {
 			 		input.val('');
 				}
-		  	})
+		  	});
 		});
 	}
 

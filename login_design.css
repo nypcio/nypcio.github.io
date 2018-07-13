@@ -47,7 +47,7 @@ html * {
   header[role=banner] {
     position: relative;
     height: 50px;
-    background: #343642;
+    background:#FFA28B;
   }
   header[role=banner] #cd-logo {
     float: left;
@@ -452,7 +452,7 @@ html * {
   }
   
   .cd-form-bottom-message {
-    position: absolute;
+    position: relative;
     width: 100%;
     left: 0;
     bottom: -30px;
