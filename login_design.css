@@ -47,7 +47,7 @@ html * {
   header[role=banner] {
     position: relative;
     height: 50px;
-    background:#FFA28B;
+    background:#fff;
   }
   header[role=banner] #cd-logo {
     float: left;
@@ -159,12 +159,16 @@ html * {
       line-height: normal;
       background: transparent;
     }
-    .main-nav a.cd-signin, .main-nav a.cd-signup {
+    .main-nav a.cd-signin {
       padding: .6em 1em;
       border: 1px solid rgba(255, 255, 255, 0.6);
       border-radius: 50em;
+      background:#f05f40;
     }
     .main-nav a.cd-signup {
+      padding: .6em 1em;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 50em;
       background: #2f889a;
       border: none;
     }
