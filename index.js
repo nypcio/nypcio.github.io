@@ -1,4 +1,3 @@
-
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
@@ -42,23 +41,35 @@ function login() {
 
 }
 
-
 function signup() {
     var userEmail = document.getElementById("email_field").value;
     var userPass = document.getElementById("password_field").value;
-
-    firebase.auth().createUserWithEmailAndPassword(userEmail, userPass)
-    .then(function (user){
-        window.location.href = "index.html";
+    var userName = document.getElementById("username_field").value;
+    var userCPass = document.getElementById("confirm_password_field").value;
+    var firebaseRef = firebase.database();
+    
+    firebaseRef.ref('users/' + userName).set({
+        email: userEmail,
     })
-    .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
 
-        window.alert("Error: " + errorMessage);
-      });
+    if (userEmail != '' && userPass != '' && userCPass != '' ) {
+        if (userPass == userCPass) {
+            firebase.auth().createUserWithEmailAndPassword(userEmail, userPass)
+            .then(function (user){
+                window.location.href = "index.html";
+            })
+            .catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // ...
+        
+                window.alert("Error: " + errorMessage);
+              }); 
+        } else {
+            window.alert("Error: Passwords do not match");
+        }
+    }
 }
 
 function returnhome() {
