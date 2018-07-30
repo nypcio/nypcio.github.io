@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-  <title>땡스피드 - 가입</title>
+  <title>NYPCIO Join</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="discussionforum.html">환영합니다!</a>
+              <a class="navbar-brand" href="discussionforum.html">Welcome!</a>
           </div>
   
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,13 +32,13 @@
                       <a href="discussionforum.html">Home</a>
                   </li>
                   <li>
-                      <a href="mypage.html">마이페이지</a>
+                      <a href="mypage.html">My Page</a>
                   </li>
                   <li class="active">
-                      <a id="joinmenu" href="join.html">가입</a>
+                      <a id="joinmenu" href="join.html">Join</a>
                   </li>
                   <li>
-                      <a id="loginmenu" href="login_extra.html">로그인</a>
+                      <a id="loginmenu" href="login_extra.html">Login</a>
                   </li>
 
               </ul>
@@ -58,7 +58,7 @@
 
 <!-- 가입 폼 시작 -->
 <div class="container">
-    <h1>환영합니다!</h1>
+    <h1>Welcome to NYPCIO Discussion Forum!</h1>
 
     <div class="form-group">
       <label for="email">Email address:</label>
@@ -66,7 +66,7 @@
     </div>
 
     <div class="form-group">
-            <label for="name">NicName:</label>
+            <label for="name">Usermame:</label>
             <input type="text" class="form-control" id="name">
     </div>
 
@@ -75,7 +75,7 @@
       <input type="password" class="form-control" id="pwd">
     </div>
 
-    <button type="button" class="btn btn-default join">가입</button>
+    <button type="button" class="btn btn-default join">Join</button>
 
 </div>
 <!-- 가입 폼 끝 -->
@@ -156,7 +156,7 @@ function logUser(){
 
     ref.set(obj); 
     }))// 고유한 자식 키가 하나 생셩이 되면서 json 삽입
-    alert("가입성공");
+    alert("Joined Successfully!");
 
     //메인 페이지로 이동시키고 세션 저장시키기
     window.location.href = "discussionforum.html"

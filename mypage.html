@@ -1,9 +1,9 @@
 
 <!DOCTYPE html>
-<html lang="kr">
+<html lang="en">
 
 <head>
-    <title>땡스피드 - 로그인</title>
+    <title>NYPCIO Discussion Board</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -108,7 +108,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="discussionforum.html">마이페이지</a>
+                <a class="navbar-brand" href="discussionforum.html">My Page</a>
             </div>
     
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -118,13 +118,13 @@
                         <a href="discussionforum.html">Home</a>
                     </li>
                     <li class="active">
-                        <a href="mypage.html">마이페이지</a>
+                        <a href="mypage.html">My Page</a>
                     </li>
                     <li>
-                        <a id="joinmenu" href="join.html">가입</a>
+                        <a id="joinmenu" href="join.html">Join</a>
                     </li>
                     <li>
-                        <a id="loginmenu" href="login_extra.html">로그인</a>
+                        <a id="loginmenu" href="login_extra.html">Login</a>
                     </li>
   
                 </ul>
@@ -155,7 +155,7 @@
 
             </div>
             <div class="media-body">
-                <h4 class="media-heading" id="nicname">닉네임</h4>
+                <h4 class="media-heading" id="nicname">Username</h4>
                 <div id="statetxtP">
                     <p id="statetxt"></p>
                 </div>
@@ -163,7 +163,7 @@
             <br>
 
             <div align="right">
-                <button id="changeBtn" type="button" class="btn btn-warning">수정하기</button>
+                <button id="changeBtn" type="button" class="btn btn-warning">Edit</button>
             </div>
         </div>
         <hr>
@@ -173,7 +173,7 @@
         <!-- 감사리스트 출력하기-->
         <div class="container">
 
-            <h3>나의 감사리스트</h3>
+            <h3>My Posts</h3>
             <br>
             <!-- 감사 리스트 붙일 곳 -->
             <div class="thanksList"></div>
@@ -247,7 +247,7 @@
                 var changeBtn = document.getElementById("changeBtn");
                 var changeBtnText = changeBtn.textContent;
 
-                if (changeBtnText == "수정하기") {
+                if (changeBtnText == "Edit") {
                     console.log("수정하기 버튼 - input file 나타나고 - p 태그 대신 input text 태그로 변경시키기 - 저장버튼 활성화 작업을 시작합니다");
 
                     //input file 붙여주기
@@ -267,7 +267,7 @@
                     console.log("한줄 메시지 적을 textarea 창 활성화 완료");
 
                     //저장하기 버튼 활성화
-                    changeBtn.textContent = "저장하기"
+                    changeBtn.textContent = "Save"
                     changeBtn.className = "btn btn-success";
                 } else {
                     console.log("저장 버튼 - input file 사라지게 input text태그 사라지고 p 태그에 넣고 저장버튼 비활성화 수정버튼 활성화를 시작합니다");
@@ -298,7 +298,7 @@
                         console.log("할줄메시지가 들어있는 p 태그 활성화");
 
 
-                        changeBtn.textContent = "수정하기"
+                        changeBtn.textContent = "Edit"
                         changeBtn.className = "btn btn-default";
 
                         console.log("저장되었습니다");
@@ -375,9 +375,9 @@
                         //유저라는 부모 키 에
                         //alert("로그인 되어 있군요 : " + user.uid);
                         //alert(snapshot.val().name + "님 환영합니다");
-                        document.getElementById("loginmenu").textContent = "로그아웃";
+                        document.getElementById("loginmenu").textContent = "Log Out";
                         document.getElementById("loginmenu").href = "logout.html";
-                        document.getElementById("joinmenu").textContent = "반가워요! " + snapshot.val().name + " 님";
+                        document.getElementById("joinmenu").textContent = "Welcome! " + snapshot.val().name;
 
 
                         document.getElementById("joinmenu").href = "#";
@@ -408,7 +408,7 @@
                             console.log("한줄글이 저장되어 있네요");
                         } else {
                             //없으면 더미 데이터 넣어준다.
-                            document.getElementById("statetxt").textContent = "한줄 기분을 적고 프로필 사진을 선택해 주세요~";
+                            document.getElementById("statetxt").textContent = "Add in your status and profile picture :)";
                             console.log("한줄글이 없네요 ㅠㅠ");
                         }
 
@@ -418,7 +418,7 @@
                         return true
                     });
                 } else {
-                    alert("로그인 해주세요.")
+                    alert("Please login to continue")
                     window.location = 'login_extra.html'
                     return;
                 }
@@ -462,9 +462,9 @@
                     " <span STYLE=\"color: green; font-size: 5pt\">" + createtime + "</span></h4>" +
                     "<div id='" + key + "'><p>" + thankComment + "</p></div></div>" +
                     "<div align=\"right\" id='" + mod_btn_key + "'>" +
-                    "<button type=\"button\" class=\"btn btn-warning modify\" id='" + mod_btn_key + "' onclick=\"btn_modify('" + key + "')\">수정</button>" +
+                    "<button type=\"button\" class=\"btn btn-warning modify\" id='" + mod_btn_key + "' onclick=\"btn_modify('" + key + "')\">Edit</button>" +
                     " " +
-                    "<button type=\"button\" class=\"btn btn-danger\" onclick=\"btn_delete('" + key + "')\">삭제</button>" +
+                    "<button type=\"button\" class=\"btn btn-danger\" onclick=\"btn_delete('" + key + "')\">Delete</button>" +
                     "</div></div>" +
                     "<hr>";
 
@@ -480,7 +480,7 @@
             var changeBtn = document.getElementById(mod_btn_key).firstChild; //버튼 두개 중에서 첫번째 버튼
             var changeBtnText = changeBtn.textContent;  //버튼의 이름을 받아온다. 수정 or 삭제 
 
-            if (changeBtnText == "수정") {
+            if (changeBtnText == "Edit") {
                 console.log("수정하기 버튼 - input file 나타나고 - p 태그 대신 input text 태그로 변경시키기 - 저장버튼 활성화 작업을 시작합니다");
 
                 //input file 붙여주기
@@ -502,10 +502,10 @@
 
                 //저장하기 버튼 활성화
                 var changeBtn = document.getElementById(mod_btn_key).firstChild;
-                changeBtn.textContent = "저장"
+                changeBtn.textContent = "Save"
                 changeBtn.className = "btn btn-success";
 
-            } else if (changeBtnText == "저장") {
+            } else if (changeBtnText == "Save") {
                 console.log("저장 버튼 - input file 사라지게 input text태그 사라지고 p 태그에 넣고 저장버튼 비활성화 수정버튼 활성화를 시작합니다");
 
                 //저장하기 함수 호출
@@ -537,10 +537,10 @@
 
                     //수정버튼 활성화
                     var changeBtn = document.getElementById(mod_btn_key).firstChild;
-                    changeBtn.textContent = "수정"
+                    changeBtn.textContent = "Edit"
                     changeBtn.className = "btn btn-warning";
 
-                    alert("수정되었습니다.");
+                    alert("Your post was edited successfully.");
                     window.location.reload();
 
                 }
@@ -563,7 +563,7 @@
 
         //삭제하기 버튼
         function btn_delete(thankKey) {
-            var check = confirm(thankKey + "삭제하시겠습니까?")
+            var check = confirm(thankKey + "Would you like to delete your post?")
 
             if (check) {
                 removeThank = firebaseDatabase.ref("thanks/" + thankKey);
