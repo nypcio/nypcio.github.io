@@ -17,6 +17,7 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -25,6 +26,13 @@
     <link href="css/creative.min.css" rel="stylesheet">
     <link href="css/image.css" rel="stylesheet">
     <link rel="stylesheet" href="bubbles.css">
+
+    <style>
+    .dropdown-item {
+        font-family:'Nunito', sans-serif;
+        font-size: 13px;
+    }
+    </style>
   </head>
 
   <body>
@@ -42,9 +50,17 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Problems </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="nav-link dropdown-item" href="#2016_nypc">NYPC 2016</a>
+                        <a class="nav-link dropdown-item" href="#2017_nypc">NYPC 2017</a>
+                    </div>            
+                </li>
+            <!-- <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#problems">Problems</a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#disqus_thread">Discussion Board</a>
             </li>
@@ -54,6 +70,10 @@
           </ul>
         </div>
       </div>
+      <div class="loggedin-div">
+        <button id="user" onclick="dashboard()">User Profile</button>    
+        <button onclick="logout()">Logout</button>
+    </div>
     </nav>
 
     <header class="masthead">
@@ -186,36 +206,57 @@
       </div>
     </section>
 
-
     <section id="problems">
-      <div class="container">
-        <h1 style="text-align: center">
-          Problems
-                      </h1>
-        <hr>
-        <h6 style="text-align: center"> 
-          <font color="gray" face="sans-serif">
-          Click on the images below to see the NYPC 2016 Problems. 
-          </font>
-        </h6>
-    <p id="img_cont"> 
-      <a href="2016pr_q1.html"><img src="img/squirrel.png"></a>
-      <a href="2016pr_q2.html"><img src="img/mabinogi.png"></a>
-    </p>
-    <p id="img_cont"> 
-      <a href="2016pr_q3.html"><img src="img/lamp_headimage.png"></a>
-      <a href="2016fr_q1.html"><img src="img/spin_and_slide.png"></a>
-    </p>
-    <p id="img_cont">
-      <a href="2016fr_q2.html"><img src="images/m1_img1.jpg"></a>
-      <a href="2016fr_q3.html"><img src="images/m2_img1.png"></a>
-    </p>
-    <p id="img_cont">
-      <a href="2016fr_q4.html"><img src="img/myfarmhouse_1.png"></a>
-      <a href="2016fr_q5.html"><img src="img/myfarmhouse_2.png"></a>
-    </p>
+        <div class="container" id="2016_nypc">
+            <h1 style="text-align: center">
+                Problems
+            </h1>
+            <hr>
+            <h6 style="text-align: center">
+                <font color="gray" face="sans-serif">
+                    Click on the images below to see the NYPC problems.
+                </font>
+            </h6>
+            <br>
 
+            <h3 style="text-align: center">
+                NYPC 2016 Qualifying Round
+            </h3>
+            <br>
+            <h5 style="text-align: center">
+                Stage 1
+            </h5>
+            <br>
+            <h3 style="text-align: center">
+                NYPC 2016 Final Round
+            </h3>
+            <br>
+            <p id="img_cont"> 
+            <a href="2016pr_q1.html"><img src="img/squirrel.png"></a>
+            <a href="2016pr_q2.html"><img src="img/mabinogi.png"></a>
+            </p>
+            <p id="img_cont"> 
+            <a href="2016pr_q3.html"><img src="img/lamp_headimage.png"></a>
+            <a href="2016fr_q1.html"><img src="img/spin_and_slide.png"></a>
+            </p>
+            <p id="img_cont">
+            <a href="2016fr_q2.html"><img src="images/m1_img1.jpg"></a>
+            <a href="2016fr_q3.html"><img src="images/m2_img1.png"></a>
+            </p>
+            <p id="img_cont">
+            <a href="2016fr_q4.html"><img src="img/myfarmhouse_1.png"></a>
+            <a href="2016fr_q5.html"><img src="img/myfarmhouse_2.png"></a>
+            </p>
+            <br>
+            <br>
           </div>
+
+        <div class="container" id="2017_nypc">
+            <h3 style="text-align: center">
+                NYPC 2017 Final Round
+            </h3>
+            <br>
+        </div>  
     </section>
 
     <!-- Bootstrap core JavaScript -->
@@ -270,6 +311,32 @@
           </div>
         </div>
     </section>
+
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBU0jRo39Inic4uyVt8ldpEVyqc83oCKeY",
+        authDomain: "nypcio-7528.firebaseapp.com",
+        databaseURL: "https://nypcio-7528.firebaseio.com",
+        projectId: "nypcio-7528",
+        storageBucket: "nypcio-7528.appspot.com",
+        messagingSenderId: "1020306735682"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script src="logout.js"></script>
+
+    <script>
+    function togglefunction() {
+        var x = document.getElementById("2016final");
+        if(x.style.display=="none") {
+            x.style.display ="block";
+        } else { 
+            x.style.display = "none";
+        }
+    }    
+    </script>
   </body>
 
 </html>

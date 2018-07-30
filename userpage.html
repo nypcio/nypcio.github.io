@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <title>땡스피드 - 담벼락</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <style>
+        /*인디케이터 스타일*/
+
+        /* Center the loader */
+
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 150px;
+            height: 150px;
+            margin: -75px 0 0 -75px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid pink;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Add animation to "page content" */
+
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s
+        }
+
+        @-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+            to {
+                bottom: 0px;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        #myDiv {
+            display: none;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body onload="myFunction()" style="margin:0;">
+        <!-- 인디케이터 작동 부분 -->
+        <div id="loader"></div>
+        <div style="display:none;" id="myDiv" class="animate-bottom"></div>
+
+    <!-- 네비게이션 바 시작 -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">프로필</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="discussionforum.html">Home</a>
+                </li>
+                <li>
+                    <a href="mypage.html">마이페이지</a>
+                </li>
+                <li>
+                    <a id="joinmenu" href="join.html">가입</a>
+                </li>
+                <li>
+                    <a id="loginmenu" href="login_extra.html">로그인</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 네비게이션 바 끝 -->
+
+    <!-- userkey 비교하기. 현재로그인 한사람의 userkey면 마이 페이지 리스트 출력, 다른사람userkey 면 다른사람이름+ page 출력 -->
+    <div class="container">
+        <h1>프로필</h1>
+        <br>
+        <!-- 프로필 사진 부분 -->
+        <div class="media">
+            <div class="media-left">
+                <img id="myimage" src="https://www.w3schools.com/bootstrap/img_avatar3.png" class="media-object" style="width:60px">
+
+                <div id="showfile">
+                </div>
+
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading" id="nicname">닉네임</h4>
+                <div id="statetxtP">
+                    <p id="statetxt"></p>
+                </div>
+            </div>
+            <br>
+
+        </div>
+        <hr>
+
+        <br>
+
+        <!-- 감사리스트 출력하기-->
+        <div class="container">
+
+            <h3>나의 감사리스트</h3>
+            <br>
+            <!-- 감사 리스트 붙일 곳 -->
+            <div class="thanksList"></div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- 가입 폼 끝 -->
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+
+        var name;
+        var userInfo;
+        var loginUserKey;
+        var emailAuth;
+        var firebaseDatabase;
+        var url;
+        var comment;
+        var newInputTypeText;
+        
+
+        //클릭한 유저 관련 변수
+        var clickedUserName; 
+        var clickedUserKey;
+        var clickedUserInfo; 
+
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBU0jRo39Inic4uyVt8ldpEVyqc83oCKeY",
+            authDomain: "nypcio-7528.firebaseapp.com",
+            databaseURL: "https://nypcio-7528.firebaseio.com",
+            projectId: "nypcio-7528",
+            storageBucket: "nypcio-7528.appspot.com",
+            messagingSenderId: "1020306735682"
+        };
+        firebase.initializeApp(config);
+        //이메일 인증 객체
+        emailAuth = firebase.auth();
+        firebaseDatabase = firebase.database();
+
+        var presenceRef = firebaseDatabase.ref("disconnectmessage");
+        presenceRef.onDisconnect().set("I disconnected!");
+
+
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            //로그인 했는지  체크 함수
+            //console.log("userSessionCheck 함수 호출");
+            var userLoginCheck = userSessionCheck();
+            //alert(userLoginCheck)
+            //유저가 로그인 되어 있으면
+            if(userLoginCheck){
+
+                showClickedUser();
+            }
+            
+            thanksList();
+
+        });
+
+
+
+
+        //로그인 체크
+        function userSessionCheck() {
+            console.log("userSessionCheck 함수안으로 들어왔습니다");
+
+            //로그인이 되어있으면 - 유저가 있으면 user를 인자값으로 넘겨준다.
+            emailAuth.onAuthStateChanged(function (user) {
+                if (user) {
+                    //조회 - 데이터 베이스에 저장된 닉네임을 현재 접속되어 있는 user의 pk key 값을 이용해서 가져오기
+                    firebaseDatabase.ref("users/" + user.uid).once('value').then(function (snapshot) {
+                        //유저라는 부모 키 에
+                        //alert("로그인 되어 있군요 : " + user.uid);
+                        //alert(snapshot.val().name + "님 환영합니다");
+                        document.getElementById("loginmenu").textContent = "로그아웃";
+                        document.getElementById("loginmenu").href = "logout.html";
+                        document.getElementById("joinmenu").textContent = "반가워요! " + snapshot.val().name + " 님";
+
+
+                        document.getElementById("joinmenu").href = "#";
+
+                        name = snapshot.val().name;
+                        loginUserKey = snapshot.key;
+                        console.log("userSessionCheck부분: 현재 로그인한 유저의 key =  " + loginUserKey);
+                        userInfo = snapshot.val(); //snapshot.val()에 user 테이블에 있는 해당 개체 정보가 넘어온다. userInfo에 대입!
+                        
+                        
+
+                        /*여기서부터 다르다~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        //닉네임 변경하기
+                        document.getElementById("nicname").textContent = name
+                        
+                        //이미지가 존재하면, 이미지 url을 가져와서 img 태그에 넣어준다.
+                        
+                        if (snapshot.val().imgURl) {
+                            document.getElementById("myimage").src = snapshot.val().imgURl
+                            console.log("이미지가 저장되어 있네요");
+                        } else {
+                            //없으면 다른 이미지 대체
+                            document.getElementById("myimage").src = "https://www.w3schools.com/bootstrap/img_avatar3.png";
+                            console.log("이미지가 없네요ㅠㅠ");
+                        }
+
+
+                        //한줄글이 있으면 가져와서 넣어준다. 
+                        if (snapshot.val().comment) {
+                            document.getElementById("statetxt").textContent = snapshot.val().comment;
+                            console.log("한줄글이 저장되어 있네요");
+                        } else {
+                            //없으면 더미 데이터 넣어준다.
+                            document.getElementById("statetxt").textContent = "한줄 기분을 적고 프로필 사진을 선택해 주세요~";
+                            console.log("한줄글이 없네요 ㅠㅠ");
+                        }
+
+                        //userkey가 셋팅이 되면 감사리스트 호출!!
+                        //thanksList();
+                         //여기까지 다르다~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+                        
+                    });
+                } else {
+                    alert("로그인 해주세요.")
+                    return false
+                }
+            });
+            return true
+        }
+
+
+        //감사리스트 가져오기
+        function thanksList() {
+            console.log("땡스 리스트 함수안으로 들어왔습니다")
+
+            var thanksRef = firebaseDatabase.ref('thanks');
+            //조회
+            thanksRef.on('child_added', on_thanks_list)
+        }
+
+        //땡스리스트 thanks 테이블의 thanks 키 들을 연속적으로 가져온다.
+        function on_thanks_list(data) {
+            console.log("on_thanks_list() 함수안으로 들어왔습니다 리스트를 가져오겠습니다")
+            //글 게수만큼 반복된다.
+            //alert(loginUserKey);
+            //alert(data.val().userkey);
+            //헌재 로그인한 유저의 key와 감사리스트 객체의 user key가 일치하는 것 만 가져오기
+            if (clickedUserKey == data.val().userkey) {
+                var key = data.key;
+                var Data = data.val();
+                var thankComment = Data.comment;
+                var createtime = Data.createtime;
+                var name = Data.name;
+                var userkey = Data.userkey;
+
+
+                //감사리스트 동적으로 붙이기
+                var html =
+                    "<div class=\"media\">" +
+                    "<div class=\"media-body\">" +
+                    "<h4 class=\"media-heading\">" + name +
+                    " <span STYLE=\"color: green; font-size: 5pt\">" + createtime + "</span></h4>" +
+                    "<div id='" + key + "'><p>" + thankComment + "</p></div></div>" +
+                    "</div>" +
+                    "<hr>";
+
+
+                $(".thanksList").append(html);
+            }
+        }
+
+
+        //클릭한 유저 정보 가져오기
+        function showClickedUser(){
+            var myParam = location.search.split('clickedUserKey=')[1]
+            
+            firebaseDatabase.ref("users/" + myParam).once('value').then(function (snapshot) {
+
+                        clickedUserName = snapshot.val().name;
+                        clickedUserKey = snapshot.key;
+                        console.log("showClickedUser 부분: 현재 클릭한 유저의 key =  " + clickedUserKey);
+                        clickedUserInfo = snapshot.val(); //snapshot.val()에 user 테이블에 있는 해당 개체 정보가 넘어온다. userInfo에 대입!
+                        
+
+                                                //닉네임 변경하기
+                        document.getElementById("nicname").textContent = clickedUserName;
+                        
+                        //이미지가 존재하면, 이미지 url을 가져와서 img 태그에 넣어준다.
+                        
+                        if (snapshot.val().imgURl) {
+                            document.getElementById("myimage").src = snapshot.val().imgURl
+                            console.log("이미지가 저장되어 있네요");
+                        } else {
+                            //없으면 다른 이미지 대체
+                            document.getElementById("myimage").src = "https://www.w3schools.com/bootstrap/img_avatar3.png";
+                            console.log("이미지가 없네요ㅠㅠ");
+                        }
+
+
+                        //한줄글이 있으면 가져와서 넣어준다. 
+                        if (snapshot.val().comment) {
+                            document.getElementById("statetxt").textContent = snapshot.val().comment;
+                            console.log("한줄글이 저장되어 있네요");
+                        } else {
+                            //없으면 더미 데이터 넣어준다.
+                            document.getElementById("statetxt").textContent = "한줄 기분을 적고 프로필 사진을 선택해 주세요~";
+                            console.log("한줄글이 없네요 ㅠㅠ");
+                        }
+            });
+        }
+
+
+
+    </script>
+
+    <script>
+        //페이지 인디케이터 함수
+        var myVar;
+        function myFunction() {
+            myVar = setTimeout(showPage, 1000);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>

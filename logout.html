@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <title>땡스피드 - 로그아웃</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <!-- 네비게이션 바 시작 -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                  aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="discussionforum.html">땡스피드게시판</a>
+          </div>
+  
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                  <li class="active">
+                      <a href="discussionforum.html">Home</a>
+                  </li>
+                  <li>
+                      <a href="mypage.html">마이페이지</a>
+                  </li>
+                  <li>
+                      <a id="joinmenu" href="join.html">가입</a>
+                  </li>
+                  <li>
+                      <a id="loginmenu" href="login_extra.html">로그인</a>
+                  </li>
+
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+  </nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <!-- 네비게이션 바 끝 -->
+
+<!-- 가입 폼 시작 -->
+<div class="container">
+        <h1>성공적으로 로그아웃되었습니다. 감사합니다:)</h1>
+    
+    </div>
+    <!-- 가입 폼 끝 -->
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+
+
+        var emailAuth;
+        var firebaseDatabase;
+        
+      // Initialize Firebase
+      var config = {
+    apiKey: "AIzaSyBU0jRo39Inic4uyVt8ldpEVyqc83oCKeY",
+    authDomain: "nypcio-7528.firebaseapp.com",
+    databaseURL: "https://nypcio-7528.firebaseio.com",
+    projectId: "nypcio-7528",
+    storageBucket: "nypcio-7528.appspot.com",
+    messagingSenderId: "1020306735682"
+  };
+      firebase.initializeApp(config);
+
+      emailAuth = firebase.auth();
+
+      emailAuth.signOut().then(function() {
+
+                //alert("로그아웃 되었습니다")
+                //메인 페이지로 이동시키고 세션 저장시키기
+                 window.location.href = "discussionforum.html"
+                 
+}).catch(function(error) {
+        if(error){
+                alert("로그인 실패");
+        }
+});
+
+
+
+    </script>    
+</body>
+</html>

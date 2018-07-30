@@ -9,3 +9,13 @@ function logout() {
         // An error happened.
     });
 }
+
+function dashboard() {
+    var user = firebase.auth().currentUser;
+
+    if (user!= null) {
+        user.providerData.forEach(function (profile) {
+            window.alert("Email: " + profile.email);
+        });
+    }
+}
