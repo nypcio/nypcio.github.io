@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="curtain.css">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
@@ -21,8 +21,7 @@
               
                 <!-- The left curtain panel -->
                 <div class="curtain__panel curtain__panel--left">
-                    <h1><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</h1>
-          
+                    <h1><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</h1>
                 </div> <!-- curtain__panel -->
               
                 <!-- The prize behind the curtain panels -->
@@ -32,7 +31,10 @@
                                     <h1 data-content="NYPC.IO"><span>NYPC.IO</span></h1>
                                     <div class="action-wrapper">
                                         <p>
-                                            <a href="mainpage.html" class="cd-btn main-action">Get started</a>
+                                                <form action="mainpage.html">
+                                                    <input type="submit" value="Get Started" />
+                                                </form>
+                                            <!-- <a href="mainpage.html">Get started</a> -->
                                             <!-- <a href="#0" class="cd-btn">Learn More</a> -->
                                         </p>
                                     </div>
