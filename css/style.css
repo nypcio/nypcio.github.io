@@ -94,7 +94,7 @@ General Style
 .cd-btn.main-action {
   background-color: #fb5e58;
 }
-@media only screen and (min-width: 480px) {
+/* @media only screen and (min-width: 480px) {
   .cd-btn {
     padding: 1.2em 1.6em;
   }
@@ -103,7 +103,7 @@ General Style
   .cd-btn {
     padding: 1.4em 1.8em;
   }
-}
+} */
 
 .cd-intro-content h1,
 .cd-intro-content h1 span,
