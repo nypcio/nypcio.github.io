@@ -114,9 +114,15 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="discussionforum.html">Home</a>
-                    </li>
+                        <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Discussion Boards 
+                                    <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                      <li><a href="nypc2016_discussion.html">NYPC 2016</a></li>
+                                      <li><a href="nypc2017_discussion.html">NYPC 2017</a></li>
+                                    </ul>      
+                                </li>
                     <li class="active">
                         <a href="mypage.html">My Page</a>
                     </li>
@@ -176,7 +182,7 @@
             <h3>My Posts</h3>
             <br>
             <!-- 감사 리스트 붙일 곳 -->
-            <div class="thanksList"></div>
+            <div class="allList"></div>
 
 
 
@@ -413,7 +419,7 @@
                         }
 
                         //userkey가 셋팅이 되면 감사리스트 호출!!
-                        thanksList();
+                        allList();
 
                         return true
                     });
@@ -427,16 +433,20 @@
 
 
         //감사리스트 가져오기
-        function thanksList() {
+        function allList() {
             console.log("땡스 리스트 함수안으로 들어왔습니다")
-
-            var thanksRef = firebaseDatabase.ref('thanks');
+            
+            var generalRef = firebaseDatabase.ref("GeneralDiscuss");
+            var sixteenRef = firebaseDatabase.ref("SixteenDiscuss");
+            var seventeenRef = firebaseDatabase.ref("SeventeenDiscuss");
             //조회
-            thanksRef.on('child_added', on_thanks_list)
+            generalRef.on('child_added', on_all_list);
+            sixteenRef.on('child_added', on_all_list);
+            seventeenRef.on('child_added', on_all_list);
         }
 
         //땡스리스트 thanks 테이블의 thanks 키 들을 연속적으로 가져온다.
-        function on_thanks_list(data) {
+        function on_all_list(data) {
             console.log("on_thanks_list() 함수안으로 들어왔습니다 리스트를 가져오겠습니다")
             //글 게수만큼 반복된다.
             //alert(loginUserKey);
@@ -469,7 +479,7 @@
                     "<hr>";
 
 
-                $(".thanksList").append(html);
+                $(".allList").append(html);
             }
         }
 

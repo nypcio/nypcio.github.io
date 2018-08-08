@@ -5,10 +5,10 @@ body {
 .css-typing p {
   border-right: .10em solid orange;
   font-family: "Courier";
-  font-size: 50px;
+  font-size: 200px;
   white-space: nowrap;
+  align-content: center;
   overflow: hidden;
-  margin-left: 40%;
 }
 .css-typing p:nth-child(1) {
   width: 3.6em;

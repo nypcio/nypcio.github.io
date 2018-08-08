@@ -3,7 +3,7 @@
 <html lang="kr">
 
 <head>
-    <title>땡스피드 - 담벼락</title>
+    <title>NYPCIO Discussion Board</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -100,20 +100,20 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">프로필</a>
+                <a class="navbar-brand" href="#">Profile</a>
             </div>
             <ul class="nav navbar-nav">
                 <li>
                     <a href="discussionforum.html">Home</a>
                 </li>
                 <li>
-                    <a href="mypage.html">마이페이지</a>
+                    <a href="mypage.html">My Page</a>
                 </li>
                 <li>
-                    <a id="joinmenu" href="join.html">가입</a>
+                    <a id="joinmenu" href="join.html">Join</a>
                 </li>
                 <li>
-                    <a id="loginmenu" href="login_extra.html">로그인</a>
+                    <a id="loginmenu" href="login_extra.html">Login</a>
                 </li>
             </ul>
         </div>
@@ -122,7 +122,7 @@
 
     <!-- userkey 비교하기. 현재로그인 한사람의 userkey면 마이 페이지 리스트 출력, 다른사람userkey 면 다른사람이름+ page 출력 -->
     <div class="container">
-        <h1>프로필</h1>
+        <h1>Profile</h1>
         <br>
         <!-- 프로필 사진 부분 -->
         <div class="media">
@@ -134,7 +134,7 @@
 
             </div>
             <div class="media-body">
-                <h4 class="media-heading" id="nicname">닉네임</h4>
+                <h4 class="media-heading" id="nicname">Username</h4>
                 <div id="statetxtP">
                     <p id="statetxt"></p>
                 </div>
@@ -149,10 +149,10 @@
         <!-- 감사리스트 출력하기-->
         <div class="container">
 
-            <h3>나의 감사리스트</h3>
+            <h3>My Posts</h3>
             <br>
             <!-- 감사 리스트 붙일 곳 -->
-            <div class="thanksList"></div>
+            <div class="allList"></div>
 
 
 
@@ -216,7 +216,7 @@
                 showClickedUser();
             }
             
-            thanksList();
+            allList();
 
         });
 
@@ -235,9 +235,9 @@
                         //유저라는 부모 키 에
                         //alert("로그인 되어 있군요 : " + user.uid);
                         //alert(snapshot.val().name + "님 환영합니다");
-                        document.getElementById("loginmenu").textContent = "로그아웃";
+                        document.getElementById("loginmenu").textContent = "Log Out";
                         document.getElementById("loginmenu").href = "logout.html";
-                        document.getElementById("joinmenu").textContent = "반가워요! " + snapshot.val().name + " 님";
+                        document.getElementById("joinmenu").textContent = "Welcome! " + snapshot.val().name;
 
 
                         document.getElementById("joinmenu").href = "#";
@@ -246,38 +246,6 @@
                         loginUserKey = snapshot.key;
                         console.log("userSessionCheck부분: 현재 로그인한 유저의 key =  " + loginUserKey);
                         userInfo = snapshot.val(); //snapshot.val()에 user 테이블에 있는 해당 개체 정보가 넘어온다. userInfo에 대입!
-                        
-                        
-
-                        /*여기서부터 다르다~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                        //닉네임 변경하기
-                        document.getElementById("nicname").textContent = name
-                        
-                        //이미지가 존재하면, 이미지 url을 가져와서 img 태그에 넣어준다.
-                        
-                        if (snapshot.val().imgURl) {
-                            document.getElementById("myimage").src = snapshot.val().imgURl
-                            console.log("이미지가 저장되어 있네요");
-                        } else {
-                            //없으면 다른 이미지 대체
-                            document.getElementById("myimage").src = "https://www.w3schools.com/bootstrap/img_avatar3.png";
-                            console.log("이미지가 없네요ㅠㅠ");
-                        }
-
-
-                        //한줄글이 있으면 가져와서 넣어준다. 
-                        if (snapshot.val().comment) {
-                            document.getElementById("statetxt").textContent = snapshot.val().comment;
-                            console.log("한줄글이 저장되어 있네요");
-                        } else {
-                            //없으면 더미 데이터 넣어준다.
-                            document.getElementById("statetxt").textContent = "한줄 기분을 적고 프로필 사진을 선택해 주세요~";
-                            console.log("한줄글이 없네요 ㅠㅠ");
-                        }
-
-                        //userkey가 셋팅이 되면 감사리스트 호출!!
-                        //thanksList();
-                         //여기까지 다르다~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
                         
                     });
                 } else {
@@ -290,16 +258,21 @@
 
 
         //감사리스트 가져오기
-        function thanksList() {
+        function allList() {
             console.log("땡스 리스트 함수안으로 들어왔습니다")
 
-            var thanksRef = firebaseDatabase.ref('thanks');
+
+            var generalRef = firebaseDatabase.ref("GeneralDiscuss");
+            var sixteenRef = firebaseDatabase.ref("SixteenDiscuss");
+            var seventeenRef = firebaseDatabase.ref("SeventeenDiscuss");
             //조회
-            thanksRef.on('child_added', on_thanks_list)
+            generalRef.on('child_added', on_all_list);
+            sixteenRef.on('child_added', on_all_list);
+            seventeenRef.on('child_added', on_all_list);
         }
 
         //땡스리스트 thanks 테이블의 thanks 키 들을 연속적으로 가져온다.
-        function on_thanks_list(data) {
+        function on_all_list(data) {
             console.log("on_thanks_list() 함수안으로 들어왔습니다 리스트를 가져오겠습니다")
             //글 게수만큼 반복된다.
             //alert(loginUserKey);
@@ -325,7 +298,7 @@
                     "<hr>";
 
 
-                $(".thanksList").append(html);
+                $(".allList").append(html);
             }
         }
 
@@ -363,7 +336,7 @@
                             console.log("한줄글이 저장되어 있네요");
                         } else {
                             //없으면 더미 데이터 넣어준다.
-                            document.getElementById("statetxt").textContent = "한줄 기분을 적고 프로필 사진을 선택해 주세요~";
+                            document.getElementById("statetxt").textContent = "Add in your status and profile picture :)";
                             console.log("한줄글이 없네요 ㅠㅠ");
                         }
             });
