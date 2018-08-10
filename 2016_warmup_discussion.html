@@ -10,26 +10,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script>
-      $(document).ready(function(){
-        $('.dropdown-submenu a.test').on("click", function(e){
-          $(this).next('ul').toggle();
-          e.stopPropagation();
-          e.preventDefault();
-        });
-      });
-      </script>
-      
-  <style>
-    .dropdown-submenu {
-      position: relative;
-    }
 
-    .dropdown-submenu .dropdown-menu {
-      top: 0;
-      left: 100%;
-      margin-top: -1px;
-    }
+  <style>
     /*인디케이터 스타일*/
 
     /* Center the loader */
@@ -117,11 +99,53 @@
       background-size: cover;
 
     }
+
+    .sidenav { 
+      width: 230px;
+      position: fixed;
+      z-index: 1;
+      top: 52px;
+      left: 3px;
+      background: #eee;
+      overflow-x: hidden;
+      padding: 8px 0;
+    }
+
+    .sidenav a { 
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+    }
+
+    .sidenav a:hover {
+    color: black;
+    }
+
+    .main {
+    margin-left: 140px; /* Same width as the sidebar + left position in px */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    }
+
+    @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    }
   </style>
 
 </head>
 
 <body onload="myFunction()" style="margin:0;">
+
+  <div class="sidenav">
+  <a href="#about">Warm Up Round</a>
+  <a href="#services">Preliminary Round 1</a>
+  <a href="#clients">Preliminary Round 2</a>
+  <a href="#contact">Preliminary Round 3</a>
+  <a href="#">Final Round</a>
+</div>
   <!-- 네비게이션 바 시작 -->
   <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
@@ -145,21 +169,11 @@
                           Discussion Boards 
                           <span class="caret"></span></a>
                           <ul class="dropdown-menu">
-                              <li class="dropdown">
-                              <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Discussion Boards 
-                                  <span class="caret"></span></a>  
-                                  <ul class="dropdown-submenu">
-                                      <li><a tabindex="-1" href="#">Warm Up Round</a></li>
-                                      <li><a tabindex="-1" href="#">Preliminary Round 1</a></li>
-                                      <li><a tabindex="-1" href="#">Preliminary Round 2</a></li>
-                                      <li><a tabindex="-1" href="#">Preliminary Round 3</a></li>
-                                      <li><a tabindex="-1" href="#">Final Round</a></li>
-                                  </ul>  
-                              </li>
+                            <li><a href="nypc2016_discussion.html">NYPC 2016</a></li>
+                            <li><a href="nypc2017_discussion.html">NYPC 2017</a></li>
                           </ul>      
                       </li>
-                  <li> 
+                  <li>
                       <a href="mypage.html">My Page</a>
                   </li>
                   <li>
