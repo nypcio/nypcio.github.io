@@ -439,10 +439,142 @@
             var generalRef = firebaseDatabase.ref("GeneralDiscuss");
             var sixteenRef = firebaseDatabase.ref("SixteenDiscuss");
             var seventeenRef = firebaseDatabase.ref("SeventeenDiscuss");
+            
+            var warmuponeRef = firebaseDatabase.ref("WarmupOne");
+            var warmuptwoRef = firebaseDatabase.ref("WarmupTwo");
+            var warmupthreeRef = firebaseDatabase.ref("WarmupThree");
+            var warmupfourRef = firebaseDatabase.ref("WarmupFour");
+            var warmupfiveRef = firebaseDatabase.ref("WarmupFive");
+
+            var sixteenprelimoneoneRef = firebaseDatabase.ref("Sixteen Prelim One One");
+            var sixteenprelimonetwoRef = firebaseDatabase.ref("Sixteen Prelim One Two");
+            var sixteenprelimonethreeRef = firebaseDatabase.ref("Sixteen Prelim One Three");
+            var sixteenprelimonefourRef = firebaseDatabase.ref("Sixteen Prelim One Four");
+            var sixteenprelimonefiveRef = firebaseDatabase.ref("Sixteen Prelim One Five");
+            var sixteenprelimonesixRef = firebaseDatabase.ref("Sixteen Prelim One Six");
+            var sixteenprelimonesevenRef = firebaseDatabase.ref("Sixteen Prelim One Seven");
+            var sixteenprelimoneeightRef = firebaseDatabase.ref("Sixteen Prelim One Eight");
+
+            var sixteenprelimtwooneRef = firebaseDatabase.ref("Sixteen Prelim Two One");
+            var sixteenprelimtwotwoRef = firebaseDatabase.ref("Sixteen Prelim Two Two");
+            var sixteenprelimtwothreeRef = firebaseDatabase.ref("Sixteen Prelim Two Three");
+            var sixteenprelimtwofourRef = firebaseDatabase.ref("Sixteen Prelim Two Four");
+            var sixteenprelimtwofiveRef = firebaseDatabase.ref("Sixteen Prelim Two Five");
+
+            var sixteenprelimthreeoneRef = firebaseDatabase.ref("Sixteen Prelim Three One");
+            var sixteenprelimthreetwoRef = firebaseDatabase.ref("Sixteen Prelim Three Two");
+            var sixteenprelimthreethreeRef = firebaseDatabase.ref("Sixteen Prelim Three Three");
+            var sixteenprelimthreefourRef = firebaseDatabase.ref("Sixteen Prelim Three Four");
+            var sixteenprelimthreefiveRef = firebaseDatabase.ref("Sixteen Prelim Three Five");
+            var sixteenprelimthreesixRef = firebaseDatabase.ref("Sixteen Prelim Three Six");
+
+            var sixteenfinaloneRef = firebaseDatabase.ref("Sixteen Final One");
+            var sixteenfinaltwoRef = firebaseDatabase.ref("Sixteen Final Two");
+            var sixteenfinalthreeRef = firebaseDatabase.ref("Sixteen Final Three");
+            var sixteenfinalfourRef = firebaseDatabase.ref("Sixteen Final Four");
+            var sixteenfinalfiveRef = firebaseDatabase.ref("Sixteen Final Five");
+
+            var seventeenprelimoneoneRef = firebaseDatabase.ref("Seventeen Prelim One One");
+            var seventeenprelimonetwoRef = firebaseDatabase.ref("Seventeen Prelim One Two");
+            var seventeenprelimonethreeRef = firebaseDatabase.ref("Seventeen Prelim One Three");
+            var seventeenprelimonefourRef = firebaseDatabase.ref("Seventeen Prelim One Four");
+            var seventeenprelimonefiveRef = firebaseDatabase.ref("Seventeen Prelim One Five");
+
+            var seventeenprelimtwooneRef = firebaseDatabase.ref("Seventeen Prelim Two One");
+            var seventeenprelimtwotwoRef = firebaseDatabase.ref("Seventeen Prelim Two Two");
+            var seventeenprelimtwothreeRef = firebaseDatabase.ref("Seventeen Prelim Two Three");
+            var seventeenprelimtwofourRef = firebaseDatabase.ref("Seventeen Prelim Two Four");
+            var seventeenprelimtwofiveRef = firebaseDatabase.ref("Seventeen Prelim Two Five");
+            
+
+            var seventeenprelimthreeoneRef = firebaseDatabase.ref("Seventeen Prelim Three One");
+            var seventeenprelimthreetwoRef = firebaseDatabase.ref("Seventeen Prelim Three Two");
+            var seventeenprelimthreethreeRef = firebaseDatabase.ref("Seventeen Prelim Three Three");
+            var seventeenprelimthreefourRef = firebaseDatabase.ref("Seventeen Prelim Three Four");
+            var seventeenprelimthreefiveRef = firebaseDatabase.ref("Seventeen Prelim Three Five");
+
+            var seventeenfinaloneoneRef = firebaseDatabase.ref("Seventeen Final One One");
+            var seventeenfinalonetwoRef = firebaseDatabase.ref("Seventeen Final One Two");
+            var seventeenfinalonethreeRef = firebaseDatabase.ref("Seventeen Final One Three");
+            var seventeenfinalonefourRef = firebaseDatabase.ref("Seventeen Final One Four");
+            var seventeenfinalonefiveRef = firebaseDatabase.ref("Seventeen Final One Five");
+
+            var seventeenfinaltwooneRef = firebaseDatabase.ref("Seventeen Final Two One");
+            var seventeenfinaltwotwoRef = firebaseDatabase.ref("Seventeen Final Two Two");
+            var seventeenfinaltwothreeRef = firebaseDatabase.ref("Seventeen Final Two Three");
+            var seventeenfinaltwofourRef = firebaseDatabase.ref("Seventeen Final Two Four");
+            var seventeenfinaltwofiveRef = firebaseDatabase.ref("Seventeen Final Two Five");
+
+
+
             //조회
             generalRef.on('child_added', on_all_list);
             sixteenRef.on('child_added', on_all_list);
             seventeenRef.on('child_added', on_all_list);
+            
+            warmuponeRef.on('child_added', on_all_list);
+            warmuptwoRef.on('child_added', on_all_list);
+            warmupthreeRef.on('child_added', on_all_list);
+            warmupfourRef.on('child_added', on_all_list);
+            warmupfiveRef.on('child_added', on_all_list);
+            
+            sixteenprelimoneoneRef.on('child_added', on_all_list);
+            sixteenprelimonetwoRef.on('child_added', on_all_list);
+            sixteenprelimonethreeRef.on('child_added', on_all_list);
+            sixteenprelimonefourRef.on('child_added', on_all_list);
+            sixteenprelimonefiveRef.on('child_added', on_all_list);
+            sixteenprelimonesixRef.on('child_added', on_all_list);
+            sixteenprelimonesevenRef.on('child_added', on_all_list);
+            sixteenprelimoneeightRef.on('child_added', on_all_list);
+            
+            sixteenprelimtwooneRef.on('child_added', on_all_list);
+            sixteenprelimtwotwoRef.on('child_added', on_all_list);
+            sixteenprelimtwothreeRef.on('child_added', on_all_list);
+            sixteenprelimtwofourRef.on('child_added', on_all_list);
+            sixteenprelimtwofiveRef.on('child_added', on_all_list);
+            
+            sixteenprelimthreeoneRef.on('child_added', on_all_list);
+            sixteenprelimthreetwoRef.on('child_added', on_all_list);
+            sixteenprelimthreethreeRef.on('child_added', on_all_list);
+            sixteenprelimthreefourRef.on('child_added', on_all_list);
+            sixteenprelimthreefiveRef.on('child_added', on_all_list);
+            sixteenprelimthreesixRef.on('child_added', on_all_list);
+            
+            sixteenfinaloneRef.on('child_added', on_all_list);
+            sixteenfinaltwoRef.on('child_added', on_all_list);
+            sixteenfinalthreeRef.on('child_added', on_all_list);
+            sixteenfinalfourRef.on('child_added', on_all_list);
+            sixteenfinalfiveRef.on('child_added', on_all_list);
+            
+            seventeenprelimoneoneRef.on('child_added', on_all_list);
+            seventeenprelimonetwoRef.on('child_added', on_all_list);
+            seventeenprelimonethreeRef.on('child_added', on_all_list);
+            seventeenprelimonefourRef.on('child_added', on_all_list);
+            seventeenprelimonefiveRef.on('child_added', on_all_list);
+
+            seventeenprelimtwooneRef.on('child_added', on_all_list);
+            seventeenprelimtwotwoRef.on('child_added', on_all_list);
+            seventeenprelimtwothreeRef.on('child_added', on_all_list);
+            seventeenprelimtwofourRef.on('child_added', on_all_list);
+            seventeenprelimtwofiveRef.on('child_added', on_all_list);
+
+            seventeenprelimthreeoneRef.on('child_added', on_all_list);
+            seventeenprelimthreetwoRef.on('child_added', on_all_list);
+            seventeenprelimthreethreeRef.on('child_added', on_all_list);
+            seventeenprelimthreefourRef.on('child_added', on_all_list);
+            seventeenprelimthreefiveRef.on('child_added', on_all_list);
+
+            seventeenfinaloneoneRef.on('child_added', on_all_list);
+            seventeenfinalonetwoRef.on('child_added', on_all_list);
+            seventeenfinalonethreeRef.on('child_added', on_all_list);
+            seventeenfinalonefourRef.on('child_added', on_all_list);
+            seventeenfinalonefiveRef.on('child_added', on_all_list);
+            
+            seventeenfinaltwooneRef.on('child_added', on_all_list);
+            seventeenfinaltwotwoRef.on('child_added', on_all_list);
+            seventeenfinaltwothreeRef.on('child_added', on_all_list);
+            seventeenfinaltwofourRef.on('child_added', on_all_list);
+            seventeenfinaltwofiveRef.on('child_added', on_all_list);
         }
 
         //땡스리스트 thanks 테이블의 thanks 키 들을 연속적으로 가져온다.
