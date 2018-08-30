@@ -12,6 +12,53 @@
 
 
     <style>
+          .dropdown-submenu {
+        position: relative;
+    }
+    
+    .dropdown-submenu>.dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+        margin-left: -1px;
+        -webkit-border-radius: 0 6px 6px 6px;
+        -moz-border-radius: 0 6px 6px;
+        border-radius: 0 6px 6px 6px;
+    }
+    
+    .dropdown-submenu:hover>.dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-submenu>a:after {
+        display: block;
+        content: " ";
+        float: right;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-left-color: #ccc;
+        margin-top: 5px;
+        margin-right: -10px;
+    }
+    
+    .dropdown-submenu:hover>a:after {
+        border-left-color: #fff;
+    }
+    
+    .dropdown-submenu.pull-left {
+        float: none;
+    }
+    
+    .dropdown-submenu.pull-left>.dropdown-menu {
+        left: -100%;
+        margin-left: 10px;
+        -webkit-border-radius: 6px 0 6px 6px;
+        -moz-border-radius: 6px 0 6px 6px;
+        border-radius: 6px 0 6px 6px;
+    }
         /*인디케이터 스타일*/
 
         /* Center the loader */
@@ -97,7 +144,7 @@
         <div style="display:none;" id="myDiv" class="animate-bottom"></div>
 
      <!-- 네비게이션 바 시작 -->
-  <nav class="navbar navbar-default navbar-fixed-top">
+     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -108,22 +155,144 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="discussionforum.html">My Page</a>
+                <a class="navbar-brand" href="discussionforum.html">NYPCIO Discussion Forum</a>
             </div>
     
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Discussion Boards 
-                                    <span class="caret"></span></a>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Discussion Boards 
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                              <li class="dropdown-submenu">
+                                <a class="dropdown-submenu" href="nypc2016_discussion.html" class="dropdown-toggle" data-toggle="dropdown">NYPC 2016</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-submenu">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Warm Up Round</a>
+                                      <ul class="dropdown-menu">
+                                        <li><a href="2016_warmup_1.html">Crazy Arcade Break the Box: Try it Yourself!</a></li>
+                                        <li><a href="2016_warmup_2.html">Dip or Pour?</a></li>
+                                        <li><a href="2016_warmup_3.html">Arithmetic Puzzle: Minimum</a></li>
+                                        <li><a href="2016_warmup_4.html">Arithmetic Puzzle: Goal</a></li>
+                                        <li><a href="2016_warmup_5.html">Arithmetic Puzzle: Change to Make 0</a></li>
+                                      </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Preliminary Round 1</a>
+                                      <ul class="dropdown-menu">
+                                        <li><a href="2016_prelim_1_1.html">Drink the Stamina Potion</a></li>
+                                        <li><a href="2016_prelim_1_2.html">Mabinogi Dual: Is this a Valid Deck?</a></li>
+                                        <li><a href="2016_prelim_1_3.html">Erin's Clock</a></li>
+                                        <li><a href="2016_prelim_1_4.html">Touch Touch Pang Pang</a></li>
+                                        <li><a href="2016_prelim_1_5.html">Crazy Arcade Break the Box: No Item</a></li>
+                                        <li><a href="2016_prelim_1_6.html">Crazy Arcade Break the Box: Create a Simulator</a></li>
+                                        <li><a href="2016_prelim_1_7.html">Crazy Arcade Break the Box: Challenge</a></li>
+                                        <li><a href="2016_prelim_1_8.html">Decrypt the Code 1</a></li>
+                                      </ul>   
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Preliminary Round 2</a>
+                                      <ul class="dropdown-menu">
+                                        <li><a href="2016_prelim_2_1.html">How much did you walk?</a></li>
+                                        <li><a href="2016_prelim_2_2.html">Release the Squirrels!</a></li>
+                                        <li><a href="2016_prelim_2_3.html">Find the center of the circle: No overlap</a></li>
+                                        <li><a href="2016_prelim_2_4.html">Find the center of the circle: Overlap</a></li>
+                                        <li><a href="2016_prelim_2_5.html">Crazy Arcade Break the Box: Find Bazzi</a></li>
+                                      </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Preliminary Round 3</a>
+                                      <ul class="dropdown-menu">
+                                        <li><a href="2016_prelim_3_1.html">Calculate your best lap</a></li>
+                                        <li><a href="2016_prelim_3_2.html">Level Up</a></li>
+                                        <li><a href="2016_prelim_3_3.html">Turn on the Lights!</a></li>
+                                        <li><a href="2016_prelim_3_4.html">A clock with only an hour hand</a></li>
+                                        <li><a href="2016_prelim_3_5.html">NexonGo: Easy</a></li>
+                                        <li><a href="2016_prelim_3_6.html">Find the Mine</a></li>
+                                      </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Final Round</a>
+                                      <ul class="dropdown-menu">
+                                        <li><a href="2016_final_1.html">Spin And Slide</a></li>
+                                        <li><a href="2016_final_2.html">Arithmetic with Matches: Only One</a></li>
+                                        <li><a href="2016_final_3.html">Arithmetic with Matches: Challenge</a></li>
+                                        <li><a href="2016_final_4.html">Manage My Own Farm: Plant and Harvest</a></li>
+                                        <li><a href="2016_final_5.html">Manage My  Own Farm: Upgraded Farm</a></li>
+                                      </ul>
+                                    </li>
+                                </ul>
+                                <li class="divider"></li> </li>
+  
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-submenu" href="nypc2017_discussion.html" class="dropdown-toggle" data-toggle="dropdown">NYPC 2017</a>
                                     <ul class="dropdown-menu">
-                                      <li><a href="nypc2016_discussion.html">NYPC 2016</a></li>
-                                      <li><a href="nypc2017_discussion.html">NYPC 2017</a></li>
-                                    </ul>      
+                                       <li class="dropdown-submenu">
+                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage One</a>
+                                          <ul class="dropdown-menu">
+                                            <li><a href="2017_prelim_1_1.html">Movement Distance of a Fly</a></li>
+                                            <li><a href="2017_prelim_1_2.html">Campfire</a></li>
+                                            <li><a href="2017_prelim_1_3.html">Postpositional Particle</a></li>
+                                            <li><a href="2017_prelim_1_4.html">Road Runner 1 Security Robot AI Development</a></li>
+                                            <li><a href="2017_prelim_1_5.html">Allocating Dorms</a></li>
+                                          </ul>
+                                       </li>
+                                       <li class="dropdown-submenu">
+                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage Two</a>
+                                         <ul class="dropdown-menu">
+                                            <li><a href="2017_prelim_2_1.html">Gobstopper</a></li>
+                                            <li><a href="2017_prelim_2_2.html">Item Deals</a></li>
+                                            <li><a href="2017_prelim_2_3.html">Break the Bricks</a></li>
+                                            <li><a href="2017_prelim_2_4.html">Frog Jump</a></li>
+                                            <li><a href="2017_prelim_2_5.html">Canon</a></li>
+                                         </ul>
+                                       </li>
+                                       <li class="dropdown-submenu">
+                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage Three</a>
+                                         <ul class="dropdown-menu">
+                                            <li><a href="2017_prelim_3_1.html">Blue Area</a></li>
+                                            <li><a href="2017_prelim_3_2.html">Match the Tiles</a></li>
+                                            <li><a href="2017_prelim_3_3.html">Gobstopper 2</a></li>
+                                            <li><a href="2017_prelim_3_4.html">Ant and Road Tiles</a></li>
+                                            <li><a href="2017_prelim_3_5.html">Find the way all at once</a></li>
+                                         </ul>
+                                       </li>
+                                       <li class="dropdown-submenu">
+                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Final Round</a>
+                                         <ul class="dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">1214</a>
+                                              <ul class="dropdown-menu">
+                                                <li><a href="2017_final_1214_1.html">Square</a></li>
+                                                <li><a href="2017_final_1214_2.html">Knit a Hat</a></li>
+                                                <li><a href="2017_final_1214_3.html">Water Balloons</a></li>
+                                                <li><a href="2017_final_1214_4.html">Match the Line</a></li>
+                                                <li><a href="2017_final_1214_5.html">Tetris</a></li>
+                                              </ul>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">1519</a>
+                                              <ul class="dropdown-menu">
+                                                <li><a href="2017_final_1519_1.html">Knit a Hat</a></li>
+                                                <li><a href="2017_final_1519_2.html">Water Balloons</a></li>
+                                                <li><a href="2017_final_1519_3.html">Create a Rock Axe</a></li>
+                                                <li><a href="2017_final_1519_4.html">Tetris</a></li>
+                                                <li><a href="2017_final_1519_5.html">Guild</a></li>
+                                              </ul>
+                                            </li>
+                                         </ul>
+                                        </li>
+                                     </ul>
                                 </li>
-                    <li class="active">
+                                <li class="divider"></li>
+                                <li class="dropdown-submenu">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Problems</a>
+                                </li>
+                            </ul>      
+                        </li>
+                    <li>
                         <a href="mypage.html">My Page</a>
                     </li>
                     <li>
@@ -216,6 +385,7 @@
         var url;
         var comment;
         var newInputTypeText;
+        var tag;
 
 
         // Initialize Firebase
@@ -591,6 +761,7 @@
                 var createtime = Data.createtime;
                 var name = Data.name;
                 var userkey = Data.userkey;
+                var tag = Data.tag;
 
                 //alert(comment +"/"+ createtime + "/"+name +"/"+userkey);
 
@@ -600,6 +771,7 @@
                 var html =
                     "<div class=\"media\">" +
                     "<div class=\"media-body\">" +
+                        " <span STYLE=\"color: orange; font-size: 7pt\">" + tag + "</span>" +
                     "<h4 class=\"media-heading\">" + name +
                     " <span STYLE=\"color: green; font-size: 5pt\">" + createtime + "</span></h4>" +
                     "<div id='" + key + "'><p>" + thankComment + "</p></div></div>" +
@@ -690,27 +862,604 @@
 
             //업데이트
             function updateCheck(thankKey) {
-                //선택된 키가 있으면 수정
-                updateRef = firebaseDatabase.ref('thanks/' + thankKey);
-                updateRef.update({
+                //선택된 키가 있으면
+                updateRef1 = firebaseDatabase.ref('GeneralDiscuss/' + thankKey);
+                updateRef2 = firebaseDatabase.ref('SixteenDiscuss/' + thankKey);
+                updateRef3 = firebaseDatabase.ref('SevenTeenDiscuss/' + thankKey);
+                
+                updateRef4 = firebaseDatabase.ref('WarmupOne/' + thankKey);
+                updateRef5 = firebaseDatabase.ref('WarmupTwo/' + thankKey);
+                updateRef6 = firebaseDatabase.ref('WarmupThree/' + thankKey);
+                updateRef7 = firebaseDatabase.ref('WarmupFour/' + thankKey);
+                updateRef8 = firebaseDatabase.ref('WarmupFive/' + thankKey);
+
+                updateRef9 = firebaseDatabase.ref('Sixteen Prelim One One/' + thankKey);
+                updateRef10 = firebaseDatabase.ref('Sixteen Prelim One Two/' + thankKey);
+                updateRef11 = firebaseDatabase.ref('Sixteen Prelim One Three/' + thankKey);
+                updateRef12 = firebaseDatabase.ref('Sixteen Prelim One Four/' + thankKey);
+                updateRef13 = firebaseDatabase.ref('Sixteen Prelim One Five/' + thankKey);
+                updateRef14 = firebaseDatabase.ref('Sixteen Prelim One Six/' + thankKey);
+                updateRef15 = firebaseDatabase.ref('Sixteen Prelim One Seven/' + thankKey);
+                updateRef16 = firebaseDatabase.ref('Sixteen Prelim One Eight/' + thankKey);
+
+                updateRef17 = firebaseDatabase.ref('Sixteen Prelim Two One/' + thankKey);
+                updateRef18 = firebaseDatabase.ref('Sixteen Prelim Two Two/' + thankKey);
+                updateRef19 = firebaseDatabase.ref('Sixteen Prelim Two Three/' + thankKey);
+                updateRef20 = firebaseDatabase.ref('Sixteen Prelim Two Four/' + thankKey);
+                updateRef21 = firebaseDatabase.ref('Sixteen Prelim Two Five/' + thankKey);
+
+                updateRef22 = firebaseDatabase.ref('Sixteen Prelim Three One/' + thankKey);
+                updateRef23 = firebaseDatabase.ref('Sixteen Prelim Three Two/' + thankKey);
+                updateRef24 = firebaseDatabase.ref('Sixteen Prelim Three Three/' + thankKey);
+                updateRef25 = firebaseDatabase.ref('Sixteen Prelim Three Four/' + thankKey);
+                updateRef26 = firebaseDatabase.ref('Sixteen Prelim Three Five/' + thankKey);
+                updateRef27 = firebaseDatabase.ref('Sixteen Prelim Three Six/' + thankKey);
+
+                updateRef28 = firebaseDatabase.ref('Sixteen Final One/' + thankKey);
+                updateRef29 = firebaseDatabase.ref('Sixteen Final Two/' + thankKey);
+                updateRef30 = firebaseDatabase.ref('Sixteen Final Three/' + thankKey);
+                updateRef31 = firebaseDatabase.ref('Sixteen Final Four/' + thankKey);
+                updateRef32 = firebaseDatabase.ref('Sixteen Final Five/' + thankKey);
+
+                updateRef33 = firebaseDatabase.ref('Seventeen Prelim One One/' + thankKey);
+                updateRef34 = firebaseDatabase.ref('Seventeen Prelim One Two/' + thankKey);
+                updateRef35 = firebaseDatabase.ref('Seventeen Prelim One Three/' + thankKey);
+                updateRef36 = firebaseDatabase.ref('Seventeen Prelim One Four/' + thankKey);
+                updateRef37 = firebaseDatabase.ref('Seventeen Prelim One Five/' + thankKey);
+
+                updateRef38 = firebaseDatabase.ref('Seventeen Prelim Two One/' + thankKey);
+                updateRef39 = firebaseDatabase.ref('Seventeen Prelim Two Two/' + thankKey);
+                updateRef40 = firebaseDatabase.ref('Seventeen Prelim Two Three/' + thankKey);
+                updateRef41 = firebaseDatabase.ref('Seventeen Prelim  Two Four/' + thankKey);
+                updateRef42 = firebaseDatabase.ref('Seventeen Prelim Two Five/' + thankKey);
+
+                updateRef43 = firebaseDatabase.ref('Seventeen Prelim Three One/' + thankKey);
+                updateRef44 = firebaseDatabase.ref('Seventeen Prelim Three Two/' + thankKey);
+                updateRef45 = firebaseDatabase.ref('Seventeen Prelim Three Three/' + thankKey);
+                updateRef46 = firebaseDatabase.ref('Seventeen Prelim Three Four/' + thankKey);
+                updateRef47 = firebaseDatabase.ref('Seventeen Prelim Three Five/' + thankKey);
+
+                updateRef48 = firebaseDatabase.ref('Seventeen Final One One/' + thankKey);
+                updateRef49 = firebaseDatabase.ref('Seventeen Final One Two/' + thankKey);
+                updateRef50 = firebaseDatabase.ref('Seventeen Final One Three/' + thankKey);
+                updateRef51 = firebaseDatabase.ref('Seventeen Final One Four/' + thankKey);
+                updateRef52 = firebaseDatabase.ref('Seventeen Final One Five/' + thankKey);
+
+                updateRef53 = firebaseDatabase.ref('Seventeen Final Two One/' + thankKey);
+                updateRef54 = firebaseDatabase.ref('Seventeen Final Two Two/' + thankKey);
+                updateRef55 = firebaseDatabase.ref('Seventeen Final Two Three/' + thankKey);
+                updateRef56 = firebaseDatabase.ref('Seventeen Final Two Four/' + thankKey);
+                updateRef57 = firebaseDatabase.ref('Seventeen Final Two Five/' + thankKey);
+
+                if (updateRef1 != null) { 
+                    updateRef1.update({
                     comment: newInputTypeText,
                     createtime: currentTime,
                     name: name,
                     userkey: loginUserKey
-                });
+                    });
+                } else if (updateRef2 != null) {
+                    updateRef2.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+                    });
+                } else if (updateRef3 != null) {
+                    updateRef3.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+                    
+                    });
+                } else if (updateRef4 != null) { 
+                    tag = updateRef4.Data.tag;
 
+                    updateRef4.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+                  
+                    });
+                } else if (udpateRef5 != null) {
+                    updateRef5.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef6 != null) {
+                    updateRef6.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef7 != null) {
+                    updateRef7.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef8 != null) {
+                    updateRef8.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef9 != null) {
+                    updateRef9.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef10 != null) {
+                    updateRef10.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef11 != null) {
+                    updateRef11.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef12 != null) {
+                    updateRef12.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef13 != null) {
+                    updateRef13.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef14 != null) {
+                    updateRef14.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef15 != null) {
+                    updateRef15.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+                  
+
+                    });
+                } else if (updateRef16 != null) {
+                    updateRef16.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+    
+
+                    });
+                } else if (updateRef17 != null) {
+                    updateRef17.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef18 != null) {
+                    updateRef18.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef19 != null) {
+                    updateRef19.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef20 != null) {
+                    updateRef20.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef21 != null) {
+                    updateRef22.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef23 != null) {
+                    updateRef24.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef24 != null) {
+                    updateRef24.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef25 != null) {
+                    updateRef25.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef26 != null) {
+                    updateRef26.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef27 != null) {
+                    updateRef27.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef28 != null) {
+                    updateRef28.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef29 != null) {
+                    updateRef29.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef30 != null) {
+                    updateRef30.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef31 != null) {
+                    updateRef31.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef32 != null) {
+                    updateRef32.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef33 != null) {
+                    updateRef33.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef34 != null) {
+                    updateRef34.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef35 != null) {
+                    updateRef35.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+                
+
+                    });
+                } else if (updateRef36 != null) {
+                    updateRef36.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef37 != null) {
+                    updateRef37.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef38 != null) {
+                    updateRef38.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef39 != null) {
+                    updateRef39.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef40 != null) {
+                    updateRef40.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef41 != null) {
+                    updateRef41.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef42 != null) {
+                    updateRef42.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef43 != null) {
+                    updateRef43.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef44 != null) {
+                    updateRef44.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef45 != null) {
+                    updateRef45.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef46 != null) {
+                    updateRef46.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef47 != null) {
+                    updateRef47.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef48 != null) {
+                    updateRef48.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef49 != null) {
+                    updateRef49.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                }  
+                else if (updateRef50 != null) {
+                    updateRef50.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef51 != null) {
+                    updateRef51.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef52 != null) {
+                    updateRef52.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef53 != null) {
+                    updateRef53.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef54 != null) {
+                    updateRef54.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef55 != null) {
+                    updateRef55.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+
+                    });
+                } else if (updateRef56 != null) {
+                    updateRef56.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+                    });
+                } else {
+                    updateRef57.update({
+                    comment: newInputTypeText,
+                    createtime: currentTime,
+                    name: name,
+                    userkey: loginUserKey
+                    });
+                } 
                 return true
             }
         }
 
         //삭제하기 버튼
         function btn_delete(thankKey) {
-            var check = confirm(thankKey + "Would you like to delete your post?")
+            var check = confirm("Would you like to delete your post?")
 
             if (check) {
-                removeThank = firebaseDatabase.ref("thanks/" + thankKey);
+                removeThank1 = firebaseDatabase.ref('GeneralDiscuss/' + thankKey);
+                removeThank2 = firebaseDatabase.ref('SixteenDiscuss/' + thankKey);
+                removeThank3 = firebaseDatabase.ref('SevenTeenDiscuss/' + thankKey);
+                
+                removeThank4 = firebaseDatabase.ref('WarmupOne/' + thankKey);
+                removeThank5 = firebaseDatabase.ref('WarmupTwo/' + thankKey);
+                removeThank6 = firebaseDatabase.ref('WarmupThree/' + thankKey);
+                removeThank7 = firebaseDatabase.ref('WarmupFour/' + thankKey);
+                removeThank8 = firebaseDatabase.ref('WarmupFive/' + thankKey);
 
-                removeThank.remove()
+                removeThank9 = firebaseDatabase.ref('Sixteen Prelim One One/' + thankKey);
+                removeThank10 = firebaseDatabase.ref('Sixteen Prelim One Two/' + thankKey);
+                removeThank11 = firebaseDatabase.ref('Sixteen Prelim One Three/' + thankKey);
+                removeThank12 = firebaseDatabase.ref('Sixteen Prelim One Four/' + thankKey);
+                removeThank13 = firebaseDatabase.ref('Sixteen Prelim One Five/' + thankKey);
+                removeThank14 = firebaseDatabase.ref('Sixteen Prelim One Six/' + thankKey);
+                removeThank15 = firebaseDatabase.ref('Sixteen Prelim One Seven/' + thankKey);
+                removeThank16 = firebaseDatabase.ref('Sixteen Prelim One Eight/' + thankKey);
+
+                removeThank17 = firebaseDatabase.ref('Sixteen Prelim Two One/' + thankKey);
+                removeThank18 = firebaseDatabase.ref('Sixteen Prelim Two Two/' + thankKey);
+                removeThank19 = firebaseDatabase.ref('Sixteen Prelim Two Three/' + thankKey);
+                removeThank20 = firebaseDatabase.ref('Sixteen Prelim Two Four/' + thankKey);
+                removeThank21 = firebaseDatabase.ref('Sixteen Prelim Two Five/' + thankKey);
+
+                removeThank22 = firebaseDatabase.ref('Sixteen Prelim Three One/' + thankKey);
+                removeThank23 = firebaseDatabase.ref('Sixteen Prelim Three Two/' + thankKey);
+                removeThank24 = firebaseDatabase.ref('Sixteen Prelim Three Three/' + thankKey);
+                removeThank25 = firebaseDatabase.ref('Sixteen Prelim Three Four/' + thankKey);
+                removeThank26 = firebaseDatabase.ref('Sixteen Prelim Three Five/' + thankKey);
+                removeThank27 = firebaseDatabase.ref('Sixteen Prelim Three Six/' + thankKey);
+
+                removeThank28 = firebaseDatabase.ref('Sixteen Final One/' + thankKey);
+                removeThank29 = firebaseDatabase.ref('Sixteen Final Two/' + thankKey);
+                removeThank30 = firebaseDatabase.ref('Sixteen Final Three/' + thankKey);
+                removeThank31 = firebaseDatabase.ref('Sixteen Final Four/' + thankKey);
+                removeThank32 = firebaseDatabase.ref('Sixteen Final Five/' + thankKey);
+
+                removeThank33 = firebaseDatabase.ref('Seventeen Prelim One One/' + thankKey);
+                removeThank34 = firebaseDatabase.ref('Seventeen Prelim One Two/' + thankKey);
+                removeThank35 = firebaseDatabase.ref('Seventeen Prelim One Three/' + thankKey);
+                removeThank36 = firebaseDatabase.ref('Seventeen Prelim One Four/' + thankKey);
+                removeThank37 = firebaseDatabase.ref('Seventeen Prelim One Five/' + thankKey);
+
+                removeThank38 = firebaseDatabase.ref('Seventeen Prelim Two One/' + thankKey);
+                removeThank39 = firebaseDatabase.ref('Seventeen Prelim Two Two/' + thankKey);
+                removeThank40 = firebaseDatabase.ref('Seventeen Prelim Two Three/' + thankKey);
+                removeThank41 = firebaseDatabase.ref('Seventeen Prelim  Two Four/' + thankKey);
+                removeThank42 = firebaseDatabase.ref('Seventeen Prelim Two Five/' + thankKey);
+
+                removeThank43 = firebaseDatabase.ref('Seventeen Prelim Three One/' + thankKey);
+                removeThank44 = firebaseDatabase.ref('Seventeen Prelim Three Two/' + thankKey);
+                removeThank45 = firebaseDatabase.ref('Seventeen Prelim Three Three/' + thankKey);
+                removeThank46 = firebaseDatabase.ref('Seventeen Prelim Three Four/' + thankKey);
+                removeThank47 = firebaseDatabase.ref('Seventeen Prelim Three Five/' + thankKey);
+
+                removeThank48 = firebaseDatabase.ref('Seventeen Final One One/' + thankKey);
+                removeThank49 = firebaseDatabase.ref('Seventeen Final One Two/' + thankKey);
+                removeThank50 = firebaseDatabase.ref('Seventeen Final One Three/' + thankKey);
+                removeThank51 = firebaseDatabase.ref('Seventeen Final One Four/' + thankKey);
+                removeThank52 = firebaseDatabase.ref('Seventeen Final One Five/' + thankKey);
+
+                removeThank53 = firebaseDatabase.ref('Seventeen Final Two One/' + thankKey);
+                removeThank54 = firebaseDatabase.ref('Seventeen Final Two Two/' + thankKey);
+                removeThank55 = firebaseDatabase.ref('Seventeen Final Two Three/' + thankKey);
+                removeThank56 = firebaseDatabase.ref('Seventeen Final Two Four/' + thankKey);
+                removeThank57 = firebaseDatabase.ref('Seventeen Final Two Five/' + thankKey);
+
+                removeThank1.remove()
                     .then(function () {
                         console.log("Remove succeeded.")
 
@@ -718,6 +1467,461 @@
                     .catch(function (error) {
                         console.log("Remove failed: " + error.message)
                     });
+
+                   removeThank2.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+
+                    removeThank3.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank4.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });    
+                    removeThank5.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank6.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank7.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank8.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank9.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank10.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank11.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank12.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });  
+                    
+                    removeThank13.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+
+                       removeThank14.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+
+                       removeThank15.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank16.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank17.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank18.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank19.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank20.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank21.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank22.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank23.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank24.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank25.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank26.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank27.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank28.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank29.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank30.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank31.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank32.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank33.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank34.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank35.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank36.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank37.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank38.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank39.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank40.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank41.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank42.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank43.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank44.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank45.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank46.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank47.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank48.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank49.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank50.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank51.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank52.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank53.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank54.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank55.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank56.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+                    removeThank57.remove()
+                    .then(function () {
+                        console.log("Remove succeeded.")
+
+                    })
+                    .catch(function (error) {
+                        console.log("Remove failed: " + error.message)
+                    });
+
+
             }
 
             window.location.reload();

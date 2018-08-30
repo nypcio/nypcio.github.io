@@ -333,7 +333,7 @@
 
 
   <!-- 점보트론 시작 -->
-  <div class="container">
+  <!-- <div class="container">
     <div class="jumbotron">
       <h1>
         <span style="color:#f05f40">NYPCIO Discussion Board</span>
@@ -343,12 +343,12 @@
       </p>
     </div>
   </div>
-  <br>
+  <br> -->
   <!-- 점보트론 끝 -->
   <!-- 쓰기 텍스트 필드 시작-->
   <div class="container">
       <div class="form-group">
-        <h3>General Discussion</h3>
+        <h3>2017 Round 1 Q5 Discussion</h3>
         <label for="comment">Share your thoughts:</label>
         <textarea class="form-control" rows="5" id="comment" placeholder="Feel free to discuss NYPC problems and share your solutions."></textarea>
         <br>
@@ -395,6 +395,7 @@
     var min = d.getMinutes().toString();
     var sec = d.getSeconds().toString();
     var currentTime = year + month + day + hours + min + sec;
+    var tag = "Allocating Dorms";
 
     var loginUserKey;
     var emailAuth;
@@ -496,7 +497,8 @@
         userkey: loginUserKey,
         name: name,
         comment: comment,
-        createtime: currentTime
+        createtime: currentTime,
+        tag: tag
       };
       thank.set(obj);
 
@@ -538,6 +540,7 @@
       var html =
         "<div class=\"media\" id='" + userkey + "' onclick=\"show_user_page(this.id)\">" +
         "<div class=\"media-body\">" +
+          " <span STYLE=\"color: orange; font-size: 7pt\">" + tag + "</span>" +
         "<h4 class=\"media-heading\">" + name +
         " <span STYLE=\"color: green; font-size: 5pt\">" + createtime + "</span></h4>" +
         "<p>" + comment + "</p></div></div>" +
