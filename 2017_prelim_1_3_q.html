@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2016 NYPC Final Round Question 1</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Postpositional Particle</h1>
+       
+
+        <p style ="text-align: relative"> When we are creating a game, we have set a structure for a sentence and by simply changing up the words in the structure, we modify the outputting sentence. However, in Korean we have different types of postpositional particles such as: 은, 는, 이, 가, 을, 를. If the letter right in front of a postpositional particle is a consonant, we use: 은, 이, 을, otherwise we need to use 가, 는, 를.
+        </p>
+
+                <!-- Add in Image here -->
+
+        <p style ="text-align: relative"> 
+        For instance, the two sentences below follow the same sentence structure. In between the sentences, we simply changed "스켈레톤" to "뱀파이어", but because of the different words, we notice the changed postpositional particles.<br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - 스켈레톤을 쓰러뜨렸다!<br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - 뱀파이어를 쓰러뜨렸다!
+        </p>
+
+        <p style="text-align: relative">
+        We can use "스켈레톤을(를) 쓰러뜨렸다!" but this makes the game seems less polished, so it's important to deal with the different cases of postpositional particles. There are more postpositional particles, but we will only deal with 은, 는, 이, 가, 을, 를. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - You may use the internet to figure out how to decipher UTF-8 Korean. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - However, other than the standard language library, you may not plagiarise anyone else's code. 
+        </p>
+        <h2>Input</h2>
+        <p style="text-align: relative">
+          On each line, one of the 3 phrases will be given. <br>
+          The sum of all lines has less than 100,000 characters under unicode standard excluding line changes. <br>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - set variable_name variable_content: set <variable_name>'s content as <variable_content>. variable_name will be less than or equal to 20 characters in small-cased alphabet letters. variable_content will be less than or equal to 100 characters in encoded UTF-8 Korean. If there was a variable with the same name, we will update the content with new content.  <br>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - print sentence_structure: In the sentence_structure, if <variable_name> appears, we will replace the <variable_name> to its <variable_content> and if the following postpositional particle is correct, we will correct it to the correct one based on the rule explained earlier. After this is complete, print out the result. After the <variable_name>m you can assume that one of 은, 는, 이, 가, 을, 를 always follows. <br>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - end: Finish the fixing process. <br>
+        </p>
+
+        <h2>Output</h2>
+        <p style="text-align: relative">
+        Print out the print statements by following the input file. The output encoding is UTF-8. You may assume there will never be a case where you don't print anything.
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+          set player 세라
+          set item 주문카운터
+          print {player}가 {item}을 획득했다!
+          set player 레미엘
+          set item 와이즈맨
+          print {player}이 {item}를 무덤에 버렸다!
+          end
+        </pre>
+
+        <h2>Output Example 1</h2>
+        <pre>
+        세라가 주문카운터를 획득했다!
+        레미엘이 와이즈맨을 무덤에 버렸다!
+        </pre>
+
+  
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        The input cases have 2 types: To get points, you need to have correct outputs for all test cases for one type of input test cases. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 1 (80 marks): Each line of input is one of 3 things: <br>
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - set variable_name variable_content (all max 1 character) <br>
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - print (variable_name) (all max 1 character) <br>
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - end <br>
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 2 (120 marks): No other restrictions other than the ones listed in the problem. <br>
+        </p>
+
+        <h2>Miscellaneous</h2>
+        <p style="text-align: relative">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - You may assume that there is never a case where <variable_name> is not set before a print command. Also { } are only used for referring to a variable name, and you can assume that there is never a case where the brackets are duplicated or missing. <br>
+
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - "end" command will applear once at the end. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - C/C++ may be hard. Try using a different language.
+
+        </p>
+        <center> <img src="images/ss_img1.png"> </center>
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                
