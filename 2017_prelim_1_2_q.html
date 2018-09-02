@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2016 NYPC Final Round Question 1</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Campfire</h1>
+       
+        <!-- Add in Image here -->
+
+        <p style ="text-align: relative"> Mabinogi's campfire is loved by a lot of users because of its unique warmth. In town, in dungeon, wherever the users gathered to chat with each other, campfires were always there. However, if the distance between the campfires are too close to one another, there is a dnager of creating a big fire. Therefore, we need to reject a request to build a new campfire near an already built campfire. Let us create a program that receives requests for building a new campfire plus monitoring the requests.
+        </p>
+        <p style ="text-align: relative"> 
+        The location of the campfire is labelled as (x, y) on a coordinate plane. The straight distance between campfires must be at least 5, and we need to reject any campfire requests that may cause the straight distance between campfires to be less than 5.
+        </p>
+        <p style="text-align: relative">
+        If the campfire started at time t, it goes off at time t + 300. Turning off the campfire takes priority over a new campfire request. If a campfire was started at time t = 10 at (x, y) = (1, 3), then since it turns off at t = 310, campfire at (x, y) = (2, 4) can begin at t = 310.
+        </p>  
+        <h2>Input</h2>
+        <p style ="text-align: relative">
+        First line of input has the number of starting campfire requests, N. N is an integer between 1 and 100,000 inclusive. <br>
+        In the next N lines, t, the time each request was made will be listed with the location of campfire request (x, y). t is an integer between 1 and 10,000 inclusive and both x and y are integers greater than or equal to -3000 and less than or equal to 3000. Each information will have a space in between the time and the location. <br>
+        The times for each request will be given in chronological order. <br>
+        Sometimes requests can come in at the same time, in which case, we will file the requests in the order they were entered. 
+        </p>
+        <h2>Output</h2>
+        <p style ="text-align: relative">
+        For all N requests, output one line for each request whether the request was accepeted or not. If a campfire was built normally, print S_OK, otherwise print E_FAILED.
+        </p>
+
+        <h2>Input Example</h2>
+        <pre>
+        9
+        0 0 0
+        0 0 0 
+        2 4 0 
+        4 2 3 
+        7 5 0 
+        12 -3 -4
+        299 2 3
+        300 0 0
+        301 5 2 
+        </pre>
+
+        <h2>Output Example</h2>
+        <pre>
+        S_OK
+        E_FAILED
+        E_FAILED
+        E_FAILED
+        S_OK
+        S_OK
+        E_FAILED
+        S_OK
+        E_FAILED
+        </pre>
+  
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        Marks will be awarded according to the number of test cases the program passes.
+        </p>
+        <center> <img src="images/ss_img1.png"> </center>
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                
