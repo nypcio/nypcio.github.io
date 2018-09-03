@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2016 NYPC Final Round Question 1</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Gobstopper</h1>
+       
+
+        <p style ="text-align: relative"> You and your friend are eating N gobstoppers. There are N gobstoppers, and each one has a nole in the middle and through this hole, a thin rope is in it, so that all N gobstoppers are connected in a line. Unless we break the rope, we cannot have the middle gobstopper. Therefore, the only gobstoppers we can have are the two gobstoppers at each end of the line. If you have one, then your friend has one. Therefore, if N is an even number, you  is an odd number, you have (N+1)/2 gobstoppers while your friend has (N-1)/2 gobstoppers. There are 26 types of gobstoppers and we label them as alphabet letters a - z. <br>
+        </p>
+        <p style="text-align: relative"> Let us look at the following example where N = 6. <br>
+        </p>
+        <!-- image-->
+
+        <p style="text-align: relative">On the first go, you can have either gobstoppers in position 1 or 6. If you eat the position 1 gobstopper a, then your friend has a choice to eat either position 2 or position 6 gobstopper. Again, if your friends eats position 2 gobstopper, then you can have either position 3 or position 6 gobstopper. Let's say you decided to eat position 6 gobstopper. Now your friend has a choice to eat either position 3 or position 5 gobstopper, and let's say they decided to eat position 5 gobstopper. Now you are left with position 3 or position 4 gobstopper, and you choose to eat position 4 gobstopper. Now your friend must have position 3 gobstopper. In this case, your sequence of gobstoppers would be adb, and your friend's would be bac. This is obvious, but you cannot eat in cba order as your first gobstopper should be either a or d.
+        </p>
+
+        <p style="text-align: relative">
+          Write a program that ouputs a possible sequence of gobstopper based on the rules given the number of gobstoppers and the order of gobstoppers. 
+        </p>
+
+
+        
+
+        <h2>Input</h2>
+        <p style="text-align: relative">
+          First line of input has the number of gobstoppers, N where N is an integer from 1 to 10,000 inclusive. The next line will have the types of gobstoppers in a sequence with N alphabet letters. This sequence should be read from left to right and it shows the ordering of gobstoppers.
+        </p>
+
+        <h2>Output</h2>
+        <p style="text-align: relative">
+        Output the answer on the first line. Here, given the ordering, assuming you and your friend alternated in having gobstoppers, print a possible sequence of gobstoppers you could have eaten in the order it was eaten. The length of sequence should be N/2 if N is even, otherwise it should be (N+1)/2.
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+        6
+        abcbad
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+        adb
+</pre>
+
+      
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        The input cases have 2 types: To get points, you need to have correct outputs for all test cases for one type of input test cases. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 1 (32 marks): All the gobstopperes are the same kind. <br>
+             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 2 (48 marks): No other restrictions other than the ones listed in the problem. <br>
+        </p>
+
+        <center> <img src="images/ss_img1.png"> </center>
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

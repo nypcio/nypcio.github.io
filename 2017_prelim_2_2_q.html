@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2016 NYPC Final Round Question 1</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Item Deals</h1>
+       
+
+        <p style ="text-align: relative"> As a game developer, you developed a system for user item trade. To test if the item trading system is working properly, you want to conduct the following tests. <br>
+        </p>
+        <p style="text-align: relative"> In the trading system, if the user sends a transaction request to a different user, a transaction window opens and the transaction begins. The two users put up their items they wish to deal with one another. Throughout the trade, users can put up their items multiple times. If both accept the trade, the two users exchange their items and the transaction ends. <br>
+        </p>
+   
+
+        <p style="text-align: relative">During the transaction, you can always cancel the transaction then the whole process ends. The whole process ends even if only one user wishes to cancel the transaction. Even if an user originally accepted the transaction, the user can change his/her mind. However, having multiple transactions simultaneously is not allowed. In order to have a new transaction, you must finish the current transaction.
+        </p>
+
+        <p style="text-align: relative">
+         During the transaction between user A and B using the system you developed, following informations are delivered. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - User A requests a transaction to user B (or vice versa). <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - User A moves its items on to the transaction page (multiple times are allowed). <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - User B moves its items on to the transaction page (multiple times are allowed). <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - User A accepts the transaction. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - User B accepts the transaction. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - User A rejects the transaction. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - User B rejects the transaction. <br>
+        The system receives the informations above to execute the transaction. Once both users accept the transaction, the items are exchanged between the users. The user may reject the transaction, so the exchange should only happen when both users confirmed to accept the transaction. 
+        </p>
+
+        <p style="text-align: relative">
+        Multiple transactions among different pairs of users may occur, so a lot of information that enters the system may be mixed. The system will take in the information in the order it was received. Print the status of items of users once all transactions are processed on the system.
+        </p>
+        
+
+        <h2>Input</h2>
+        <p style="text-align: relative">
+          First line of input has the number of users, N where N is an integer from 1 to 100 inclusive. Each user is assigned a unique number from 1 to N, in order. The following N lines have the information of items each user has. On the ith line, user i's number of item is listed along with the name of items with spaces in between. The max number of items a user can have is 100 and the minimum is 1.
+        </p>
+
+        <p style="text-align: relative">
+        Each transaction is assigned a number so that they are differentiated. First request number if a 1, and it increments by 1 each time a new transaction request is made. 
+        </p>
+
+        <p style="text-align: relative">
+        On the next line, the number of total transactions that need to be taken care of L, is given where L is an integer from 1 to 100 inclusive. The following L lines have transaction information. Each transaction information starts with <transaction type> and <transaction number> and it has the following format:  <br>
+        &nbsp;&nbsp;&nbsp; For <transaction type>: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1) Transaction request = B <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2) Placement of an item = M <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3) Transaction accept = E <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4) Transaction cancel = R <br>
+        The transaction number is given as X. <br>
+
+        These are some examples: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - B X i j : Transaction request: User i is requesting a transaction with a User j. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - M X i a : Placement of an item: User i moves its item onto the transaction window with transaction number X. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - E X i : Transaction Accept: User i accepts the transaction with transaction number X. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - R X i : Transaction Cancel: User i rejects the transaction with transaction number X. <br>
+        </p>
+
+        <p style="text-align: relative"> 
+        Item names are given in lowercase alphabet, the length of the name should be greater than or equal to 1 but less than or equal to 10. Only valid transaction informations are given in the input. For example, transaction information of transactions that have already ended, transaction information where a user is placing items that they don't own on the transaction window, users accepting transaction request of a transaction that has already been accepted, current user under a different transaction asking a new transaction request, or any information that are not useful for the user under the current transaction is not entered. 
+        </p>
+        <h2>Output</h2>
+        <p style="text-align: relative">
+        Output across N lines, the item information of users after all the requested transactions. ith line of ouput will have the item info of user i, in alphabetical order.
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+        4
+        1 sword
+        1 shield
+        1 sword
+        1 shield
+        7
+        B 1 1 2
+        M 1 1 sword
+        M 1 2 shield
+        E 1 1
+        B 2 3 4
+        M 2 3 sword
+        R 2 4
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+        sword
+        shield
+        sword
+        shield
+</pre>
+
+    <h2>Input Example 2</h2>
+    <pre>
+      2
+      2 sword sword
+      2 shield shield
+      5
+      B 1 1 2
+      M 1 1 sword
+      M 1 2 shield
+      E 1 1 
+      E 1 2
+    </pre>
+      <h2>Output Example 2</h2>
+      <pre>
+      shield sword
+      shield sword
+      </pre>
+
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        Marks will be awarded according to the number of test cases the program passes.
+        </p>
+
+        <center> <img src="images/ss_img1.png"> </center>
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                
