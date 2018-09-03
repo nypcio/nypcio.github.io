@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2016 NYPC Final Round Question 1</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Allocating Dorms</h1>
+       
+
+        <p style ="text-align: relative"> In Nexon Game Developer School, there are dorms. There are N students in dorams and the students are labelled from 1 to N. Each room accomodates 1 student. The total shape of the dorms looks like a binary tree. In otherwords, there is a root room and to its left and right, there can be "children" rooms. For these "children" rooms, they are connected by hallways to their "parent"'s room. A child room could have its own children rooms. <br>
+        </p>
+        <p style="text-align: relative"> One day the principal thought of <Rule 1> for the room allocation. <br>
+        </p>
+        <p style="text-align: relative"> Rule 1: If there are i left "children" rooms, then for students numbered 1 to i were given those rooms in order and i + 1 student kept the root room, and the rest were placed (i + 2 to N). So with this rule, for 8 roomes it would look like: 
+        </p>
+
+        <!-- image-->
+        <p style="text-align: relative">
+          Each number represents the student's number. <br>
+        </p>
+
+        <br>
+        <p style="text-align: relative">
+          However, unfortunately, with some announcement error, the students were allocations with rule 2 rather than rule 1.
+        </p>
+        <br>
+        <p style="text-align: relative">
+        Rule 2: Once agai, if there are i left "children" rooms, then for students numbered 1 to i were given those rooms in order, then the students numbered i + 1 to N-1 were given the right "children" rooms, and the Nth student was given the root room. Once again with this rule, the allocation for 8 students would look like"
+        </p>
+        <!--image-->
+        <p style="text-align: relative">
+        The principal found out the error and tried to fix the situation, but some students were already asleep, so not everyone was able to swtich. (In the above diagram, student 3 is alseep.) Thus, only the students awake moved their rooms based on rule 1, but the rule was modified to rule 3 due to the students who were asleep.
+        </p>
+
+        <p style="text-align: relative">
+        Rule 3: For those students who were not alseep moved accordingly to rule 1 starting from students with lower numbers. If there was a student asleep, they skipped that room and continued with rule 1. <br>
+
+        This produces the same result as rule 1 if no student is asleep, but like the above example, if there exist students who are asleep, it produces a slightly different result like the following diagram:
+        <br>
+        </p>
+
+
+                <!-- Add in Image here -->
+
+        <p style ="text-align: relative"> 
+        Write a program that calculates the smallest sum of hallways the student needs to cross to get to their rooms using rule 3 from their original room allocations from rule 2, and students who are asleep. <br> 
+        </p>
+
+  
+
+        <h2>Input</h2>
+        <p style="text-align: relative">
+          In the first line of input, the number of rooms N, and the number students who are asleep, K are given. N is an integer between 1 and 100,000 inclusive and K is an integer between 0 and N inclusive. The second line shows the connection rule between the students. Firstly, the root room always exists so the existence of the root room is not given. Starting from the root room, the existing rooms are given in level order with the information of whether that room has a left or right child room through the numbers 0 and 1. 1 means that there exists a child room. The level order is given in the order of how close the rooms are to the root room and if the distance from the root room is the same, they are numbered in the order from left to right. In the third line, the student numbers of K students who are asleep are given and each number should be different. If K = 0, the third line of input is empty. To get a better idea of the input style, check out the input example which is the diagram given in the problem.
+        </p>
+
+        <h2>Output</h2>
+        <p style="text-align: relative">
+        Output the minimum sum of hallways each student must cross in order to get to their corerct rooms.
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+        8 1
+        1 1 0 0 1 1 1 0 1 1 0 0 0 0 0 0 
+        3
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+        14
+</pre>
+
+        <h2>Input Example 2</h2>
+        <pre>
+        2 1
+        0 1 0 0 
+        2
+        </pre>
+
+        <h2>Output Example 2</h2>
+        <pre>
+        0
+        </pre>
+      
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        The input cases have 3 types: To get points, you need to have correct outputs for all test cases for one type of input test cases. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 1 (45 marks): N is less than or equal to 10. <br>
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 2 (105 marks): N is less than or equal to 1000. <br>
+             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 3 (300 marks): No other restrictions other than the ones listed in the problem. <br>
+        </p>
+
+        <center> <img src="images/ss_img1.png"> </center>
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2016 NYPC Final Round Question 1</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Road Runner 1 Security Robot AI Development</h1>
+       
+
+        <p style ="text-align: relative"> Road Runner 1 is a remake Nexon did from an old game, Road Runner. The player wants to control the runner so that the runner doesn't get caught by the security robots and collect all the gold in the map.
+        </p>
+
+                <!-- Add in Image here -->
+
+        <p style ="text-align: relative"> 
+        Let us create a security robot AI so that it dcan get to the runner as quickly as possible. The AI needs to decide the order of actions it should take in order to get to the runner as quickly as possible given the current map status, the runner's location and the security robot's lovation. We will assume initially that the given security robot AI will always be standing on a block, and the runner is not moving.
+        </p>
+
+        <p style="text-align: relative">
+       The robot's movement rules are as follows: <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - The game map is designed with empty space, ladder, and blocks. <br>
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - You cannot walk into a block. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - If you're standing on a block, you can move either left or right. <br>
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - On a ladder, you can also move up and down.  <br>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - You can step on a ladder, and in such case you can go down the ladder. <br>
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - If you're currently hanging on a ladder and the bottom is empty spacfe, you will fall below. <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - To move 1 step in either (left/right) direction, it takes H amount of time. (On a ladder, you can still move left/right and this will also take H time.) <br>
+             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - To move 1 step up/down on a ladder takes V time. <br>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - To fall down one step takes time F. <br>
+        </p>
+        <!-- image-->
+
+        <h2>Input</h2>
+        <p style="text-align: relative">
+          First line of input has the size of the map, N x M where N, M are integers between 1 and 3000 inclusive. <br>
+          Second line has H, V, F with spaces in between respectively. H, V, F can be greater than or equal to 1 and less than equal to 10 <sub>9</sub>. <br>
+          In the next M lines, we get the map information from top to bottom. <br>
+          Empty sapce on a map is given as '.' <br>
+          A block is given as 'B'. <br>
+          A ladder is given as 'H'. <br>
+          The location of the runner as 'R', and the robot as 'G'. <br>
+        </p>
+
+        <h2>Output</h2>
+        <p style="text-align: relative">
+        On the first line, output the direction the robot should move in L, U, R, D without any space. You also need to output the fall. For instance, the above should output R, D. From the ladder, sliding to the right is R and the fall is D. If you fall multiple steps, you need to ouput D the number of steps you fall. <br>
+
+        If there are multiple ways to get to the runner with the same minimum amount of time, you only need to output one of the possible answers. If it is impossible to get to the runner, output X. 
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+        5 5
+        1 1 1 
+        BBBBB
+        B.R.B
+        B.BHB
+        BG.HB
+        BBBBB
+        </pre>
+
+        <h2>Output Example 1</h2>
+        <pre>
+        RRUUL
+        </pre>
+
+       <h2>Warning</h2>
+       <p style="text-align: relative">
+       On the actual game, there are many extra factors such as there are digging blocks, holding on, etc. but we do not worry about this in this particular problem.
+       </p>
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        The input cases have 3 types: To get points, you need to have correct outputs for all test cases for one type of input test cases. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 1 (90 marks): In the given map, we do not get a ladder. <br>
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 2 (60 marks): H = V = F = 1 <br>
+             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 3 (150 marks): No other restrictions other than the ones listed in the problem. <br>
+        </p>
+
+        <center> <img src="images/ss_img1.png"> </center>
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                
