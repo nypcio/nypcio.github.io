@@ -312,6 +312,9 @@
                   <li>
                       <a id="loginmenu" href="login_extra.html">Login</a>
                   </li>
+                  <li>
+                    <a id="NYPC Messenger" href="https://nypcio-chat.firebaseapp.com/">NYPC Messenger</a>
+                  </li>
 
               </ul>
           </div>
@@ -395,6 +398,7 @@
     var min = d.getMinutes().toString();
     var sec = d.getSeconds().toString();
     var currentTime = year + month + day + hours + min + sec;
+    var tag = "General";
 
     var loginUserKey;
     var emailAuth;
@@ -496,7 +500,8 @@
         userkey: loginUserKey,
         name: name,
         comment: comment,
-        createtime: currentTime
+        createtime: currentTime,
+        tag: tag
       };
       thank.set(obj);
 
@@ -530,6 +535,7 @@
       var createtime = Data.createtime;
       var name = Data.name;
       var userkey = Data.userkey;
+      var tagit = Data.tag;
 
       //alert(comment +"/"+ createtime + "/"+name +"/"+userkey);
 
@@ -538,12 +544,14 @@
       var html =
         "<div class=\"media\" id='" + userkey + "' onclick=\"show_user_page(this.id)\">" +
         "<div class=\"media-body\">" +
+          " <span STYLE=\"color: orange; font-size: 7pt\">" + tag + "</span>" +
         "<h4 class=\"media-heading\">" + name +
         " <span STYLE=\"color: green; font-size: 5pt\">" + createtime + "</span></h4>" +
         "<p>" + comment + "</p></div></div>" +
         "<hr>";
-
-      $(".generaldiscuss").append(html);
+      if (tagit == "General") { 
+        $(".generaldiscuss").append(html);
+      }
 
     }
 

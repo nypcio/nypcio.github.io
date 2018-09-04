@@ -367,7 +367,7 @@
       <h3>Discussion Board</h3>
       <br>
       <!-- 감사 리스트 붙일 곳 -->
-      <div class="sixteenprelimoneone"></div>
+      <div class="generaldiscuss"></div>
   
   
   
@@ -428,8 +428,8 @@
     $(document).ready(function () {
 
       //감사리스트 호출
-      sixteenprelimoneone();
-      console.log("sixteenprelimoneone(); 함수 작동이 완료되었습니다");
+      generaldiscuss();
+      console.log("generaldiscuss(); 함수 작동이 완료되었습니다");
       //메인화면 감사일기 쓰기버튼 눌렀을 때
       $(document).on('click', '.write', function () {
 
@@ -439,7 +439,7 @@
         comment = $('#comment').val();
         if (seseionCheck == "Logout") {
           //저장하기
-          saveSixteenPrelimOneOne();
+          saveGeneral();
         } else {
           alert("You need to be logged in to submit.")
         }
@@ -485,11 +485,11 @@
 
 
     //쓰기 버튼 눌렀을 때 호출 되는 함수
-    function saveSixteenPrelimOneOne() {
+    function saveGeneral() {
       console.log("function saveThanks(){ 쓰기 버튼 호출");
 
       //thanks 라는 테이블을 만들고 하위 데이터에 유저 아이디를 넣어준다. 그곳에 push로 가상의 키를 넣고, 객체를 넣어준다.!!!!
-      var ths = firebaseDatabase.ref("Sixteen Prelim One One");
+      var ths = firebaseDatabase.ref("GeneralDiscuss");
       //thankKey = ths.push().key;
       var thank = ths.push(); // 해당 객체의 key 값이 자동으로 생성된다.
       //로그인한 유저의 pk값,이름,내용,시간 데이터
@@ -514,16 +514,16 @@
 
 
 
-    function sixteenprelimoneone() {
+    function generaldiscuss() {
       console.log("땡스 리스트 함수안으로 들어왔습니다")
 
-      var generalRef = firebaseDatabase.ref('Sixteen Prelim One One');
+      var generalRef = firebaseDatabase.ref('GeneralDiscuss');
       //조회
-      generalRef.on('child_added', on_sixteenprelimoneone_list)
+      generalRef.on('child_added', on_general_list)
     }
 
     //땡스리스트 thanks 테이블의 thanks 키 들을 연속적으로 가져온다.
-    function on_sixteenprelimoneone_list(data) {
+    function on_general_list(data) {
       console.log("on_thanks_list() 함수안으로 들어왔습니다 리스트를 가져오겠습니다")
       var key = data.key;
 
@@ -532,7 +532,7 @@
       var createtime = Data.createtime;
       var name = Data.name;
       var userkey = Data.userkey;
-
+      var tagit = Data.tag;
       //alert(comment +"/"+ createtime + "/"+name +"/"+userkey);
 
 
@@ -540,13 +540,14 @@
       var html =
         "<div class=\"media\" id='" + userkey + "' onclick=\"show_user_page(this.id)\">" +
         "<div class=\"media-body\">" +
-        " <span STYLE=\"color: orange; font-size: 7pt\">" + tag + "</span>" +
+          " <span STYLE=\"color: orange; font-size: 7pt\">" + tag + "</span>" +
         "<h4 class=\"media-heading\">" + name +
         " <span STYLE=\"color: green; font-size: 5pt\">" + createtime + "</span></h4>" +
         "<p>" + comment + "</p></div></div>" +
         "<hr>";
-
-      $(".sixteenprelimoneone").append(html);
+      if (tagit == "Drink the Stamina Potion") {
+        $(".generaldiscuss").append(html);
+      }
 
     }
 
