@@ -62,13 +62,13 @@
     <div id="dvAuth">
       <div id="dvLogin">
           <h5>로그인</h5>
-          <!-- <div id="dvSocial">
+          <div id="dvSocial">
               <ul class="btnGroup">
                   <li id="liGoogleBtn" class="waves-effect waves-teal btn-flat"><i></i>구글 계정으로 가입 및 로그인</li>
                   <li id="liFacebookBtn" class="waves-effect waves-teal btn-flat"><i></i>페이스북 계정으로 가입 및 로그인</li>
               </ul>
               <em class="or">or</em>
-          </div> -->
+          </div>
           <div id="dvEmail">
               <input type="email" id="userName" name="userName" class="input-text" placeholder="이메일 아이디">
               <input type="password" id="password" name="password" class="input-text" maxlength="17" placeholder="비밀번호">
@@ -303,7 +303,7 @@
                       uid: user.uid,
                       userName: user.displayName,
                       message: convertMsg, // 태그 입력 방지
-                      profileImg: user.photoURL ? user.photoURL : user.displayName,
+                      profileImg: user.photoURL ? user.photoURL : '',
                       timestamp: firebase.database.ServerValue.TIMESTAMP  //서버시간 등록하기
                   }
                   //유저별 룸리스트 저장
@@ -319,7 +319,7 @@
                                   roomUserListLength == 2 && i == 1 ? this.roomUserlist[0]   // 1대 1 대화 이고 i값이 1이면
                                       : '', // 나머지
                               lastMessage : downloadURL ? '다운로드' : convertMsg,
-                              profileImg : user.photoURL ? user.photoURL : user.displayName,
+                              profileImg : user.photoURL ? user.photoURL : '',
                               timestamp: firebase.database.ServerValue.TIMESTAMP
                           };
                       }
@@ -872,7 +872,7 @@
                       console.log('saveUserAtRealDB 저장');
                       userRef.set({  //데이터 저장
                           email: user.email
-                          , profileImg: user.photoURL ? user.photoURL : user.displayName
+                          , profileImg: user.photoURL ? user.photoURL : ''
                           , userName : user.displayName
                       }).then(cbUserAfterSave.bind(this));
                   }
