@@ -218,9 +218,9 @@
            * 초기 이벤트 바인딩
            */
           FirebaseChat.prototype.initEvent = function(){
-              this.liGoogleBtn.addEventListener('click', this.onGoogleBtnClick.bind(this));
+            //   this.liGoogleBtn.addEventListener('click', this.onGoogleBtnClick.bind(this));
               this.auth.onAuthStateChanged(this.onAuthChange.bind(this));
-              this.liFacebookBtn.addEventListener('click', this.onFacebookBtnClick.bind(this));
+            //   this.liFacebookBtn.addEventListener('click', this.onFacebookBtnClick.bind(this));
               this.liEmailJoin.addEventListener('click', this.displayEmailJoin.bind(this));
               this.liEmailJoinSubmit.addEventListener('click', this.createEmailUser.bind(this));
               this.liEmailBtn.addEventListener('click', this.onEmailBtnClick.bind(this));
