@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Firebase-Tutorial</title>
+    <title>NYPC Messenger</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="css/custom.css">
@@ -15,7 +15,7 @@
         <nav>
             <div class="nav-wrapper valign-wrapper">
                 <a href="#" id="aBackBtn" class="small material-icons left hiddendiv">arrow_back</a>
-                <span id="spTitle" class="brand-logo center">Firebase-Tutorial</span>
+                <span id="spTitle" class="brand-logo center">NYPC Messenger</span>
                 <a href="#dvAddUser" id="aInvite" class="small material-icons right hiddendiv modal-trigger">add</a>
             </div>
         </nav>
@@ -35,7 +35,7 @@
         <!-- 설정탭 영역 -->
         <div id="tab-3" class="col s12 tabContents">
             <ul class="collection">
-                <li id="liLogOut" class="collection-item">로그아웃</li>
+                <li id="liLogOut" class="collection-item">Log Out</li>
             </ul>
         </div>
         <!-- 채팅방 메세지화면 영역 -->
@@ -43,7 +43,7 @@
             <ul id="ulMessageList" class="collection">
             </ul>
             <div id="dvMsgForm" class="meta-bar chat">
-                <div id="dvInputChat" contenteditable="true" placeholder="메세지 작성"></div>
+                <div id="dvInputChat" contenteditable="true" placeholder="Write your message"></div>
                 <i id='iBtnAttach' class="small material-icons">attach_file</i>
                 <i id='iBtnSend' class="small material-icons">send</i>
                 <input type="file" id="attachFile" style="display:none;"/>
@@ -62,40 +62,40 @@
     <!-- 로그인 화면 및 가입화면 영역 -->
     <div id="dvAuth">
       <div id="dvLogin">
-          <h5>로그인</h5>
+          <h5>Login</h5>
           <div id="dvSocial">
-              <ul class="btnGroup">
+              <!-- <ul class="btnGroup">
                   <li id="liGoogleBtn" class="waves-effect waves-teal btn-flat"><i></i>구글 계정으로 가입 및 로그인</li>
                   <li id="liFacebookBtn" class="waves-effect waves-teal btn-flat"><i></i>페이스북 계정으로 가입 및 로그인</li>
-              </ul>
+              </ul> -->
               <em class="or">or</em>
           </div>
           <div id="dvEmail">
-              <input type="email" id="userName" name="userName" class="input-text" placeholder="이메일 아이디">
-              <input type="password" id="password" name="password" class="input-text" maxlength="17" placeholder="비밀번호">
+              <input type="email" id="userName" name="userName" class="input-text" placeholder="Email Address">
+              <input type="password" id="password" name="password" class="input-text" maxlength="17" placeholder="Password">
               <ul class="btnGroup">
-                  <li id="liEmailBtn" class="waves-effect waves-teal btn-flat">이메일으로 로그인</li>
+                  <li id="liEmailBtn" class="waves-effect waves-teal btn-flat">Login</li>
               </ul>
               <ul class="btnGroup">
-                  <li id="liEmailJoin" class="waves-effect waves-teal btn-flat">이메일으로 가입</li>
+                  <li id="liEmailJoin" class="waves-effect waves-teal btn-flat">Join</li>
               </ul>
           </div>
       </div>
       <div id="dvJoin">
-          <h5>이메일 가입</h5>
-          <input type="text" id="joinUserName" name="userName" class="input-text" placeholder="이름">
-          <input type="email" id="joinUserEmail" name="userName" class="input-text" placeholder="이메일 아이디">
-          <input type="password" id="joinPassword" name="password" class="input-text" maxlength="17" placeholder="비밀번호">
-          <input type="password" id="joinRePassword" class="input-text" maxlength="17" placeholder="비밀번호 확인">
+          <h5>Join</h5>
+          <input type="text" id="joinUserName" name="userName" class="input-text" placeholder="Username">
+          <input type="email" id="joinUserEmail" name="userName" class="input-text" placeholder="Email">
+          <input type="password" id="joinPassword" name="password" class="input-text" maxlength="17" placeholder="Password">
+          <input type="password" id="joinRePassword" class="input-text" maxlength="17" placeholder="Confirm Password">
           <ul class="btnGroup">
-              <li id="liEmailJoinSubmit" class="waves-effect waves-teal btn-flat">이메일으로 가입</li>
+              <li id="liEmailJoinSubmit" class="waves-effect waves-teal btn-flat">Join</li>
           </ul>
       </div>
     </div>
     <!-- Modal 영역 -->
     <div id="dnModal" class="modal col s4">
         <div class="modal-content">
-            <h5>업로드</h5>
+            <h5>Upload</h5>
             <div class="progress">
                 <div id="dvProgressBar" class="determinate"></div>
                 <div id="dvFileName"></div>
@@ -104,12 +104,12 @@
     </div>
     <div id="dvAddUser" class="modal">
         <div class="modal-content">
-          <h5>초대</h5>
+          <h5>Invite</h5>
           <ul id="ulAddUserList" class="collection">
           </ul>
         </div>
         <div class="modal-footer">
-            <a id="aConfirmInvite" href="#!" class="modal-action modal-close waves-effect waves-green btn blue white-text">추가</a>
+            <a id="aConfirmInvite" href="#!" class="modal-action modal-close waves-effect waves-green btn blue white-text">Add</a>
         </div>
     </div>
     <!-- template 영역 -->
@@ -257,7 +257,7 @@
               var cbError = function(error) { // 에러발생
                   console.log(error);
                   $('#dnModal').modal('close');
-                  alert('업로드 중 에러가 발생하였습니다.');
+                  alert('An error occurred while updating a file.');
               }
               var cbComplete = function() { // 완료
                   //프로그레스바 닫기
@@ -282,7 +282,7 @@
               }
               //파일전송 메세지
               if(downloadURL && fileName){
-                  msg = "<a class='waves-effect waves-light btn blue' download='"+fileName+"' href='"+ downloadURL +"'>다운로드</a></br><span class=''>파일명 : "+ fileName +"</span>";
+                  msg = "<a class='waves-effect waves-light btn blue' download='"+fileName+"' href='"+ downloadURL +"'>Download</a></br><span class=''>File : "+ fileName +"</span>";
               }
               if(msg.length > 0){
                   this.dvInputChat.focus();
@@ -319,7 +319,7 @@
                               roomOneVSOneTarget : roomUserListLength == 2 && i == 0 ? this.roomUserlist[1] :  // 1대 1 대화이고 i 값이 0 이면
                                   roomUserListLength == 2 && i == 1 ? this.roomUserlist[0]   // 1대 1 대화 이고 i값이 1이면
                                       : '', // 나머지
-                              lastMessage : downloadURL ? '다운로드' : convertMsg,
+                              lastMessage : downloadURL ? 'Download' : convertMsg,
                               profileImg : user.photoURL ? user.photoURL : '',
                               timestamp: firebase.database.ServerValue.TIMESTAMP
                           };
@@ -338,7 +338,7 @@
               var updates = {};
               for(var i=0; i < arrInviteUserListLength; i++){
                   var inviteUserUid = arrInviteUserList[i].getAttribute('data-targetUserUid');
-                  var inviteUserName = arrInviteUserList[i].getAttribute('data-username') + '님';
+                  var inviteUserName = arrInviteUserList[i].getAttribute('data-username');
                   updates['RoomUsers/'+ this.roomId +'/'+ inviteUserUid] = true;
                   arrInviteUserList[i].outerHTML = '';
                   this.roomUserlist.push(inviteUserUid);
@@ -348,7 +348,7 @@
               this.roomUserlist.sort();
               this.database.ref().update(updates);
               //초대 메세지
-              this.saveMessages(arrInviteUserName.join() + '이 초대되었습니다.');
+              this.saveMessages(arrInviteUserName.join() + ' was asked to join.');
           }
           /**
            * 챗방 오픈 , 메세지 로드 및 AddUserList
@@ -462,7 +462,7 @@
                   var arrRoomUserName = val.roomUserName.split(this.SPLIT_CHAR);
                   arrRoomUserName.splice(arrRoomUserName.indexOf(this.auth.currentUser.displayName), 1); // 방 제목 타이틀에서는 자신의 이름을 제외합니다.
                   var eachRoomTitle = arrRoomUserName.length > 1 ?
-                      arrRoomUserName[0] + " 외 " + (arrRoomUserName.length - 1) + "명" : arrRoomUserName[0] +'님';
+                      arrRoomUserName[0] + 'and' + (arrRoomUserName.length - 1) + "more" : arrRoomUserName[0];
                   if(data.key === this.roomId && this.isOpenRoom){ //현재 메세지 상단 제목을 갱신해준다.
                       this.spTitle.innerHTML  = eachRoomTitle;
                   }
@@ -590,7 +590,7 @@
                   roomListTarget.click();
               }else{
                   // 메세지 로드
-                  this.roomTitle = targetUserName+'님';
+                  this.roomTitle = targetUserName+;
                   this.roomUserlist = [targetUserUid, this.auth.currentUser.uid]; // 챗방 유저리스트
                   this.roomUserName = [targetUserName, this.auth.currentUser.displayName] // 챗방 유저 이름
                   this.roomId = this.MAKEID_CHAR + this.auth.currentUser.uid + this.DATETIME_CHAR + FirebaseChat.yyyyMMddHHmmsss();
@@ -614,7 +614,7 @@
                       messageHtml = _.template(messageTemplate)({
                           key : data.key
                           , profileImg : val.profileImg
-                          , userName : val.userName
+                          , userName : val.displ
                           , time : FirebaseChat.timestampToTime(val.timestamp)
                           , message : val.message
                       });
@@ -650,15 +650,15 @@
                   day = date.getDate(),
                   hour = date.getHours(),
                   minute = date.getMinutes(),
-                  week = new Array('일', '월', '화', '수', '목', '금', '토');
-              var convertDate = year + "년 "+month+"월 "+ day +"일 ("+ week[date.getDay()] +") ";
+                  week = new Array('Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat');
+              var convertDate = year +month+ day +" ("+ week[date.getDay()] +") ";
               var convertHour="";
               if(hour < 12){
-                  convertHour = "오전 " + FirebaseChat.pad(hour) +":" + FirebaseChat.pad(minute);
+                  convertHour = FirebaseChat.pad(hour) +":" + FirebaseChat.pad(minute) + "AM" ;
               }else if(hour === 12){
-                  convertHour = "오후 " + FirebaseChat.pad(hour) +":" + FirebaseChat.pad(minute);
+                  convertHour = FirebaseChat.pad(hour) +":" + FirebaseChat.pad(minute) + "PM";
               }else{
-                  convertHour = "오후 " + FirebaseChat.pad(hour - 12) +":" + FirebaseChat.pad(minute);
+                  convertHour = FirebaseChat.pad(hour - 12) +":" + FirebaseChat.pad(minute) + "PM";
               }
               return convertDate + convertHour;
           }
@@ -742,8 +742,8 @@
                       var store = tx.objectStore(objectName);
                       store.get(user.uid).onsuccess = function(event){  //user.uid 기준으로 IndexedDB 데이터를 읽어온다
                           var data = event.target.result;
-                          console.log('IndexedDB query 결과 : ', data);
-                          console.log('saveUserAtIndexedDB isSave 파라미터', isSave);
+                          console.log('IndexedDB query result : ', data);
+                          console.log('saveUserAtIndexedDB isSave parameter', isSave);
                           if(!data){  //데이터가 없으면 저장
                               store.put({
                                   uid: user.uid
@@ -764,7 +764,7 @@
                           }
                       }
                       tx.oncomplete = function() {
-                          console.log('IndexedDB 트랜잭션 완료')
+                          console.log('IndexedDB transaction complete')
                           db.close();
                       };
                   }
@@ -782,40 +782,40 @@
               if(this.validateJoinForm(email, password, rePassword)){
                   var cbCreateUserWithEmail = function(user){
                       this.saveUserAtIndexedDB(user ,userName, false); //추가 메소드
-                      console.log('이메일 가입 성공 : ', JSON.stringify(user));
+                      console.log('Email login success : ', JSON.stringify(user));
                       //프로필 업데이트 - 이메일 가입시 유저이름 파라미터를 보내지 않으므로 가입 성공 후 처리
                       user.updateProfile({
                           displayName: this.userName,
                       }).then(function() {
-                          console.log('userName 업데이트 성공')
+                          console.log('userName update success')
                       }).catch(function(error) {
-                          console.error('userName 업데이트 실패 : ', error );
+                          console.error('userName update error : ', error );
                       });
                       //인증 메일 발송
                       this.auth.useDeviceLanguage(); // 이메일 기기언어로 세팅
                       user.sendEmailVerification().then(function() {
-                          console.log('인증메일 발송 성공')
+                          console.log('email verification mail sent success')
                       }).catch(function(error) {
-                          console.error('인증메일 발송 에러', error);
+                          console.error('email verification mail sent failure', error);
                       });
                   }
                   var cbAfterPersistence = function(){
                       return this.auth.createUserWithEmailAndPassword(email, password)
                           .then(cbCreateUserWithEmail.bind(this))
                           .catch(function(error) {
-                              console.error('이메일 가입시 에러 : ', error);
+                              console.error('email join error : ', error);
                               switch(error.code){
                                   case "auth/email-already-in-use":
-                                      alert('이미 사용중인 이메일 입니다.');
+                                      alert('This email is already in use.');
                                       break;
                                   case "auth/invalid-email":
-                                      alert('유효하지 않은 메일입니다');
+                                      alert('This email is not a valid email.');
                                       break;
                                   case "auth/operation-not-allowed":
-                                      alert('이메일 가입이 중지되었습니다.');
+                                      alert('Join was paused.');
                                       break;
                                   case "auth/weak-password":
-                                      alert("비밀번호를 6자리 이상 필요합니다");
+                                      alert("Password should be longer than 6 charaters.");
                                       break;
                               }
                           });
@@ -823,7 +823,7 @@
                   this.auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
                       .then(cbAfterPersistence.bind(this))
                       .catch(function(error) {
-                          console.error('인증 상태 설정 중 에러 발생' , error);
+                          console.error('Error while verification' , error);
                       });
               }
           }
@@ -832,19 +832,19 @@
            */
           FirebaseChat.prototype.signInWithPopup = function(provider) {
               var cbSignIn = function(result){
-                  console.log('로그인 성공')
+                  console.log('Login success')
                   this.saveUserAtIndexedDB(result.user, null , false);
               }
               return  this.auth.signInWithPopup(provider).then(cbSignIn.bind(this)).catch(function(error) {
-                  alert('로그인에 실패하였습니다');
-                  console.error('로그인 에러',error);
+                  alert('Failed to login');
+                  console.error('Login error',error);
               });
           }
           /**
            * 로그아웃
            */
           FirebaseChat.prototype.logOut = function(){
-              if(confirm('로그아웃 하시겠습니까?')){
+              if(confirm('Would you like to logout?')){
                   if(this.database){
                       this.database.goOffline(); // 데이터 베이스를 명시적으로 오프라인
                   }
@@ -856,10 +856,10 @@
            */
           FirebaseChat.prototype.onAuthChange = function(user){
               if (user) {
-                  console.log('user로그인 : ',JSON.stringify(user));
+                  console.log('user Login : ',JSON.stringify(user));
                   this.setLogin(user); //파라미터 추가
               } else {
-                  console.log('로그아웃');
+                  console.log('Logout');
                   this.setLogOut();
               }
           }
@@ -876,14 +876,14 @@
                       var store = tx.objectStore(objectName);
                       store.get(user.uid).onsuccess = function(event){ // indexedDB에서 uid값으로 쿼리
                           var data = event.target.result;
-                          console.log('IndexedDB query 결과 : ', data);
+                          console.log('IndexedDB query result : ', data);
                           console.log('checkAndSaveUser isSave' , data.isSave);
                           if(!data.isSave){
                               fbChat.saveUserAtRealDB(data);
                           }
                       }
                       tx.oncomplete = function() {
-                          console.log('IndexedDB 트랜잭션 완료')
+                          console.log('IndexedDB transaction complete')
                           db.close();
                       };
                   }
@@ -898,7 +898,7 @@
               var userRef = this.database.ref('Users/' + user.uid);
               var cbUserRefResult = function(dataSnapShot){ // User Ref에 데이터가 없을 경우 데이터 저장
                   if(!dataSnapShot.hasChildren()){
-                      console.log('saveUserAtRealDB 저장');
+                      console.log('saveUserAtRealDB save');
                       userRef.set({  //데이터 저장
                           email: user.email
                           , profileImg: user.photoURL ? user.photoURL : ''
@@ -930,22 +930,22 @@
                   var cbSignInEmail = function() {
                       return  this.auth.signInWithEmailAndPassword(email, password)
                           .then(function(){
-                              console.log('이메일 로그인 성공');
+                              console.log('Email login success');
                           })
                           .catch(function(error) {
-                              console.error('이메일 로그인 과정 에러', error);
+                              console.error('Email login error', error);
                               switch(error.code){
                                   case "auth/invalid-email":
-                                      alert('유효하지 않은 메일입니다');
+                                      alert('This email is invalid.');
                                       break;
                                   case "auth/user-disabled":
-                                      alert('사용이 정지된 유저 입니다.')
+                                      alert('This user is disabled.')
                                       break;
                                   case "auth/user-not-found":
-                                      alert('사용자를 찾을 수 없습니다.')
+                                      alert('This user is not found.')
                                       break;
                                   case "auth/wrong-password":
-                                      alert("잘못된 패스워드 입니다.");
+                                      alert("Wrong password. Try again.");
                                       break;
                               }
                           });
@@ -960,12 +960,12 @@
           FirebaseChat.prototype.validateJoinForm = function(email, password, rePassword){
               //이메일 유효성 체크
               if(!FirebaseChat.emailCheck(email)){
-                  alert("이메일 형식에 맞지 않습니다");
+                  alert('Incorrect email format.');
                   return false;
               }
               //패스워드 동일 여부 체크
               if(password !== rePassword){
-                  alert('패스워드가 동일하지 않습니다');
+                  alert('Two passwords do not match.');
                   return false
               }
               return true;
@@ -994,7 +994,7 @@
               this.auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
                   .then(this.signInWithPopup.bind(this, facebookProvider))
                   .catch(function(error) {
-                      console.error('인증 상태 설정 중 에러 발생' , error);
+                      console.error('Verification Error' , error);
                   });
           }
           /**
@@ -1005,7 +1005,7 @@
               this.auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
                   .then(this.signInWithPopup.bind(this, googleProvider))
                   .catch(function(error) {
-                      console.error('인증 상태 설정 중 에러 발생' , error);
+                      console.error('Verification Error' , error);
                   });
           }
           /**
@@ -1020,8 +1020,8 @@
               $('#dvAddUser').modal();
               if(navigator.serviceWorker){
                   navigator.serviceWorker.register('/firebase-messaging-sw.js')
-                      .then(function(reg){console.log('서비스워커 등록성공 :', reg)})
-                      .catch(function(error){console.log('서비스워커 등록실패 :', error)});
+                      .then(function(reg){console.log('Service worker join success:', reg)})
+                      .catch(function(error){console.log('Service worker join failure :', error)});
               }
           });
       </script>
