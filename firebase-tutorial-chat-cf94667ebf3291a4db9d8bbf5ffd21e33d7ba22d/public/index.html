@@ -63,13 +63,13 @@
     <div id="dvAuth">
       <div id="dvLogin">
           <h5>Login</h5>
-          <div id="dvSocial">
-              <!-- <ul class="btnGroup">
+          <!-- <div id="dvSocial">
+              <ul class="btnGroup">
                   <li id="liGoogleBtn" class="waves-effect waves-teal btn-flat"><i></i>구글 계정으로 가입 및 로그인</li>
                   <li id="liFacebookBtn" class="waves-effect waves-teal btn-flat"><i></i>페이스북 계정으로 가입 및 로그인</li>
-              </ul> -->
+              </ul>
               <em class="or">or</em>
-          </div>
+          </div> -->
           <div id="dvEmail">
               <input type="email" id="userName" name="userName" class="input-text" placeholder="Email Address">
               <input type="password" id="password" name="password" class="input-text" maxlength="17" placeholder="Password">
@@ -651,7 +651,7 @@
                   hour = date.getHours(),
                   minute = date.getMinutes(),
                   week = new Array('Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat');
-              var convertDate = year +month+ day +" ("+ week[date.getDay()] +") ";
+              var convertDate = year + '/' +month+ '/' day +" ("+ week[date.getDay()] +") ";
               var convertHour="";
               if(hour < 12){
                   convertHour = FirebaseChat.pad(hour) +":" + FirebaseChat.pad(minute) + "AM" ;
