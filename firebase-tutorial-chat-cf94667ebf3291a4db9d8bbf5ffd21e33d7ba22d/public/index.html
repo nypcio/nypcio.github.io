@@ -590,7 +590,7 @@
                   roomListTarget.click();
               }else{
                   // 메세지 로드
-                  this.roomTitle = targetUserName+;
+                  this.roomTitle = targetUserName;
                   this.roomUserlist = [targetUserUid, this.auth.currentUser.uid]; // 챗방 유저리스트
                   this.roomUserName = [targetUserName, this.auth.currentUser.displayName] // 챗방 유저 이름
                   this.roomId = this.MAKEID_CHAR + this.auth.currentUser.uid + this.DATETIME_CHAR + FirebaseChat.yyyyMMddHHmmsss();
