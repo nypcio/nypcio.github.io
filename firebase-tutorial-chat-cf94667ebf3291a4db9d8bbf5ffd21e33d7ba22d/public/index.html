@@ -651,7 +651,7 @@
                   hour = date.getHours(),
                   minute = date.getMinutes(),
                   week = new Array('Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat');
-              var convertDate = year + '/' +month+ '/' day +" ("+ week[date.getDay()] +") ";
+              var convertDate = year + "/" +month+ "/" + day + " ("+ week[date.getDay()] +") ";
               var convertHour="";
               if(hour < 12){
                   convertHour = FirebaseChat.pad(hour) +":" + FirebaseChat.pad(minute) + "AM" ;
