@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2017 NYPC Final Round 1214 Question 1</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Square</h1>
+       
+
+        <p style ="text-align: relative"> 
+        You are given a polygon on a 2-D plane. The given polygon has 6 points and is in the shape of an L. The edges of the polygon are always either horizontal or vertical and the lengths are given in the following order: 
+        Starting from the top-left point to the top-right point that edge's length is given first, and the remaining edges' lengths are given in clockwise order. 
+        </p>
+
+        <center> <img src="images/2017_final_1214_1.png"> </center>
+          <p style="text-align: relative"> 
+         In this problem we wish to count the number of squares with edges length less than or equal to K that can be drawn inside this polygon. The squares may overlap. The squares' edges must be parallel to the edges of the polygon and the edges' lengths should always be an integer. For the image above, we can see that the number of squares we can draw with edges length 1 is 14. For edges length 2, we can draw 7 squares. Therefore, if K = 2, the answer becomes 21. <br> 
+
+         <br>
+         One thing that we need to be careful of is that it is possible for the 3rd length given to be 0. In that case, the given polygon is a rectangle. First, second, and fourth length given are always greater than 0. <br>
+
+         
+           </p>
+
+       
+
+        <h2>Input</h2>
+        <p style="text-align: relative">
+      The first line of input has a, b, c, d, and K. a, b, d, K are all integers greater than 0, and c is an integer greater than or equal to 0. All values are less than or equal to 100. 
+        </p>
+
+        <h2>Output</h2>
+        <p style="text-align: relative">
+      Output the number of squares you can draw given K. <br>
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+     3 2 1 2 2
+
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+        21
+</pre>
+
+
+     
+
+
+      
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        The input cases have 4 types: To get points, you need to have correct outputs for all test cases for one type of input test cases. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 1 (10 marks): c = 0, K = 1.<br>
+             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 2 (10 marks): K = 1. <br>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 3 (10 marks): c = 0. <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 4 (40 marks): No other restrictions other than the ones listed in the problem. <br>
+        </p>
+
+
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2017 NYPC Stage Three Question 1</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Blue Area</h1>
+       
+
+        <p style ="text-align: relative"> 
+        On a white canvas (2-D), we draw and color in a square where the sides are parallel with the x and y axes of the 2-D coordinate system with blue markers. As a result, the frame and the inside of the square will be all colored blue. <br>
+
+        N of these squares lie on a plane. Each square will be represented by its bottom left coordinate and the length of the square. In such a case, our goal is to write a program on how many of these blue areas can occur. <br> 
+
+        Here, the connected blue area means that if arbitrary points a and b were selected, an ant can started at point a and get to point b by solely crossing the blue area (by at least one route). By using the fact that the sides of the square are parallel to the x and y axes, we can redefine the blue area P as: for two arbitrary points a and b in P, by connecting a and b and with lines parallel to the axes in the blue area gives us at least one route. <br>
+        </p>
+
+        <p style="text-align: relative"> 
+       In the figure below, we see 3 square with 2 squares with side length 1 with the bottom left coordinates being (1, 1) and (2, 2). We also see one with side length 2 with the bottom left coordinate being (4, 1). <br>
+       Let us label the left 2 squares A and B. A and B overlap at point (2, 2) and because the square area includes the frame, these 2 squares form one blue area. In other words, if we choose an arbitary point a in A and a point b in B, with a combination of lines parallel to the x and y axes, a path P can be made that connects point a and point b within that blue area. This path must pass (2, 2). In this diagram, we see that there are 2 connected blue areas. 
+        </p>
+        <center> <img src="images/2017_prelim_3_1.jpg"> </center>
+        
+
+
+
+        <h2>Input</h2>
+        <p style="text-align: relative">
+          The first line has the number N, which represents the number of squares and N can be greater than or equal to 1 and less than or equal to 1000. <br>
+          Then, the next N lines have 3 values a, b, and L separated by a space. (0 &ge; a, b &le; 10<sup>9</sup>). a, b here represent the x and y coordinate of the bottom left coordinate of the square and L is the square's side length. Every square's coordinates are less than 10 <sup>9</sup>. 
+        </p>
+
+       
+        <h2>Output</h2>
+        <p style="text-align: relative">
+       Output the number of blue areas. 
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+       3
+       1 1 1 
+       2 2 1
+       4 1 1 
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+        2
+</pre>
+
+
+        <h2>Input Example 2</h2>
+        <pre>
+       5
+       1 1 2
+       2 2 2
+       4 1 1 
+       5 2 1 
+       5 2 1 
+        </pre>
+
+        <h2>Output Example 2</h2>
+<pre>
+        1
+</pre>
+
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+          The input cases have 3 types: To get points, you need to have correct outputs for all test cases for one type of input test cases. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 1 (25 marks): N &le; 100, and all x and y coordinates of the points of the square should be less than or equal to 100. <br>
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 2 (60 marks): N &le; 1000, and all x and y coordinates of the points of the square should be less than or equal to 1000. <br>
+             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 3 (35 marks): No other restrictions other than the ones listed in the problem. <br>
+        </p>
+        </p>
+
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

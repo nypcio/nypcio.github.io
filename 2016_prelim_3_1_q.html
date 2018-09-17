@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2016 NYPC Preliminary Round 3 Question 1</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Calculate your best lap</h1>
+       
+        <!-- Add in Image here -->
+
+        <p style ="text-align: relative"> 
+        Kartrider is a driving game released in 2004 that is still loved by many players.
+
+        </p>
+
+        
+ <center> <img src="images/2016_prelim_3_1_1.png"> </center>
+
+         <p style="text-align: relative">
+       One game in Kartrider has many laps. Essentially, the player who enters the finish line first in the very last lap is considered the winner, but there are still times recorded for the best lap. <br>
+
+        Write a program that outputs the fastest time one player drove in all of the L laps the players drove.<br>
+        </p>
+        
+
+
+        <h2>Input</h2>
+        <p style ="text-align: relative">
+         
+         In the first line, L, the number of laps completed by the player is given. L should be greater than or equal to 1 and less than or equal to 50. Across the next L lines, in the format of "00:00.000", the time taken for driving each individual lap is given. Minute and seconds are always between 0 and 59 inclusive, and millisecond is between 0 and 999 inclusive.
+        </p>
+
+        <h2>Output</h2>
+        <p style ="text-align: relative">
+        Output the lap number L with the fastest time. If there are multiple laps with the fastest time, output the last lap number.
+        </p>
+       
+       <h2>Input Example 1</h2>
+       <pre>
+       3
+       03:15.085
+       03:12.199
+       03:09.182
+       </pre>
+        
+        <h2>Output Example 1</h2>
+        <pre>
+          3
+        </pre>
+        <p style="text-align: relative">
+        The last lap had the fastest time. 
+        </p>
+
+           <h2>Input Example 2</h2>
+       <pre>
+       3
+       01:59.000
+       02:00.000
+       01:59.000
+       </pre>
+        
+        <h2>Output Example 2</h2>
+        <pre>
+          3
+        </pre>
+        <p style="text-align: relative">
+        There were multiple laps with the same shortest time, so output the last lap number.
+        </p>
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        Marks will be awarded only if all the hidden test cases pass. Otherwise, you will not receive any marks. 
+        </p>
+
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

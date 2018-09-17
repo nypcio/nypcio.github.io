@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2016 NYPC Preliminary Round 2 Question 4</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Find the center of the circle: Overlap</h1>
+       
+        <!-- Add in Image here -->
+
+        <p style ="text-align: relative"> 
+        In web serivces or online games, there are often automated programs so that the computers can do the work instead of humans. <br>
+
+        This happens without the intention of the developer, so there are regulations placed or even tests that asks whether you are a robot or a human. For example, CAPTCHA is one of them. <br>
+
+       In order to really determine whether the user is a robot or a human, the problems need to be something that is hard for robots to solve but easy for humans. If this is not done well, it could produce the opposite effect which is what would want the least. <br>
+
+        
+        Louis, after creating the most recent blog, he wants to develop a program that detects spam bots so that they won't leave useless comments on his blog. The system Louis wants to develop is that given an image with two circles, whether they are able to accurately click on the two circles. The images will always be the size of 100 pixel by 100 pixel, and the two black circles in the image can now be overlapped. For example, the following image is an example. <br>
+
+        </p>
+
+        
+         <center> <img src="images/2016_prelim_2_3_1.png"> </center>
+        <p style="text-align: relative">
+        Louis thought this was the way to truly prevent such robots from spamming his blog. <br>
+
+         However, angered by Louis's laziness in improving his program, Tarek decided to create a robot program that will accurately detect two circles in the image. If this program could detect the two circles' centers and radii, then Louis would be so embarrassed. <br>
+
+        So, let us help Marie develop such program.
+        </p>
+        
+
+
+        <h2>Input</h2>
+        <p style ="text-align: relative">
+         In 100 lines, each line has 100 characters and each character being either 0 or 1. 0 or 1 represents the pixel's color. 1 is black, and 0 is white. <br>
+
+         The image contains two full circles that have radii greater than or equal to 15 with overlap. In fact, one circle could be completely within one circle. We say the two circles overlap even if only one pixel is included in both circles.  The center and the radius of the circle is always an integer.<br>
+
+         The algorithm mentioned below is not required in solving this problem, but if interested, take a look at "Algorithm to color the circle". <br>
+        </p>
+
+        <h2>Output</h2>
+        <p style ="text-align: relative">
+        Output the first circle and second circle's x-coordinate and y-coordinate for the center and the radius of each circle in respective order. All results should be integers and the radius must be greater than or equal to 15. <br>
+
+        The pixel grid is represented as the following: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - The top left is (0, 0), the top right is (99, 0), bottom left is (0, 99), and the bottom right is (99, 99). <br>
+
+        It doesn't matter which circle's information you output first. If it's the case that one circle is completely within one circle, it doesn't matter which circle's information you decide to output. Furthermore, given the output information, if you are able to draw the same image as given in the input, that is considered correct. (However, the radius must be greater than or equal to 15).
+        </p>
+        <h2>Algorithm to color the circle</h2>
+       
+
+      
+
+         <p style="text-align: relative">
+         This is just for reference, so if you aren't interested, you do not have to read. <br>
+
+         In order to draw a circle with center (p, q) and radius r, we use an algorithm called Midpoint circle algorithm. <br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Into the midpoint circle algorithm, plug in x = r, y = 0, and err = 0. <br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - For the case that x is greater than or equal to y, we repeat the following: <br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> Color all pixels from (p - x, q - y) to (p + x, q - y).<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> Color all pixels from (p - x, q + y) to (p + x, q + y).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> Color all pixels from (p - y, q - x) to (p + y, q - x).<br>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> Color all pixels from (p - y, q + x) to (p + y, q + x).<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> Increment y by 1.<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> Increase err by 1 + 2 * y.<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> If 2 * (err - x) + 1 is greater than 0, <br>
+
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Decrement x by 1.<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Increase err by 1 - 2 * x.<br>
+        </p><br>
+
+        <h2>Extra Images</h2>
+        <p style="text-align: relative">
+        These are some example images the input will receive.
+        </p>
+         <center> <img src="images/2016_prelim_2_3_2.png"> </center>
+        
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        Marks will be awarded according to the number of hidden test cases the program passes. 
+        </p>
+       
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

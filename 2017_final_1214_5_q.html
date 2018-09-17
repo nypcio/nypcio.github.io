@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2017 NYPC Final Round 1214 Question 5</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Tetris</h1>
+       
+
+        <p style ="text-align: relative"> 
+        Tetris pro, Bazzi, has a hobby of playing tetris with other characters and taking their snacks. The other characters decided to come together to beat Bazzi by creating a tetris macro. <br>
+
+        <br>
+        Tetris is a game made out of 4 grid blocks, filling a 20*10 grid plane. The rules are as follows: <br> 
+        - At the start, the grid plane is empty. <br>
+        - When the game begins, in a set order, one of the seven blocks fall from top to bottom. The block falls until it hits different block. <br>
+        </p>
+        <center> <img src="images/2017_final_1214_5.jpg"> </center>
+        <p style="text-align: relative">
+        - The player can move the destination location of the blocks and rotate the blocks. However, unlike other tetris games, you cannot do so while the block is falling. <br>
+        - Blocks cannot leave the grid plane. If it does, the game ends. <br>
+        - A row filled with blocks gets removed and the top blocks fall. <br>
+        - You can use a function called "hold". If you "hold" a block, you can swap it with the falling block. At the start, the hold section is open, and once you hold a falling block, the next block becomes the falling block and the hold section is filled with the block you just held. <br>
+        - You cannot use the "hold" function in a row. <br>
+        - After making the final block fall, you cannot use the block in the hold section. <br>
+
+        To win a tetris battle, you need to have a high combo score. <br>
+        - At the start, you have a combo score of 0. <br>
+        - Your combo increases by one if there is a line that is removed, otherwise your combo score is reset to 0. <br>
+
+        <br>
+        Let us create a program that tells us the way to get the max comobo score given the ordering of blocks.
+        </p>
+
+        <h2>Input</h2>
+        <p style="text-align: relative">
+      The first line of iput has the number of games, T where T is greater than or equal to 1 and less than or equal to 10. For each game, the first line has the number of blocks, N, where 1 &le; N &le; 100. The second line has N block numbers that show us the order the blocks fall. The blocks are labelled 0 to 6 in the order of the image above. 
+        </p>
+
+        <h2>Output</h2>
+        <p style="text-align: relative">
+     For each test case, output the actions taken on each turn across N + max(0, (hold_count - 1)) lines. If you used the "hold" function, output H, otherwise, output the rotation number r, and the falling block's leftmost x-coordinate. (0 &le; r &le; 3, 0 &le; x &le; 9)
+     The leftmost coordinate of the grid plane is 0, and the right most is 9. Block rotates by 90 degrees clockwise.  <br>
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+1
+7
+0 1 0 0 0 1 0
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+
+0 0
+H
+0 4
+0 2
+0 6
+H
+0 0
+H
+0 8
+</pre>
+
+
+
+  <p style="text-align: relative">
+ The given input has 2 combos. On line 7, we deleted that line by block 1, and on line 9, we deleted that line by block 1 as well.
+  </p>
+
+
+      
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        We calculate each test case score as follows: <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - If you output something wrong, or you are unable to place your blocks in the middle of the game, you do not receive any marks. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - In the case the above scenario does not apply to you, for each test case you will receive: <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; - Score = (current_test_case_score) * (0.5 + 0.5 (T + 1)/(B + 1)) where: <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - T = Maximum combo of the test case. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - B = The maximum combo of any contestant for that test case. <br>
+
+        Total score is the sum of all test cases. <br>
+        </p>
+
+
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

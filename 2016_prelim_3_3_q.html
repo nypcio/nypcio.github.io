@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2016 NYPC Preliminary Round 3 Question 4</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>A Clock with only an hour hand</h1>
+       
+
+        <p style ="text-align: relative"> 
+        Bazzi dropped the only clock present in the house. As a result, only the hour hand remains. 
+
+
+        </p>
+
+     <center> <img src="images/2016_prelim_3_4_1.png"> </center>
+
+             <p style="text-align: relative">
+        Bazzi doesn't wish to spend money on a new clock and he believes that he will be able to tell the exact time with only the hour hand by looking at the exact location of it, so he decided to write a program that will determine the exact time for him given the location of the hour hand. <br>
+
+        Let us design a program that outputs the exact time given the exact location of the hour hand in a perfect circle clock. 
+        </p>
+        
+
+        <h2>Input</h2>
+        <p style ="text-align: relative">
+         
+        The x and y coordinate of the tip of the hour hand is given in integers. The maximum absolute value for both values are less than or equal to 1,000,000. If the center of the clock is (0, 0), 3'o clock direction is the positive x-axis, and the 6'o clock direction is the positive y-axis. Therefore, if the clock is exactly pointing at 12, x is 0 and y is negative. <br>
+
+        The length of the hour hand is not given, but it's precise enough so that we can always tell the exact time even until the second. 
+        </p>
+
+        <h2>Output</h2>
+        <p style ="text-align: relative">
+        Output the most exact time possible in the format of HH:MM:SS. One digit integer will have a 0 added to the front, so HH goes from 01 to 12, MM goes from 00 to 59, and ss goes from 00 to 59 as well. One second difference from the exact time will be considered correct, so it doesn't matter if you decide to drop or up the time by 1 second.
+        </p>
+       
+       <h2>Input Example 1</h2>
+       <pre>
+       -866025 -500000
+         </pre>
+        
+        <h2>Output Example 1</h2>
+        <pre>
+          10:00:00
+        </pre>
+        
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        Marks will be awarded based on the number of the hidden test cases that pass.
+        </p>
+
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2017 NYPC Stage Three Question 5</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Find the way all at once</h1>
+       
+
+        <p style ="text-align: relative"> 
+        We can calculate the shortest distance of an object moving to a specific destination on a 2-D coordinate plane using Dijkstra or A* algorithm. However, for a strategy simulation game, in the case multiple units are moving together and if it's not possible for two or more units to be in the same coordinate, these units become obstacles, making it harder for us to directly apply these algorithms.  <br>
+
+        Let us great a program that allows all units to move to its specific destinations as quick as possible under these conditions: <br>
+
+        <br> 
+        - In each unit, we are given a color. There can be multiple units with the same color, and for each color, the destinations are selected based on the units with the same color. <br>
+        - In a unit, there can be a max of 2 colors. <br>
+        - For every turn in the simulation, each unit can either move up down left right by one step or not move at all. <br>
+        - For every turn in the simulation, a unit can only move to an empty location at its current time. Meaning, if a unit next to the unit you are trying to move moved on step does not mean you can move to that location in that turn. <br> 
+        - At each turn, preplanned moves are made all at once and that turn finishes. <br>
+        - Two or more units cannot stay in one location together. Therefore, the starting points of the units are always in a different location, and two or more units cannot move to the same place. <br>
+        - Everywhere on the map is connected other than some obstacle walls placed, and units cannot move out of the map. <br>
+        - After all turns, if the unit places its color to one of its given destination points, then we say that unit has arrived to its destination. <br>
+        
+        </p>
+
+
+    
+      
+
+        
+
+        <h2>Input</h2>
+        <p style="text-align: relative">
+       The first line has height H and width W. (1 &le; H &le; 100, 1 &le; W &le; 100). Across the next H lines, for each line we are given the map with W letters. The map letters are: #, ., A, B, a, and b. <br>
+       These the rules on how to read the map: <br>
+
+       &nbsp;&nbsp;&nbsp; - # means an obstacle wall. The unit cannot move pass this. <br>
+       &nbsp;&nbsp;&nbsp; - . means an empty space. The unit can move pass this. <br>
+       &nbsp;&nbsp;&nbsp; - Captial letters such as A means that that color's unit is placed there. The total number of units will always be less than or equal to 100. <br>
+       &nbsp;&nbsp;&nbsp; - Lowercase letters such as a means that that color's unit's destination is there. The unit can get to this destination by moving through empty spaces. <br>
+
+       <br> 
+
+        For every test case, to show you how the input data generally looks like, we've provided you a file. The input file may not be in the exact format as shown in the files. Image files are as follows: <br>
+        &nbsp; &nbsp; &nbsp; -  The unit's current location is either colored in blue/orange shape. <br>
+        &nbsp; &nbsp; &nbsp; -  The unit's destination is either not filled in blue/orange shape. <br>
+        &nbsp; &nbsp; &nbsp; -  The walls or obstacles are colored black. <br>
+
+        <br>
+        You may download the file here. <a href="https://nypc.github.io/2017/stage3-5.zip">Link</a>
+
+        </p>
+
+        <h2>Output</h2>
+        <p style="text-align: relative">
+        &nbsp; &nbsp; &nbsp; -  On the first line, output the number of turns you wish to take (T). <br>
+        &nbsp; &nbsp; &nbsp; -  For each turn, output N, the number of units you wish to move. <br>
+        &nbsp; &nbsp; &nbsp; -  Across the next N lines, output <current_height_loc> <current_width_loc> <moving_direction>. <br>
+        &nbsp; &nbsp; &nbsp; - For <current_height_loc>, the top most is 1 and bottom most is H.  <br>
+        &nbsp; &nbsp; &nbsp; - For <current_width_loc>, the left most is 1 and right most is W.  <br>
+        &nbsp; &nbsp; &nbsp; - <moving_direction> can be U, D, L, R where U is up, D is down, L is left, and R is right. <br>
+        &nbsp; &nbsp; &nbsp; - The total number of movements cannot exceed 120,000.
+
+
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+        2 5
+        bAB.a
+        #..##
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+        4
+1
+1 3 D
+2
+1 2 R
+2 3 L
+2
+1 3 R
+2 2 U
+2
+1 4 R
+1 2 L
+</pre>
+
+
+        <h2>Input Example 1</h2>
+        <pre>
+    3 5
+AB...
+A###.
+b..aa
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+        6
+1
+2 1 D
+2
+1 1 D
+3 1 R
+3
+1 2 L
+2 1 D
+3 2 R
+3
+1 1 D
+3 1 R
+3 3 R
+3
+2 1 D
+3 2 R
+3 4 R
+1
+3 3 R 
+</pre>
+
+
+      
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+       For each test case, this is how you receive marks. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - If you output something wrong, or if more than half of the unit did not arrive to the destination, then you do not receive marks. <br>
+             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - We mark the same test input multiple times. In the case that your answer changes throughout these multiple tests, you do not receive any marks. <br>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - If you do not apply to the above situation, you receive mark penalties under the following rules:  <br>
+               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; - Penalty = (number_units_that_didn't_arrive_to_dest) * 50 + (number_of_turns) <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - For each test case you receive: (full marks of the test case) * (B / T) where: <br>
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; - T = Penalty of that test case you received <br>
+                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; - B = the minimum penalty mark of all the contestants who solved this problem <br>
+
+
+                   Your total marks are your points added up from all test cases. By the way this question is marked, your score may vary continuously. 
+        </p>
+
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

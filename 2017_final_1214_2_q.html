@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2017 NYPC Final Round 1214 Question 2</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Knit a Hat</h1>
+       
+
+        <p style ="text-align: relative"> 
+        Every year, 2,700,000 babies die within the month they were born and 960,000 babies die on the day they were born. The reason for their deaths are pneumonia, diarrhea, malaria or any other diseases that may have been present while they were being born. However, preventing such deaths is not a super complicated process. When cutting the umbilical cord, we just need to use a sterilized knife, put some pneumonia precenting medication into the baby, put on warm hats for the babies so that they don't die of hypothermia. Through a campaign called "Knit a Hat," we wish to be some help.
+        </p>
+<br>
+<br>
+          <p style="text-align: relative"> 
+         To join in on this campaign, N Nexon employees are going to knit some hats. Every employee will start knitting the hats at the same time, and one employee cannot knit multiple hats at the same time. However, they are able to knit the next hat once they finish one. The time each employee takes to knit a hat varies, but the experience doesn't make them knit the hat faster nor slow them down cause they are tired. Nexon employees wish to knit M hats as soon as possible as they are busy. As mentioned earlier, because every employee knits a hat at a different speed, it is crucial to split up the number of hats each employee will knit to make this whole process effective.<br> 
+
+         <br>
+         Nexon has asked you to develop an algorithm to produce M hats as soon as possible with N Nexon employees with varying knitting speed. <br>
+
+         
+           </p>
+
+       
+
+        <h2>Input</h2>
+        <p style="text-align: relative">
+      The first line of input has N, the number of employees (1 &le; N &le; 1,000) and the number of hats that needs to be made, M, (1 &le; M &le; 1,000). The following N lines will have the ith employee's speed, S_i (1 &le; S_i &le; 1,000).
+        </p>
+
+        <h2>Output</h2>
+        <p style="text-align: relative">
+      Output the minimum time it takes for N employees to knit M hats. <br>
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+1 10
+30
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+      300
+</pre>
+
+
+        <h2>Input Example 2</h2>
+        <pre>
+2 10
+1
+11
+
+        </pre>
+
+        <h2>Output Example 2</h2>
+<pre>
+      10
+</pre>
+
+
+        <h2>Input Example 3</h2>
+        <pre>
+2 10
+1
+9
+        </pre>
+
+        <h2>Output Example 3</h2>
+<pre>
+      9
+</pre>
+
+  <p style="text-align: relative">
+  Example 1 has one employee, so if they make one hat in 30 minutes, making 10 will take 300 minutes. <br>
+
+  <br>
+  Example 2 has two employees, but making 10 hats with just one employee who makes one hat in 1 minute is the most effective.
+
+  <br>
+  <br>
+  Example 3 has two employees, so one employee who makes a hat in 1 minute should make 9, and the other should make one, making it total to 9 minutes.
+  </p>
+
+
+      
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        The input cases have 2 types: To get points, you need to have correct outputs for all test cases for one type of input test cases. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 1 (12 marks): N = 1.<br>
+          
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 2 (40 marks): No other restrictions other than the ones listed in the problem. <br>
+        </p>
+
+
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

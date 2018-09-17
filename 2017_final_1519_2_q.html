@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2017 NYPC Final Round 1519 Question 5</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Guild</h1>
+       
+
+        <p style ="text-align: relative"> 
+       In a game, there are N users. These users have friendships with one another, so everyone has N - 1 friends. Each user has their skill score and this is an integer value. It can be a negative integer. 
+        </p>
+
+
+        <center> <img src="images/2017_final_1519_5.png"> </center>
+       
+
+        <p style ="text-align: relative"> 
+       The above image shows the relationship of 8 users and their friendshps along with their skill scores. The users can make a guild, and a guild must have more than one user and if you are in the same guild, two users must be connected to another in more than just one friendship. The guild's score is the sum of all the user's skill scores.
+       <br>
+       <br>
+       In the above scenario, to create a guild with the maximum score is joining the users with skill scores 2 and 3. In this case, the guild score becomes 5. Of course, a guild with one user with a skill score 5, makes the guild score of 5. <br>
+
+       Let's say the top user with a -4 skill score increased its skill score to 3. Then, four users can join to make a guild with a score of 9. If the bottom left user with a skill score 2 increased its skill score to a 5, then 6 users can join to make a guild with a score of 10. <br>
+
+       Given the friendship map, beginning skill scores of each users and their possible increase in scores, write a program that outputs the way to create a guild with the highest score. 
+        </p>
+        <h2>Input</h2>
+        <p style="text-align: relative">
+      The first line of input has N, the number of users. (1 &le; N &le; 100,000). Every user has a number labelled from 1 to N. Across the next N lines, skill scores are given for each user. The skill scores are always greater than or equal to -10<sup>9</sup> and less than or equal to 10 <sup>9</sup>. In the next N-1 lines, we are given the friendships. The next line has the number of upgrades or downgrades of skill scores, U. (0 &le; U &le; 100,000)
+      The following U lines have the difference of users with the user number n, and the variable number v. v is always greater than or equal to 1 and less than or equal to 10 <sup>9</sup>.
+      <br> 
+
+      In the given M, there is always a "stoneaxe" and this represents the rock axe.
+
+        </p>
+
+        <h2>Output</h2>
+        <p style="text-align: relative">
+        Output is done across U + 1 lines. 
+        The first line has the maximum guild score with the original information, and the following U lines have the maximum guild score depending on each U variatin. <br>
+                </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+8
+1 -4 3 2 2 -4 -6 5
+1 2
+2 3
+3 4
+3 6
+6 5
+3 7
+8 7
+2
+2 7
+5 3
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+
+5
+9
+10
+</pre>
+
+       
+      
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        The input cases have 4 types: To get points, you need to have correct outputs for all test cases for one type of input test cases. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 1 (10 marks): U = 0, and each user has max 2 friends. <br>
+          
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 2 (20 marks): N &le; 1,000 and U &le; 1,000. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 3 (40 marks): Each user has max 2 friends. <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 4 (50 marks): No other restrictions other than the ones listed in the problem. <br>
+      
+      
+        </p>
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

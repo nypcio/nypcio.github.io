@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2016 NYPC Preliminary Round 3 Question 2</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Level Up</h1>
+       
+        <!-- Add in Image here -->
+
+        <p style ="text-align: relative"> 
+        Sometimes when we are playing a game, there are times when we modify the experience table in order to help players level up easier. In fact, at times when the maximum level possible increases, the experience table is also modified. <br>
+
+        In such a case, in order to not affect the original characters, we need to recalculate their levels and experience scores. Let us create a program that does so. <br>
+
+        The maximum level possible currently was 45, and the experience table was as follows: <br>
+        <br>
+
+        Current Level | Experience needed to level up ------|------------ 1| 898 2 | 988 3 | 1288 4 | 1816 5 | 2590 6 | 3628 7 | 4948 8 | 6568 9 | 8506 10 | 10780 11 | 13408 12 | 16408 13 | 19798 14 | 23596 15 | 27820 16 | 32488 17 | 37618 18 | 43228 19 | 49336 20 | 55960 21 | 63118 22 | 70828 23 | 79108 24 | 87976 25 | 97450 26 | 107548 27 | 118288 28 | 129688 29 | 141766 30 | 154540 31 | 168028 32 | 182248 33 | 197218 34 | 212956 35 | 229480 36 | 246808 37 | 264958 38 | 283948 39 | 303796 40 | 324520 41 | 346138 42 | 368668 43 | 392128 44 | 416536
+
+        <br>
+        <br>
+        In the case the maximum level increases to level 70, the table changes to the following: <br>
+        <br>
+         Current Level | Experience needed to level up ------|------------ 1| 498 2 | 505 3 | 529 4 | 581 5 | 671 6 | 814 7 | 1024 8 | 1317 9 | 1711 10 | 2226 11 | 2884 12 | 3706 13 | 4718 14 | 5945 15 | 7415 16 | 9157 17 | 11202 18 | 13582 19 | 16332 20 | 19486 21 | 23083 22 | 27161 23 | 31760 24 | 36922 25 | 42691 26 | 49113 27 | 56233 28 | 64101 29 | 72766 30 | 82280 31 | 92696 32 | 104069 33 | 116455 34 | 129913 35 | 144501 36 | 160282 37 | 177318 38 | 195673 39 | 215413 40 | 236606 41 | 259322 42 | 283630 43 | 309604 44 | 337317 45 | 366845 46 | 398265 47 | 431656 48 | 467098 49 | 504674 ... | ... <br>
+
+         <br>
+         Given the current character's level and the experience score it received in the current level, by calculating the total amount of experience score it has acquired so far, write a program that outputs the new level and experience score based on the modified experience table. <br>
+
+
+        </p>
+
+        
+        
+
+        <h2>Input</h2>
+        <p style ="text-align: relative">
+         
+        Two integers L, X will be given. L is the currentl level and it is in between 1 and 45 inclusive. X is the current experience score within the current level, and it is always greater than or equal to 0 and less than the experience score needed to move on to the next level. If L is 45, X is always 0.
+        </p>
+
+        <h2>Output</h2>
+        <p style ="text-align: relative">
+        Similar to the input, output the modified level and the acquired experience score with space in between.
+        </p>
+       
+       <h2>Input Example 1</h2>
+       <pre>
+       5 0 
+       </pre>
+        
+        <h2>Output Example 1</h2>
+        <pre>
+          8 368
+        </pre>
+        <p style="text-align: relative">
+        Before changing the experience table, the acquired experience score until level 5 is 898 + 988 + 1288 + 1816 = 4990. <br>
+        After the modified experience table, experience score needed to get to level 8 is 498 + 505 + 529 + 581 + 671 + 814 + 1024 = 4622. Therefore, the level changes to 8 and the experience score left is 368.
+        </p>
+
+        <h2>Input Example 2</h2>
+       <pre>
+       10 1823
+       </pre>
+        
+        <h2>Output Example 2</h2>
+        <pre>
+          15 5924
+        </pre>
+
+        <h2>Input Example 3</h2>
+       <pre>
+       45 0 
+       </pre>
+        
+        <h2>Output Example 3</h2>
+        <pre>
+          49 332334
+        </pre>
+
+        <p style="text-align: relative">
+        Just because you were at the maximum level before the modified experience table doesn't mean you are automatically at the max level in the modified experience table. In that case, you just need to know the information until level 49. 
+        </p>
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        Marks will be awarded only if all the hidden test cases pass. Otherwise, you will not receive any marks. 
+        </p>
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

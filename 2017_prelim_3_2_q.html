@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2017 NYPC Stage Three Question 2</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Match the Tiles</h1>
+       
+
+        <p style ="text-align: relative"> 
+        The world famous tile company, AwesomeTile, decided to produce interesting tiles with Korean cahracters as it is their 100th anniversary. Square tiles are in the form of a 3 x 3 grid, and as shown below, each grid has one of the four korean words: [풀], [물], [길], [흙]. <br>
+        We wish to design a map by adding several tiles. The example below shoes the map of 4 connected tiles. we say the file/grid are "adjacent" at the connection points of the tiles and individual grids.
+        <br> 
+
+        Also, maps produced with the following rules are considered "Good maps" while if not, those maps are called "Bad maps". <br>
+        </p>
+
+        <center> <img src="images/2017_prelim_3_2_1.png"> </center>
+
+        <p style="text-align: relative"> 
+       The rules are as follows: <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1) [길] grids should always be adjacent within 1 tile. <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2) In a tile with at least one [길] grid, one of these [길] grids should be connected to at least one different tile with a [길] grid.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3) [길] grid should alawys be in some form of a line. (2 x 2 grid filled with [길] is not allowed.) <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4) [물] grid and [흙] grid should not be adjacent to one another. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5) [풀] should always be adjacent to [물] or [길]. <br>
+                </p>
+
+<p style="text-align: relative">
+Given the map, write a program that determines whether the map is "Good" or "Bad".
+</p>        
+
+
+
+        <h2>Input</h2>
+        <p style="text-align: relative">
+          First line of input has the number of types of tiles, N. (1 &le; N &le; 100,000). In the next N lines, each line has the information about the tiles. Tile information contains an integer K, which holds the specific ID of the tile, and information about the 3 x 3 grid. 
+          For convenience reasons, we will label  G(풀), W(물), R(길), D(흙) and the grid information should be read from left to right, top to bottom. The only value that shouldn't be the same is K. The following image's ID is 283 and the grid information is shown. (1 &le; K &le; 100,000 <br>
+
+          <br>
+          283 G R D G R R W W W
+                  </p>
+
+    <center> <img src="images/2017_prelim_3_2_2.png"> </center>
+
+       <p style="text-align: relative">
+       After that, the two integers C, R which represent the size of the map are given. C is the number of tiles in one row, and R is the number of rows. (1 &le; C, R &le; 300). Following R lines represent the map with the ID numbers of each grid. 
+       </p>
+        <h2>Output</h2>
+        <p style="text-align: relative">
+       Output the whether the given map is Good or Bad. 
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+       4
+33 G G G R R G G R G
+71 G R D G R R G R D
+65 G R G W R R W W W
+92 G R D R R R W W W
+2 2
+33 71
+65 92
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+        Bad
+
+</pre>
+
+
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+          Marks will be given based on the number of hidden tests the program passes.
+        </p>
+
+        <center> <img src="images/ss_img1.png"> </center>
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2017 NYPC Stage Two Question 5</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Canon</h1>
+       
+
+        <p style ="text-align: relative"> 
+        A new strategy simulation game Nexon is developing has the following rules: <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1. The location of the battle is on an N x N grid. The leftmost bottom is labelled as (1, 1) and the topright is (N, N). <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2. Each player can have K cannons placed. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3. You cannot move the cannon. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4. The shooting range of the cannon is determined the following way: <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; - If the current location of my cannon is (a, b), and the opponent's is (a', b'), the distance the cannon flew is |a - a'| + |b - b'|. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5. All cannon's range is the same. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6. Starting from your team, you can shoot one cannon each turn and a cannon that gets hit by a cannon ball gets destroyed. <br>
+
+        <br>
+
+        With the above rules, you would obviously want to win the game. Since we don't know whic hcannon the opponent will hit first, we would like to use our cannons to destroy all of the cannons the opponent owns. Upgrading the range of our cannons cost money, and we would like to minimise the cost. Let's look at the following scenario. The opponent's cannons are lablled as B, and the ones we own are labelled A. 
+        </p>
+
+                <center> <img src="images/2017_prelim_2_5.png"> </center>
+
+
+        <p style="text-align: relative"> 
+        Currently, our cannons are placed in (1, 2), (2, 3), (3, 1) and the opponent's cannons are placed at (3, 5), (4, 5), and (5, 4). <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - To hit the furthest cannon at (5, 4) from (1, 2), we need to have a shooting range of 6. (|1 - 5| + |2 - 4| = 6) <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - To hit the furthest cannon at (5, 4) from (2, 3), we need to have a shooting range of 4. (|2 - 5| + |3 - 4| = 4) <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - To hit the furthest cannon at (5, 4) from (3, 1), we need to have a shooting range of 5. (|3 - 5| + |1 - 4| = 5) <br>
+
+        <br> 
+        By looking at the cases aboce, the minimum shooting range of the cannon should be 6 in order to attack all of the opponent's cannons. Given the size of the grid, the number of cannons, and the locations of the cannons, write a program that returns the minimum shooting range needed to attack all of the opponent's cannons.
+
+        </p>
+       
+
+
+        <h2>Input</h2>
+        <p style="text-align: relative">
+          The first line of input has N, the value that tells us the size of the grid. N is greater than or equal to 1 and less than or equal to 1,000,000,000. We are also given k (1 &le; k &le; 1,000,000), which is the number of cannons on each side. 
+          The following k lines have two values a, b and they represent our cannons' locations in the form of (a, b). a and b are both greater than or equal to 1 and less than or equal to N. The next k lines have two values a', b' which are the locations of the opponent's cannons. Once again, they have the same range as a and b.
+        </p>
+
+       
+        <h2>Output</h2>
+        <p style="text-align: relative">
+        Output the minimum range needed to hit all the opponent's cannons.
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+       5 3
+1 2
+2 3
+3 1
+3 5
+4 5
+5 4
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+        6
+</pre>
+
+
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+          The input cases have 3 types: To get points, you need to have correct outputs for all test cases for one type of input test cases. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 1 (40 marks): k &le; 1,000. <br>
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 2 (80 marks): All cannons are in a line. In other words, either all the x-coordinates or the y-coordinates of the cannons are the same. <br>
+             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 3 (280 marks): No other restrictions other than the ones listed in the problem. <br>
+        </p>
+        </p>
+
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

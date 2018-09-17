@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2016 NYPC Preliminary Round 1 Question 1</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Drink the Stamina Potion</h1>
+       
+        <p style ="text-align: relative"> Potion is a common item that appears in games, and drinking it produces a lot of effects. Out of all the effects, the most common is the red potion, which boosts your energy.
+        </p>
+
+        <center> <img src="images/2016_prelim_1_1.png"> </center>
+
+        <p style ="text-align: relative"> 
+        In the currently developing game The Legend of Tales Story 3, the stamina postion has the following rules. <br>
+
+        <br>
+        Let's first say the character's current energy is A and its maximum energy is B. A and B are always positive integers. In such case, if a character drinks a potion that boosts the energy by H: <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; - If A + H doesn't go over B (the maximum energy), the character's energy becomes A + H. <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; - If A + H does exceed B, the exceeding amount (B - (A + H))'s 25% is boosted, giving the character the energy that exceeds the maximum energy. <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; - For the case where the character's energy is boosted and it goes over the maxmimum, the exceeding amount, in the case that it is a decimal number, the numbers after the decimal point is dropped. <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  - When exceeding the maxmium energy, you cannot exceed 1.5 times your original energy. Again, the numbers after the decimal point is dropped. <br>
+        <br>
+        Given the character's current energy, maximum energy, and the amount the potion boosts your energy, write a program that determines the end energy after drinking the potion. <br>
+
+        </p>
+      
+
+
+        <h2>Input</h2>
+        <p style ="text-align: relative">
+          First line of input has A, B, H with spaces in between. All input numbers are positive integers and should be less than or equal to 999. A, B, H are the current energy, maximum energy, and energy boost amount respectively. The current energy must be less than or equal to the maximum energy.
+        </p>
+
+        <h2>Output</h2>
+        <p style ="text-align: relative">
+         Output the ending result of the character's energy after drinking the potion.
+        </p>
+        <h2>Input Example 1</h2>
+        <pre>
+        50 100 30
+        </pre>
+        <h2>Output Example 1</h2>
+        <pre>
+       80
+        </pre>
+        <h2>Input Example 2</h2>
+        <pre>
+        50 100 70
+        </pre>
+
+        <h2>Output Example 2 </h2>
+        <pre>
+        105
+        </pre>
+
+        <h2>Input Example 3</h2>
+        <pre>
+        50 100 73
+        </pre>
+
+        <h2>Output Example 3</h2>
+        <pre>
+        105
+        </pre>
+
+        <h2>Input Example 4</h2>
+        <pre>
+        50 100 999
+        </pre>
+
+        <h2>Output Example 4 </h2>
+        <pre>
+        150
+        </pre>
+
+        <p style="text-align: relative">
+        Even after drinking a potion with a huge energy boost, you cannot exceed 150% of your current energy. Excessive drinking of potions can lead to addiction. 
+
+        </p>
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        Marks will be awarded according to the number of hidden test cases the program passes. If you miss even one, you will receive no marks.
+        </p>
+     
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

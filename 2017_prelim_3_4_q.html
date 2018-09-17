@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2017 NYPC Stage Three Question 4</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Ant and Road Tiles</h1>
+       
+
+        <p style ="text-align: relative"> 
+        An ant is trying to move to a destination on a 2-D plane. On this 2-D plane, there are road tiles patterned as shown below. The lines of the image represent the boundary of road tiles and continuous shapes are drawn. Some points are given coordinate values. 
+        </p>
+
+        <center> <img src="images/2017_prelim_3_4.png"> </center>
+          <p style="text-align: relative"> 
+          One of the top tiles are covered by dirt, so the boundaries of the tiles are blocked. In the above diagram, we can see that 3 tiles are blurred from (2, 8) to (18, 8). <br>
+          For an ant, crossing the boundary borders is difficult, so we want to select a path that crosses the least amount of borders but still gets them to its destination. In the above diagram, the ant can get to the destination by crossing 4 boundaries.
+           </p>
+
+        <p style="text-align: relative"> 
+        Write a program that outputs the least number of boundaries the ant has to pass to get to its destination point given the ant's starting coordinate, destination coordinate, and places wehre borders are blurred out.
+        </p>
+      
+
+        
+
+        <h2>Input</h2>
+        <p style="text-align: relative">
+       The first line of input will have the number of borders deleted represented by N. (0 &le; N &le; 3000) <br>
+       The next N lines will have the mid point coordinates of deleted tiles one by one. The line following these N lines, the starting coordinate of the ant will be given, followed by the destination coordination of the ant. Every coordinate should be greater than or equal to -100,000,000 and less than or equal to 100,000,000. there will not be a case where the ant's starting coordination and end coordination will lie on the border.
+        </p>
+
+        <h2>Output</h2>
+        <p style="text-align: relative">
+      Output the least number of borders the ant needs to cross to get to the destination.
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+       3
+        6 7
+        10 7
+        14 7
+        2 1
+        18 5
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+        4
+</pre>
+
+
+        <h2>Input Example 1</h2>
+        <pre>
+      0
+      2 1
+      18 5
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+        5
+</pre>
+
+
+      
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        The input cases have 3 types: To get points, you need to have correct outputs for all test cases for one type of input test cases. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 1 (80 marks): All coordinates are in the range of 1 to 100. <br>
+             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 2 (100 marks): N = 0 <br>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 3 (170 marks): No other restrictions other than the ones listed in the problem. <br>
+        </p>
+
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

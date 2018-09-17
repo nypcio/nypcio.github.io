@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2016 NYPC Preliminary Round One Question 2</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Erin's Clock</h1>
+       
+        <!-- Add in Image here -->
+
+        <p style ="text-align: relative"> In Erin, Mabinogi's world, we use a different calendar from the ones used in the real world. First, the year is separated into seven semesters. The seven semesters are:  <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Alban Eiler <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Beltane <br> 
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Alban Heruin <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Lughnasadh <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Alban Elved <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Samhain <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Imbolic <br>
+        </p>
+
+        <!-- image-->
+
+        <p style ="text-align: relative"> 
+            Each semester has 40 days and so the entire year in Erin is 280 days. One day is 24 hours and 1 hour is 60 mins. <br>
+
+            Erin's time passes 40 times faster than time does in the real world. Therefore, one day in the real world is Erin's one semester, and one week in the real world is Erin's one year. Furthermore, Alban Eiler is Monday, and Imbolic is Sunday if corresponded to the real world  days from Korean Standard Time. Meaning: <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Monday: Alban Eiler <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Tuesday: Beltane <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Wednesday: Alban Heruin <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Thursday: Lughnasadh <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Friday: Alban Elved <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Saturday: Samhain <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Sunday: Imbolic <br>
+            So if it is Monday in Korea, it is Alban Eiler in Erin, and if it's Samhain in Erin, it is Saturday in Korea. Given the date and time in the real world, let us create a program that determines Erin's date and time. We do not consider leap seconds nor Erin's year.
+        </p> 
+        
+
+
+        <h2>Input</h2>
+        <p style ="text-align: relative">
+          First line of input has year, month, day, hour, minute, second separated by spaces which are all represented by integers. The given times are in the timeframe of 06/22/2004 and 12/31/2100.
+        </p>
+
+        <h2>Output</h2>
+        <p style ="text-align: relative">
+        In Erin, we write: [Day], [Semester], [Hour]:[Minute]. <br>
+        Day is represented as for example, 3rd, 8th, 21st and the rules for this are as follows: <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - If the day's ten's digit is 1, we write the number and write "th" at the end. ex) 11th, 12th, 13th, etc. <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - If the day's ten's digit is not 1 : <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - If the one's digit is 1: we add "st". ex) 1st, 21st, etc. <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - If the one's digit is 2: we add "nd". ex) 2nd, 22nd, etc. <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - If the one's digit is 3: we add "rd". ex) 3rd, 23rd, etc. <br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - If none of the above cases apply, we add "th". ex) 9th, 20th, etc. <br>
+
+        When we are calculating hour and minute, sometimes they don't divide exactly. For such a case, take a look at the examples. <br> 
+        </p>
+        <h2>Input Example 1</h2>
+        <pre>
+          2016 1 1 17 10 30
+          </pre>
+        <h2>Output Example 1</h2>
+        <pre>
+       29th, Alban Elved, 15:00
+        </pre>
+
+        <p style="text-align: relative">
+        1/1/2016 is a Friday. 29th, Alvan Elved, 14:59, 29th, Alban Elved, 15:01 are both considered correct. 
+        </p>
+        <h2>Input Example 2</h2>
+        <pre>
+        2016 6 1 11 59 59
+        </pre>
+
+        <h2>Output Example 2 </h2>
+        <pre>
+        20th, Alban Heruin, 23:59
+        </pre>
+
+         <p style="text-align: relative">
+        If it becomes midnight in the real world, in Erin, the entire semester changes. Therefore, 11:59:59 is just 20th, 11:59pm. <br>
+
+        20th, Alban Heruin, 23:58, 21st, Alban Heruin, 00:00 are both considered correct.  
+        </p>
+        <h2>Input Example 3</h2>
+        <pre>
+        2016 2 29 17 29 38
+        </pre>
+
+        <h2>Output Example 3</h2>
+        <pre>
+        30th, Alban Eiler, 03:45
+        </pre>
+         <p style="text-align: relative">
+        2016 was a leap year.
+        </p>
+      
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        Marks will be awarded according to the number of hidden test cases the program passes. If you miss even one, you will receive no marks.
+        </p>
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

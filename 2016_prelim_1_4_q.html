@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2016 NYPC Preliminary Round One Question 3</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Touch Touch Pang Pang</h1>
+       
+        <!-- Add in Image here -->
+
+        <p style ="text-align: relative"> 
+        Touch Touch Pang Pang is a game where players tap on balloons on a touch screen to make them burst and get points accordingly. <br>
+
+        After each game, the results are sent to the server and for top-ranked players, Golden Fingers are given. <br>
+
+        However, there could be users who manipulate these scores to get the Golden Finger. Therefore, to assure fairness, we would like to develop a program that receives the replay data and actually checks if the scores match as security is really important in games. <br>
+
+        Develop a progrma that retrieves the replay data and calculates the final score. <br>
+
+        </p>
+
+        
+
+        <p style ="text-align: relative"> 
+            Game Rules: <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Time is represented as a tick. <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - The game screen is in the shape of a rectangle, starting from (0, 0) to (W, H). <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - All balloons are in the shapeof a circle. <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Balloons are created at a specific lovation and are sent out in a specific direction in a straight line. <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - If the balloons leave the screen, then that balloon is completely gone. <br>
+             &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; -> Leaving the screen means that the area of the screen and the balloon overlaps is 0. <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Everytime a new balloon is created, there is a creation event.<br>
+             &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; -> The balloon's size, direction, and speed are given. <br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; -  Everytime a user touches the screen, there is a touch event. <br>
+             &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  -> With this event, by a touch on the screen, all the balloons are a certain radius distance of the touching point are popped. <br>
+              &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; -> Even if only one point overlaps from the touching radius, then that balloon is popped. <br>
+
+               &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Multiple balloons may be popped in one touch and the more popped in one touch, the more multi-bonus points are given. <br>
+                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Balloons may be overlapped with one another, but each balloon is individual, so one balloon will not affect the other. 
+                <br>
+                 &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - If you don't make a missing touch, you will receive 1 combo each time. <br>
+                  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; -> If you do, then your combo score is reset to 0. <br>
+                  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; -> Your combo score will only increase by 1 even if you pop multiple balloons with one touch event as combo scores are calculated by touch events, not the number of balloons popped. <br>
+                  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - The score you receive for every successful touch event is affect by the combo score C, and the multi-bonus score M. The score is calculated by the following equation: <br>
+                  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; Score = C * (current_combo_ score) + M * (number_balloons_popped_by_this_touch) <sup> 2 </sup>. <br>
+        </p> 
+        
+
+
+        <h2>Input</h2>
+        <p style ="text-align: relative">
+          First line of input has 6 integers, W, H, C, M R, and N. W is the width of the touch screen, and H is the height. W,H are integers greater than or equal to 50 and less than or equal to 1,000,000. C is the combo score and M is the multi-bonus score. These scores are non-negative integers and these scores are given under the 32 bit integers. R is the radius a touch event affects and this does not exceed 1,000,000. N is the total number of events and this should be greater than or equal to 1 and less than or equal to 5,000. <br>
+          <br>
+          The next N lines have the list of events. <br>
+<br>
+          Each event is represented with 4 things: String E, integers t, x, and y. E is the type of event (C : creation event, T: touch event), t is the time the event occurred, and x and y are the coordinates in which the event happened. t is an integer greater than or equal to 0 and less than or equal to 1,000,000. <br>
+          For a creation event, on the same line, three more informations are given in the order of r, vx, and vy. These are three integers where r is the radius of the balloon, and vx and vy are the amount the balloon will move in each x and y-direction as each tick passes. The radius is always a positive integer and all three of these values should never exceed 1,000,000. In the case of a touch event, r, vx, and vy are not given. <br>
+          <br>
+          All events happen within the screen so x should always be greater than or equal to 0 and less than or equal to W and y should always be greater than or equal to 0 and less than or equal to H. <br> 
+          <br>
+          Each event is given as the tick increases and there can not be two events occurring in the same tick. There cannot be a negtaive tick. <br>
+        </p>
+
+        <h2>Output</h2>
+        <p style ="text-align: relative">
+        Output the replay data's final score. <br>
+        </p>
+        <h2>Input Example 1</h2>
+        <pre>
+          100 50 2 3 5 10
+          T 1 50 25
+          C 2 0 0 1 2 1 
+          C 3 0 0 1 2 1 
+          C 4 0 0 1 2 1
+          C 5 0 0 1 2 1
+          C 6 0 0 1 2 1
+          C 7 0 0 1 2 1
+          T 27 50 25
+          T 33 50 25
+          T 36 50 23
+          </pre>
+        <h2>Output Example 1</h2>
+        <pre>
+        45
+        </pre>
+
+      
+
+         <p style="text-align: relative">
+         To give an explanation of the above scenario, the things that occurred in each given event looks like this: <br>
+         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Tick 1: Touches (50, 25) but there were no balloons so nothing happened. <br>
+         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Tick 2: A new balloon was created at (0, 0) and it moves by (2, 1) every tick. <br>
+         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Tick 3: Same as Tick 2. <br>
+         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Tick 4: // <br>
+         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Tick 5: // <br>
+         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Tick 6: // <br>
+         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Tick 7: // <br>
+         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Tick 27: Touches (50, 25) and this pops balloons created at Tick 2, 3, and 4. Since 3 balloons were popped, you get the score of: 
+         <br>
+         C * 1 + M * 3 <sup>2</sup> = 2 + 27 = 29. <br>
+         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Tick 33: Touches (50, 25) and this doesn't affect the balloon created at Tick 5, but pops the balloons created at Tick 6 and 7. Therefore the score is: <br>
+         C * 2 + M * 2 <sup>2</sup> = 4 + 12 = 16. <br>
+         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; - Tick 36: Touches (50, 25) but no balloons are affected. <br>
+         <br>
+         Therefore, the total score is 45. <br>
+        </p>
+        <h2>Input Example 2</h2>
+        <pre>
+         100 50 2 3 5 10
+          T 1 50 25
+          C 2 0 0 1 2 1 
+          C 3 0 0 1 2 1 
+          C 4 0 0 1 2 1
+          C 5 0 0 1 2 1
+          C 6 0 0 1 2 1
+          C 7 0 0 1 2 1
+          T 27 50 25
+          T 30 0 0
+          T 36 50 23
+
+        </pre>
+
+        <h2>Output Example 2</h2>
+        <pre>
+        43
+        </pre>
+         <p style="text-align: relative">
+        The input is similar to Example 1, but at Tick 30 we missed the balloons so the combo point was reset. Therefore, the total score is 43. <br>
+        </p>
+      
+
+<h2>Input Example 3</h2>
+        <pre>
+         100 50 2 3 5 8
+          C 2 0 0 1 2 1 
+          C 3 0 0 1 2 1 
+          C 4 0 0 1 2 1
+          C 5 0 0 1 2 1
+          C 6 0 0 1 2 1
+          C 7 0 0 1 2 1
+          T 54 100 50
+          T 58 100 50
+        </pre>
+
+        <h2>Output Example 3</h2>
+        <pre>
+        29
+        </pre>
+         <p style="text-align: relative">
+        We touched (100,50) at Tick 54. At this time, balloons created at Tick 2 and 3 have already left the screen. We touched 3 balloons, so we got the score of 29. <br>
+        </p>
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+        Marks will be awarded according to the number of hidden test cases the program passes. 
+        </p>
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

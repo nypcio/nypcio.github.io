@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>2017 NYPC Stage Two Question 3</title>
+
+        <link href="css/image.css" rel="stylesheet">
+        <style>
+        .button {
+            background-color: #f05f40;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;  
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+        .button3 {font-size: 14px;} 
+        </style>
+    </head>
+    <body>
+            <script>
+                    SEC_HTTPS = true;
+                    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
+                    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
+                      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);   
+                    }(document, "script", "sphere-engine-compilers-jssdk"));
+                    </script>
+
+<script>SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};</script>
+
+        
+        <h1>Break the Bricks</h1>
+       
+
+        <p style ="text-align: relative"> "Break the Bricks", a new game Nexon is developing has the following rules: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Rectangular bricks are placed across N rows. Each row has a minimum of 0 bricks and a max of million bricks. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Number of bricks on each row and a sequence of numbers from 1 to N (no repetitive numbers) are given in the input. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - It's your job to break the bricks if the number of bricks on a row matches the number of that specific element in the sequence. In other words, if we labelled the first element of the sequence as P(1), second elemnt as P(2),..., ith element as P(i), there should be exactly P(i) - 1 rows with bricks less than the number of bricks on the ith row.<br>
+        To explain more in deatil, if we visit the row according to the sequence and count the number of bricks on these rows, the number of bricks should be increasing. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- In the input, the number of bricks on each row could be the asme, but in the end, they should be all different. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- You will get the highest mark if you can achieve this by breaking the smallest number of bricks. 
+        </p>
+        <p style="text-align: relative"> Let us look at the example below. <br>
+        N = 5 and the bricks are placed as shown. The sequence given was (1, 3, 2, 5, 4). 
+        </p>
+                <center> <img src="images/2017_prelim_2_3_1.png"> </center>
+        <p style="text-align: relative"> 
+        By breaking 2 bricks on the first column, two on the second column produces the following result. This is the optimal solution. 
+        </p>
+   
+        < <center> <img src="images/2017_prelim_2_3_2.png"> </center>
+
+        <p style="text-align: relative">
+        However, with the same number of bricks and but a different brick placement sequence (1, 2, 4, 5, 3), there isn't a solution because by only breaking bricks, column 3 cannot have the second most bricks. 
+        </p>
+
+        <p style="text-align: relative">
+        Given the number of column of bricks, number of bricks per column, and the brick sequence, output the minimum number of bricks that need to be broken if the number of bricks per column can match the given sequence.
+        </p>
+        
+
+        <h2>Input</h2>
+        <p style="text-align: relative">
+          The first line of input has the number of columns of bricks, N, where N is greater than or equal to 1 and less than or equal to 200,000. The next line has N numbers, and reading from left to right, it indicates the number of bricks on each column. The max number of bricks can be from 0 to 1 billion. The following line has the sequence of numbers 1 to N with no repetition. 
+        </p>
+
+       
+        <h2>Output</h2>
+        <p style="text-align: relative">
+        Output the minimum number of bricks that need to be broken in order to achieve the desired status. If this is not possible, output -1. If no bricks need be broken, output 0.
+        </p>
+
+        <h2>Input Example 1</h2>
+        <pre>
+        5
+        3 5 2 6 4
+        1 3 2 5 4 
+        </pre>
+
+        <h2>Output Example 1</h2>
+<pre>
+        4
+</pre>
+
+    <h2>Input Example 2</h2>
+    <pre>
+   5
+   3 5 2 6 4
+   1 2 4 5 3
+    </pre>
+      <h2>Output Example 2</h2>
+      <pre>
+     -1
+      </pre>
+
+
+        <h2>Marks Guideline</h2>
+        <p style="text-align: relative">
+          The input cases have 2 types: To get points, you need to have correct outputs for all test cases for one type of input test cases. <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 1 (60 marks): N is less than or equal to 1000, and the maximum number of bricks that can be placed per column is 10,000.  <br>
+             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 2 (140 marks): No other restrictions other than the ones listed in the problem. <br>
+        </p>
+        </p>
+
+       
+           
+       <!-- <div id="disqus_thread"></div>
+       <script>
+        -->
+       <!-- /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+       /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */ -->
+       <!-- (function() { // DON'T EDIT BELOW THIS LINE
+       var d = document, s = d.createElement('script');
+       s.src = 'https://nypcio.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+       })();
+       </script>
+       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+    <div class="sec-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+
+    <div data-id="example-widget" data-widget="e5ca872ec52274990fae82062b43e0d8"></div>
+<script>
+    SEC.ready(function() {
+        $('#btn-load-widget').on('click', function(e) {
+            e.preventDefault();
+            var SECWidget = SEC.widget("example-widget");
+        });
+    });
+</script><a href="#" id="btn-load-widget" class="btn btn-default">Load widget</a>
+
+       <!-- <a href="index.html"><button class="button button3">Return Home</button></a>
+       <a href="https://compilers.widgets.sphere-engine.com/lp?hash=e5ca872ec52274990fae82062b43e0d8">Let's Code</a> -->
+
+    </body>
+</html>
+
+                

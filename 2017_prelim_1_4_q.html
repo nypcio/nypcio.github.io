@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>2016 NYPC Final Round Question 1</title>
+        <title>2017 NYPC Stage One Question 4</title>
 
         <link href="css/image.css" rel="stylesheet">
         <style>
@@ -42,7 +42,8 @@
         <p style ="text-align: relative"> Road Runner 1 is a remake Nexon did from an old game, Road Runner. The player wants to control the runner so that the runner doesn't get caught by the security robots and collect all the gold in the map.
         </p>
 
-                <!-- Add in Image here -->
+                <center> <img src="images/2017_prelim_1_4_1.png"> </center>
+
 
         <p style ="text-align: relative"> 
         Let us create a security robot AI so that it dcan get to the runner as quickly as possible. The AI needs to decide the order of actions it should take in order to get to the runner as quickly as possible given the current map status, the runner's location and the security robot's lovation. We will assume initially that the given security robot AI will always be standing on a block, and the runner is not moving.
@@ -60,7 +61,10 @@
              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - To move 1 step up/down on a ladder takes V time. <br>
               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - To fall down one step takes time F. <br>
         </p>
-        <!-- image-->
+                <center> <img src="images/2017_prelim_1_4_2.png"> </center>
+                        <center> <img src="images/2017_prelim_1_4_3.png"> </center>
+
+
 
         <h2>Input</h2>
         <p style="text-align: relative">
@@ -76,6 +80,8 @@
         <h2>Output</h2>
         <p style="text-align: relative">
         On the first line, output the direction the robot should move in L, U, R, D without any space. You also need to output the fall. For instance, the above should output R, D. From the ladder, sliding to the right is R and the fall is D. If you fall multiple steps, you need to ouput D the number of steps you fall. <br>
+                <center> <img src="images/2017_prelim_1_4_4.png"> </center>
+
 
         If there are multiple ways to get to the runner with the same minimum amount of time, you only need to output one of the possible answers. If it is impossible to get to the runner, output X. 
         </p>
@@ -109,7 +115,6 @@
              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Type 3 (150 marks): No other restrictions other than the ones listed in the problem. <br>
         </p>
 
-        <center> <img src="images/ss_img1.png"> </center>
        
            
        <!-- <div id="disqus_thread"></div>
